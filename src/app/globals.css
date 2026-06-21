@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --background: #020617;
+  --foreground: #f8fafc;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: #0158E6;
+  --font-sans: var(--font-roboto), var(--font-nata-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-nata-sans), sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+h1, h2 {
+  font-family: var(--font-nata-sans) !important;
+}
+
+p, span, div, h3, h4, h5, h6 {
+  font-family: var(--font-roboto);
+}
+
+button, button * {
+  font-family: var(--font-nata-sans) !important;
+  cursor: pointer;
+}
+
+/* Custom Scrollbar for Process Steps */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px; /* Sleek thin width */
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Clean invisible track */
+  border-radius: 10px;
+  margin: 10px 0; /* Add some spacing */
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1; /* Subtle slate-300 color */
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary); /* Turns blue when hovered */
+}
+
+/* Hide scrollbar for carousels */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
