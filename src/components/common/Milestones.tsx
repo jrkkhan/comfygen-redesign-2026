@@ -94,7 +94,7 @@ export const Milestones = () => {
                   {/* Top: Icon & Number */}
                   <div className="flex flex-row items-center justify-between mb-5 gap-3">
                     <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-100 transition-all duration-500">
-                      {React.cloneElement(item.icon as React.ReactElement, { className: "w-6 h-6 text-[#0158E6]" })}
+                      {React.cloneElement(item.icon as React.ReactElement<any>, { className: "w-6 h-6 text-[#0158E6]" })}
                     </div>
                     <h3 className={`text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br ${item.gradient} tracking-tighter leading-none opacity-90 group-hover:scale-105 origin-bottom-right transition-transform duration-500`}>
                       {item.number}
