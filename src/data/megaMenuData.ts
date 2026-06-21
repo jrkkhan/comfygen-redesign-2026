@@ -261,11 +261,11 @@ export const megaMenuData = {
   },
   company: [
     { title: "About Us", desc: "Who we are & what we do", href: "/about-us", isActive: true },
-    { title: "Our Portfolio", desc: "Showcasing Our Successful Projects", href: "#" },
-    { title: "Career At comfygen", desc: "Join Our Dynamic Team Today", href: "#" },
+    { title: "Our Portfolio", desc: "Showcasing Our Successful Projects", href: "/portfolio" },
+    { title: "Career At Comfygen", desc: "Join Our Dynamic Team Today", href: "/career-at-comfygen" },
     { title: "Life at Comfygen", desc: "Experience Our Collaborative Work Culture", href: "/life-at-comfygen" },
     { title: "Client Testimonials", desc: "What Our Clients Say About Us", href: "/client-testimonials" },
-    { title: "Contact us", desc: "Get in Touch with Us", href: "#" },
+    { title: "Contact us", desc: "Get in Touch with Us", href: "/contact-us" },
     { title: "Our Blog", desc: "Read our latest articles", href: "#" }
   ],
   companyFeature: {

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { Phone, Mail, Globe, ShieldCheck, MapPin } from 'lucide-react';
 
 const globalOffices = [
@@ -26,6 +27,9 @@ const globalOffices = [
 ];
 
 export const Footer = () => {
+  const pathname = usePathname();
+  const isContactPage = pathname === '/contact-us';
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -86,8 +90,11 @@ export const Footer = () => {
     <footer className="w-full bg-[#0A0D27] pt-20 border-t border-white/5 relative z-10">
       <div className="max-w-[1400px] mx-auto px-4">
 
-        {/* Top Contact Form & Info Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-24">
+        {/* Conditionally hide top contact section on Contact page */}
+        {!isContactPage && (
+          <>
+            {/* Top Contact Form & Info Section */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-24">
 
           {/* Left Side: Contact Information */}
           <div className="flex flex-col justify-center">
@@ -209,8 +216,10 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Separator */}
-        <hr className="border-white/5 mb-16" />
+            {/* Separator */}
+            <hr className="border-white/5 mb-16" />
+          </>
+        )}
 
         {/* Footer Links & Info Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-6 mb-16">
