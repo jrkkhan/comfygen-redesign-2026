@@ -64,6 +64,7 @@ export const Milestones = () => {
                     alt="Global Team"
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   {/* Dark gradient overlay for text readability */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0158E6]/95 via-[#0158E6]/40 to-transparent" />

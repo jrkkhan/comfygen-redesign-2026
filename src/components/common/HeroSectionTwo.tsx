@@ -10,8 +10,9 @@ interface HeroSectionTwoProps {
   primaryButtonLink?: string;
   secondaryButtonText?: string;
   secondaryButtonLink?: string;
-  imageSrc: string;
+  imageSrc?: string;
   imageAlt?: string;
+  rightContent?: ReactNode;
 }
 
 export const HeroSectionTwo: React.FC<HeroSectionTwoProps> = ({
@@ -23,7 +24,8 @@ export const HeroSectionTwo: React.FC<HeroSectionTwoProps> = ({
   secondaryButtonText,
   secondaryButtonLink = "#",
   imageSrc,
-  imageAlt = "Hero Image"
+  imageAlt = "Hero Image",
+  rightContent
 }) => {
   return (
     <section
@@ -68,16 +70,22 @@ export const HeroSectionTwo: React.FC<HeroSectionTwoProps> = ({
           </div>
         </div>
 
-        {/* Image (Right) */}
-        <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-[600px] rounded-[32px] overflow-hidden  z-10">
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            fill
-            className="object-cover hover:scale-105 transition-transform duration-700"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            priority
-          />
+        {/* Right Section */}
+        <div className="relative w-full z-10 flex items-center justify-center">
+          {rightContent ? (
+            rightContent
+          ) : imageSrc ? (
+            <div className="relative w-full aspect-[4/3] lg:aspect-auto lg:h-[600px] rounded-[32px] overflow-hidden">
+              <Image
+                src={imageSrc}
+                alt={imageAlt}
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
+            </div>
+          ) : null}
         </div>
 
       </div>
