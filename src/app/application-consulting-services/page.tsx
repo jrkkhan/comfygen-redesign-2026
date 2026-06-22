@@ -23,8 +23,8 @@ const Blog = dynamic(() => import("@/components/common/Blog").then((mod) => mod.
 const Footer = dynamic(() => import("@/components/common/Footer").then((mod) => mod.Footer));
 
 export const metadata = {
-  title: "Mobile App Development | Comfygen",
-  description: "Leading mobile app development services.",
+  title: "Application Consulting Services | Comfygen",
+  description: "Transform your ideas into high-performance applications with our Application Consulting Services.",
 };
 
 const mobileServices = [
@@ -189,9 +189,8 @@ const mobileExtraInfoData = [
   }
 ];
 
-async function getMobileAppDevelopmentData() {
-  // Use the new fetchAPI helper with qs params
-  const cmsData = await fetchAPI('/mobile-app-development', {
+async function getApplicationConsultingServicesData() {
+  const cmsData = await fetchAPI('/application-consulting-services', {
     populate: {
       herosection: { populate: '*' },
       servicesection: { populate: '*' },
@@ -205,19 +204,19 @@ async function getMobileAppDevelopmentData() {
   return cmsData;
 }
 
-export default async function MobileAppDevelopmentPage() {
-  const cmsData = await getMobileAppDevelopmentData();
+export default async function ApplicationConsultingServicesPage() {
+  const cmsData = await getApplicationConsultingServicesData();
   const data = cmsData?.data;
   const heroSection = data?.herosection?.[0] || data?.Herosection?.[0];
-  const heroTitle = heroSection?.heading || "Custom Mobile App Development Services";
+  const heroTitle = heroSection?.heading || "Application Consulting Services";
   
   const heroSubtitle = heroSection?.subtitle || 
     heroSection?.description?.[0]?.children?.[0]?.text || 
-    "Transform your ideas into high-performance mobile applications. Comfygen delivers scalable, secure, and user-centric mobile apps for iOS and Android platforms.";
+    "Transform your ideas into high-performance applications. Comfygen delivers scalable, secure, and user-centric solutions.";
 
   const servicesSection = data?.servicesection?.[0];
-  const servicesTitle = servicesSection?.heading || "Mobile App\nDevelopment Services";
-  const servicesSubtitle = servicesSection?.subtitle || "Explore our comprehensive suite of mobile application development services tailored to fuel your digital growth.";
+  const servicesTitle = servicesSection?.heading || "Application Consulting\nServices";
+  const servicesSubtitle = servicesSection?.subtitle || "Explore our comprehensive suite of application consulting services tailored to fuel your digital growth.";
 
   const defaultIcons = [Smartphone, Bot, MonitorSmartphone, Layers, Component, Feather];
   
@@ -233,19 +232,19 @@ export default async function MobileAppDevelopmentPage() {
   }) || mobileServices;
 
   const aboutInfoSection = data?.aboutinfo?.[0];
-  const aboutTitle = aboutInfoSection?.title || "Future Ready Mobile App Development Solutions for Global Businesses";
+  const aboutTitle = aboutInfoSection?.title || "Future Ready Application Consulting Solutions for Global Businesses";
   const aboutParagraphs = aboutInfoSection?.description 
     ? aboutInfoSection.description.split('\n\n').filter((p: string) => p.trim() !== '')
     : [
-        "Future Ready Mobile App Development Solutions for Global Businesses Comfygen Technologies is a trusted mobile app development company in Jaipur, India, delivering high-performing mobile apps for startups and enterprises. Based in Jaipur, we build feature-rich Android, iOS, and cross-platform apps for Healthcare, Fintech, Blockchain, Education, Gaming, On-Demand, and Entertainment industries.",
-        "With fast deployment, easy customisation, and end-to-end support, our white label App Development solutions are ideal for anyone looking to save mobile app development time, reduce costs, and stay ahead of the competition."
+        "Future Ready Application Consulting Solutions for Global Businesses Comfygen Technologies is a trusted consulting company in Jaipur, India, delivering high-performing apps for startups and enterprises. Based in Jaipur, we build feature-rich Android, iOS, and cross-platform apps for Healthcare, Fintech, Blockchain, Education, Gaming, On-Demand, and Entertainment industries.",
+        "With fast deployment, easy customisation, and end-to-end support, our consulting solutions are ideal for anyone looking to save time, reduce costs, and stay ahead of the competition."
       ];
   const aboutImage = aboutInfoSection?.img?.url ? `https://cms.comfygen.com${aboutInfoSection.img.url}` : "/images/mobile-app-development/mobile-app-development-aboutinfo.webp";
-  const aboutImageAlt = aboutInfoSection?.img?.alternativeText || "Mobile app development about info";
+  const aboutImageAlt = aboutInfoSection?.img?.alternativeText || "Application consulting about info";
   const aboutButtonText = aboutInfoSection?.buttontext || "Consult Our Experts";
 
   const whyChooseSection = data?.whychoose?.[0];
-  const whyChooseTitle = whyChooseSection?.heading || "Why Choose Comfygen For Your\nMobile App Development?";
+  const whyChooseTitle = whyChooseSection?.heading || "Why Choose Comfygen For Your\nApplication Consulting Services?";
   const whyChooseReasons = whyChooseSection?.cards?.map((card: any, index: number) => {
     return {
       id: `0${index + 1}`,
@@ -254,8 +253,8 @@ export default async function MobileAppDevelopmentPage() {
     };
   }) || mobileWhyChooseUsReasons;
 
-  let solutionTitle = "AI-Powered Mobile App Development";
-  let solutionSubtitle = "Modern Mobile Apps Compete On Intelligence, Not Just Features. Comfygen's AI-Powered Mobile App Development Integrates Machine Learning Directly Into Core Workflows.";
+  let solutionTitle = "AI-Powered Application Consulting";
+  let solutionSubtitle = "Modern Applications Compete On Intelligence, Not Just Features. Comfygen's AI-Powered Application Consulting Integrates Machine Learning Directly Into Core Workflows.";
   let solutionCards = mobileSolutionsData;
 
   if (data.solution) {
@@ -271,7 +270,7 @@ export default async function MobileAppDevelopmentPage() {
     }
 
   const extraCardSection = data?.extracard?.[0];
-  const extraCardTitle = extraCardSection?.heading || "Emerging Technologies We Leverage For Mobile Application Development";
+  const extraCardTitle = extraCardSection?.heading || "Emerging Technologies We Leverage For Application Consulting";
   
   const renderRichText = (blocks: any[]) => {
     if (!blocks || !Array.isArray(blocks)) return null;
@@ -397,8 +396,8 @@ export default async function MobileAppDevelopmentPage() {
           cards={extraCards}
         />
         <CallToAction
-          title={<>Ready to Dominate the <br className="hidden md:block" /> Mobile App Market?</>}
-          description="We Build Custom Mobile Apps That Boost Orders, Retain Customers, And Help You Scale Your Business Faster."
+          title={<>Ready to Dominate the <br className="hidden md:block" /> Market?</>}
+          description="We Provide Application Consulting That Boosts Orders, Retains Customers, And Helps You Scale Your Business Faster."
           buttonText="Talk to Expert Now"
           isDark={false}
           graphicType="dashed-circles"
@@ -408,8 +407,8 @@ export default async function MobileAppDevelopmentPage() {
         <TechStack />
         <Team />
         <FAQ
-          title="Mobile App Development FAQs"
-          description="Have questions about our mobile app development process? Find answers to the most commonly asked questions regarding platforms, cost, timelines, and post-launch support."
+          title="Application Consulting FAQs"
+          description="Have questions about our application consulting process? Find answers to the most commonly asked questions regarding platforms, cost, timelines, and post-launch support."
           faqs={apiFaqs}
         />
         <Blog />

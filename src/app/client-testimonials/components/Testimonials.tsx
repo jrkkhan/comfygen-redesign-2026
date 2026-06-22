@@ -34,99 +34,27 @@ const DesignRushBadge = () => (
   </div>
 );
 
-const reviews = [
-  {
-    id: 1,
-    name: 'Nhi Do',
-    location: 'Vietnam',
-    platform: 'DesignRush',
-    text: '"My overall experience working with the company was very positive. The team demonstrated professionalism and strong technical skills throughout the project. Communication was clear and timely, which helped us stay on schedule. They were responsive to our feedback and flexible in adapting to changes. The final product met all our expectations and was delivered on time. Some minor..."'
-  },
-  {
-    id: 2,
-    name: 'Rob Lipps',
-    location: 'Madison',
-    platform: 'DesignRush',
-    text: '"Sonic Foundry Inc. noted that Comfygen consistently fulfilled its commitments and demonstrated strong project management skills, keeping the app\'s development on track. The client was pleased with the final result."'
-  },
-  {
-    id: 3,
-    name: 'Avinash',
-    location: 'Atlanta, Indiana',
-    platform: 'Clutch',
-    text: '"Comfygen Technologies developed and designed a blockchain and a web wallet for a cryptocurrency company. The team built a Proof of Authority blockchain based on Geth and a user-friendly web wallet."'
-  },
-  {
-    id: 4,
-    name: 'Rishabh Shukla',
-    location: 'Noida, India',
-    platform: 'Clutch',
-    text: '"An IT company hired Comfygen to design and build a dating app for both iOS and Android. The team also integrated features, including geolocation-based matching, swipe functionality, and a secure payment system."'
-  },
-  {
-    id: 5,
-    name: 'Raman Mathur',
-    location: 'Jaipur, India',
-    platform: 'Clutch',
-    text: '"Comfygen Technologies developed and designed a food delivery app for a mobile app and website development company. The team was responsible for creating a user-friendly and scalable mobile app."'
-  },
-  {
-    id: 6,
-    name: 'Sayead Shadab Arif',
-    location: 'Dubai, United Arab Emirates',
-    platform: 'Clutch',
-    text: '"Comfygen provided software development services for an IT project management company. The team worked on three projects involving blockchain and e-commerce."'
-  },
-  {
-    id: 7,
-    name: 'Raunak Pradhan',
-    location: 'Denver, New York',
-    platform: 'Clutch',
-    text: '"Comfygen built a custom healthcare mobile app for a review writer company. The app included appointment scheduling, patient record management, and a telemedicine feature. The team also worked on its UI."'
-  },
-  {
-    id: 8,
-    name: 'Saurav Gupta',
-    location: 'Denver, New York',
-    platform: 'Google',
-    text: '"I had a great experience working with Comfygen Technologies. The team is professional, responsive, and truly understands client requirements. Their technical expertise and timely delivery made the entire process smooth and stress-free. I\'d definitely recommend Comfygen Technologies to anyone looking for reliable and quality IT solutions."'
-  }
-];
+export type Review = {
+  id: number;
+  name: string;
+  location: string;
+  platform: string;
+  text: string;
+};
 
-const videos = [
-  {
-    id: 1,
-    name: 'Nitesh Rajput',
-    app: 'Book My Tutor',
-    youtubeId: 'Jxv6y3A4GoY'
-  },
-  {
-    id: 2,
-    name: 'Sayead Shadab Arif',
-    app: 'Froge Flex',
-    youtubeId: 'Jxv6y3A4GoY'
-  },
-  {
-    id: 3,
-    name: 'Alex Mercer',
-    app: 'Delivery App Pro',
-    youtubeId: 'Jxv6y3A4GoY'
-  },
-  {
-    id: 4,
-    name: 'Sarah Connor',
-    app: 'Fitness Tracker',
-    youtubeId: 'Jxv6y3A4GoY'
-  },
-  {
-    id: 5,
-    name: 'David Guetta',
-    app: 'Music Streaming',
-    youtubeId: 'Jxv6y3A4GoY'
-  }
-];
+export type TestimonialVideo = {
+  id: number;
+  name: string;
+  app: string;
+  youtubeId: string;
+};
 
-export const Testimonials = () => {
+interface TestimonialsProps {
+  reviews: Review[];
+  videos: TestimonialVideo[];
+}
+
+export const Testimonials = ({ reviews, videos }: TestimonialsProps) => {
   const [activeTab, setActiveTab] = useState<'reviews' | 'videos'>('reviews');
   const [activeVideoChunk, setActiveVideoChunk] = useState(0);
   const [playingVideoId, setPlayingVideoId] = useState<number | null>(null);
@@ -195,7 +123,9 @@ export const Testimonials = () => {
           {/* Reviews Grid */}
           <div className={`transition-all duration-500 absolute w-full ${activeTab === 'reviews' ? 'opacity-100 translate-y-0 z-10 relative' : 'opacity-0 translate-y-4 z-0 hidden'}`}>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {reviews.map(review => (
+              {reviews.map(review => {
+                const platformLower = (review.platform || '').trim().toLowerCase();
+                return (
                 <div key={review.id} className="bg-white border border-slate-200 rounded-xl p-6 hover:border-primary/30 transition-all group flex flex-col justify-between cursor-pointer">
                   <div>
                     <div className="flex justify-between items-start mb-6 gap-2">
@@ -203,10 +133,10 @@ export const Testimonials = () => {
                         <h3 className="text-slate-900 font-semibold text-base leading-tight">{review.name}</h3>
                         <span className="text-slate-500 text-xs leading-tight">{review.location}</span>
                       </div>
-                      {review.platform === 'Google' && <GoogleBadge />}
-                      {review.platform === 'Clutch' && <ClutchBadge />}
-                      {review.platform === 'DesignRush' && <DesignRushBadge />}
-                      {!['Google', 'Clutch', 'DesignRush'].includes(review.platform) && review.platform && (
+                      {platformLower === 'google' && <GoogleBadge />}
+                      {platformLower === 'clutch' && <ClutchBadge />}
+                      {platformLower === 'designrush' && <DesignRushBadge />}
+                      {!['google', 'clutch', 'designrush'].includes(platformLower) && review.platform && (
                         <span className="text-slate-700 text-xs font-bold bg-slate-50 border border-slate-200 px-3 py-1 rounded-full group-hover:bg-slate-100 transition-colors whitespace-nowrap shrink-0">
                           {review.platform}
                         </span>
@@ -217,7 +147,7 @@ export const Testimonials = () => {
                     </p>
                   </div>
                 </div>
-              ))}
+              )})}
             </div>
           </div>
 
