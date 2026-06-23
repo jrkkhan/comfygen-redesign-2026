@@ -257,10 +257,10 @@ export default async function ApplicationConsultingServicesPage() {
   let solutionSubtitle = "Modern Applications Compete On Intelligence, Not Just Features. Comfygen's AI-Powered Application Consulting Integrates Machine Learning Directly Into Core Workflows.";
   let solutionCards = mobileSolutionsData;
 
-  if (data.solution) {
+  if (data?.solution) {
       solutionTitle = data.solution.heading || solutionTitle;
       solutionSubtitle = data.solution.subheading || solutionSubtitle;
-      if (data.solution.cards && data.solution.cards.length > 0) {
+      if (data?.solution.cards && data.solution.cards.length > 0) {
         solutionCards = data.solution.cards.map((card: any) => ({
           title: card.title,
           description: card.description,
@@ -301,7 +301,7 @@ export default async function ApplicationConsultingServicesPage() {
   })) || mobileExtraInfoData;
 
   let apiFaqs = mobileFaqs;
-  if (data.faqdata && data.faqdata.length > 0) {
+  if (data?.faqdata && data.faqdata.length > 0) {
       const faqComponent = data.faqdata[0];
       if (faqComponent.faqdata && faqComponent.faqdata.length > 0) {
         apiFaqs = faqComponent.faqdata.map((faq: any) => ({

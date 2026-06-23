@@ -189,10 +189,11 @@ export const megaMenuData = {
     }
   ],
   solutionsFeature: {
-    image: { label: "/images/hero/team-collaborating.webp", href: "/images-hero-team-collaborating-webp" },
-    buttonText: { label: "Connect to expert \u2192", href: "/connect-to-expert-u2192" },
-    href: { label: "#", href: "/" }
+    image: "/images/hero/team-collaborating.webp",
+    buttonText: "Connect to expert \u2192",
+    href: "#"
   },
+
   industries: [
     {
       id: "healthcare",
@@ -255,10 +256,11 @@ export const megaMenuData = {
     }
   ],
   industriesFeature: {
-    image: { label: "/images/hero/team-collaborating.webp", href: "/images-hero-team-collaborating-webp" },
-    buttonText: { label: "Connect to expert \u2192", href: "/connect-to-expert-u2192" },
-    href: { label: "#", href: "/" }
+    image: "/images/hero/team-collaborating.webp",
+    buttonText: "Connect to expert \u2192",
+    href: "#"
   },
+
   company: [
     { title: "About Us", desc: "Who we are & what we do", href: "/about-us", isActive: true },
     { title: "Our Portfolio", desc: "Showcasing Our Successful Projects", href: "/portfolio" },

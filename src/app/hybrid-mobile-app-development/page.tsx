@@ -136,7 +136,7 @@ export default async function HybridMobileAppDevelopmentPage() {
   })) || [];
 
   let apiFaqs: any[] = [];
-  if (data.faqdata && data.faqdata.length > 0) {
+  if (data?.faqdata && data.faqdata.length > 0) {
     const faqComponent = data.faqdata[0];
     if (faqComponent.faqdata && faqComponent.faqdata.length > 0) {
       apiFaqs = faqComponent.faqdata.map((faq: any) => ({
