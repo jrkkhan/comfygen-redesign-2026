@@ -15,10 +15,16 @@ export async function fetchAPI(path: string, urlParamsObject = {}, options = {})
 
     // Build the request URL
     const requestUrl = `https://cms.comfygen.com/api${path}${queryString ? `?${queryString}` : ''}`;
+    console.log("Fetching Strapi URL:", requestUrl);
+    console.log("Using Token:", process.env.STRAPI_API_TOKEN ? "Token exists" : "NO TOKEN!");
 
     // Make the fetch request
     const response = await fetch(requestUrl, {
       cache: 'no-store', // Default to no-store during active development
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+      },
       ...options,
     });
 
