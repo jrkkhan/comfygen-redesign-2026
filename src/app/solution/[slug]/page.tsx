@@ -47,12 +47,7 @@ export default async function SolutionPage({ params }: { params: { slug: string 
     { id: "06", title: "Maintenance & Support", desc: "Post-launch support to keep your app updated and secure." }
   ];
 
-  // Dummy data for FAQ
-  const faqData = [
-    { question: "How much does it cost to build a food delivery app?", answer: "The cost depends on the features, platforms (iOS/Android), and complexity. A basic app starts around $10k-$15k, while an advanced app like UberEats can go higher." },
-    { question: "How long does it take to develop the app?", answer: "Typically, it takes 3 to 6 months to develop a fully functional food delivery ecosystem including User, Driver, and Admin panels." },
-    { question: "Do you provide the source code?", answer: "Yes, once the project is completed and final payments are made, we hand over 100% ownership and the complete source code to you." },
-  ];
+
 
   const { 
     heroSection, 
@@ -85,7 +80,11 @@ export default async function SolutionPage({ params }: { params: { slug: string 
       />
 
       {/* 2. About info with bullet */}
-      <SolutionAboutInfo />
+      <SolutionAboutInfo 
+        title={aboutSection?.title}
+        description={aboutSection?.paragraph}
+        bulletPoints={aboutSection?.bullets}
+      />
 
       {/* 3. App Modules */}
       <AppModulesTab sectionData={modulesSection} />
@@ -125,9 +124,9 @@ export default async function SolutionPage({ params }: { params: { slug: string 
 
       {/* 14. FAQs */}
       <FAQ 
-        title="Frequently Asked Questions"
-        description="Got questions? We have answers."
-        faqs={faqData}
+        title={faqSection?.heading || "Frequently Asked Questions"}
+        description={faqSection?.subHeading || "Got questions? We have answers."}
+        faqs={faqSection?.items || []}
       />
 
       <Footer />

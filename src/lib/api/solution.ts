@@ -14,7 +14,18 @@ export async function fetchSolutionData(slug: string): Promise<SolutionPageData 
     // If strapi-plugin-populate-deep is not installed, we'll need to write out explicit populate params
     const response = await fetchAPI('/solutions', {
       filters: { slug: { $eq: slug } },
-      populate: '*', 
+      populate: {
+        seo: { populate: '*' },
+        SolutionHeroSection: { populate: '*' },
+        SolutionAboutSection: { populate: '*' },
+        SolutionModulesSection: { populate: '*' },
+        SolutionProblemsSection: { populate: '*' },
+        SolutionOfferingsSection: { populate: '*' },
+        SolutionTechFeaturesSection: { populate: '*' },
+        SolutionClonesSection: { populate: '*' },
+        SolutionPricingSection: { populate: '*' },
+        faqSection: { populate: '*' }
+      }, 
     });
 
     if (!response || !response.data || response.data.length === 0) {
