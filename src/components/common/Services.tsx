@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Smartphone, Activity, BrainCircuit, Network, Component, ShoppingCart } from 'lucide-react';
+import { ArrowRight, Smartphone, Activity, BrainCircuit, Network, Component, ShoppingCart, icons } from 'lucide-react';
 
 interface ServiceCardProps {
   title: string;
@@ -31,7 +31,7 @@ const ServiceCard = ({ title, description, isBlueLink = false, className = "", c
 export interface ServiceItemData {
   title: string;
   description: string;
-  icon?: React.ElementType;
+  icon?: string | React.ElementType;
   isBlueLink?: boolean;
   className?: string;
 }
@@ -67,12 +67,20 @@ export const Services = ({
     displayServices[5] || defaultServices[5],
   ];
 
-  const Icon0 = s0?.icon || Smartphone;
-  const Icon1 = s1?.icon || Smartphone;
-  const Icon2 = s2?.icon || Smartphone;
-  const Icon3 = s3?.icon || Smartphone;
-  const Icon4 = s4?.icon || Smartphone;
-  const Icon5 = s5?.icon || Smartphone;
+  const getIcon = (iconProp: any) => {
+    if (typeof iconProp === 'string') {
+      const IconComp = (icons as any)[iconProp];
+      return IconComp || Smartphone;
+    }
+    return iconProp || Smartphone;
+  };
+
+  const Icon0 = getIcon(s0?.icon);
+  const Icon1 = getIcon(s1?.icon);
+  const Icon2 = getIcon(s2?.icon);
+  const Icon3 = getIcon(s3?.icon);
+  const Icon4 = getIcon(s4?.icon);
+  const Icon5 = getIcon(s5?.icon);
 
   return (
     <section className="w-full py-24 px-4 bg-white relative z-20">

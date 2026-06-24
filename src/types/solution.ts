@@ -37,7 +37,7 @@ export interface SolutionPageData {
     items: Array<{
       title: string;
       description: string;
-      icon?: any;
+      icon?: string;
     }>;
   };
   modulesSection: {
