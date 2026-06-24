@@ -56,7 +56,7 @@ export const ProblemStatement = ({ sectionData }: ProblemStatementProps) => {
             <AlertCircle className="w-4 h-4" />
             <span>The Industry Challenge</span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-sans text-slate-900 mb-6 leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold !font-heading text-slate-900 mb-6 leading-tight">
             {sectionData?.heading ? (
               <span dangerouslySetInnerHTML={{ __html: sectionData.heading.replace('Problems', '<span class="text-rose-600">Problems</span>') }} />
             ) : (

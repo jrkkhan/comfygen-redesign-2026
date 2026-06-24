@@ -318,9 +318,9 @@ export const AppModulesTab = ({ sectionData }: AppModulesTabProps) => {
   return (
     <section className="py-20 lg:py-28 bg-slate-50 relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-sans text-slate-900 mb-6 tracking-tight">{sectionData?.heading || "Complete Ecosystem Architecture"}</h2>
-          <p className="text-slate-600 text-lg max-w-2xl mx-auto font-medium">{sectionData?.subHeading || "A fully integrated suite of premium applications designed to scale across any on-demand business model instantly."}</p>
+        <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold !font-heading text-slate-900 mb-6 tracking-tight">{sectionData?.heading || "Complete Ecosystem Architecture"}</h2>
+          <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto font-medium">{sectionData?.subHeading || "A fully integrated suite of premium applications designed to scale across any on-demand business model instantly."}</p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">

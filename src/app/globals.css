@@ -23,8 +23,12 @@ h1, h2 {
   font-family: var(--font-nata-sans) !important;
 }
 
-p, span, div, h3, h4, h5, h6 {
+p, h3, h4, h5, h6 {
   font-family: var(--font-roboto);
+}
+
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span, button span {
+  font-family: inherit;
 }
 
 button, button * {
