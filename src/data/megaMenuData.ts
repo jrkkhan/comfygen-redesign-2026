@@ -122,16 +122,16 @@ export const megaMenuData = {
       subtitle: "Tailored Apps for Instant Needs",
       icon: "User",
       links: [
-        { label: "Delivery App Development", href: "/delivery-app-development" }, { label: "Salon App Development", href: "/salon-app-development" },
-        { label: "Food Delivery App Development", href: "/food-delivery-app-development" }, { label: "Business Directory App Development", href: "/business-directory-app-development" },
-        { label: "Pizza Delivery App Development", href: "/pizza-delivery-app-development" }, { label: "Logistics App Development", href: "/logistics-app-development" },
-        { label: "Milk Delivery App Development", href: "/milk-delivery-app-development" }, { label: "Home Service App Development", href: "/home-service-app-development" },
-        { label: "Flower Delivery App Development", href: "/flower-delivery-app-development" }, { label: "Meat Delivery App Development", href: "/meat-delivery-app-development" },
-        { label: "Water Delivery App Development", href: "/water-delivery-app-development" }, { label: "Alcohol Delivery App Development", href: "/alcohol-delivery-app-development" },
-        { label: "Taxi App Development", href: "/taxi-app-development" }, { label: "Courier Delivery App Development", href: "/courier-delivery-app-development" },
-        { label: "Astrology App Development", href: "/astrology-app-development" }, { label: "Billing Software Development", href: "/billing-software-development" },
-        { label: "Ice Cream Delivery App Development", href: "/ice-cream-delivery-app-development" }, { label: "Accounting Software Development", href: "/accounting-software-development" },
-        { label: "Fuel Delivery App Development", href: "/fuel-delivery-app-development" }
+        { label: "Delivery App Development", href: "/solution/delivery-app-development" }, { label: "Salon App Development", href: "/solution/salon-app-development" },
+        { label: "Food Delivery App Development", href: "/solution/food-delivery-app-development" }, { label: "Business Directory App Development", href: "/solution/business-directory-app-development" },
+        { label: "Pizza Delivery App Development", href: "/solution/pizza-delivery-app-development" }, { label: "Logistics App Development", href: "/solution/logistics-app-development" },
+        { label: "Milk Delivery App Development", href: "/solution/milk-delivery-app-development" }, { label: "Home Service App Development", href: "/solution/home-service-app-development" },
+        { label: "Flower Delivery App Development", href: "/solution/flower-delivery-app-development" }, { label: "Meat Delivery App Development", href: "/solution/meat-delivery-app-development" },
+        { label: "Water Delivery App Development", href: "/solution/water-delivery-app-development" }, { label: "Alcohol Delivery App Development", href: "/solution/alcohol-delivery-app-development" },
+        { label: "Taxi App Development", href: "/solution/taxi-app-development" }, { label: "Courier Delivery App Development", href: "/solution/courier-delivery-app-development" },
+        { label: "Astrology App Development", href: "/solution/astrology-app-development" }, { label: "Billing Software Development", href: "/solution/billing-software-development" },
+        { label: "Ice Cream Delivery App Development", href: "/solution/ice-cream-delivery-app-development" }, { label: "Accounting Software Development", href: "/solution/accounting-software-development" },
+        { label: "Fuel Delivery App Development", href: "/solution/fuel-delivery-app-development" }
       ]
     },
     {
@@ -140,11 +140,11 @@ export const megaMenuData = {
       subtitle: "Secure Your Digital Future",
       icon: "Box",
       links: [
-        { label: "POW Blockchain Development", href: "/pow-blockchain-development" }, { label: "POA Blockchain Development", href: "/poa-blockchain-development" },
-        { label: "DPOS Blockchain Development", href: "/dpos-blockchain-development" }, { label: "DApp Development Company", href: "/dapp-development-company" },
-        { label: "DeFi Development Company", href: "/defi-development-company" }, { label: "DeFi Smart Contract Development", href: "/defi-smart-contract-development" },
-        { label: "Smart Contract Development", href: "/smart-contract-development" }, { label: "Smart Contract MLM Software", href: "/smart-contract-mlm-software" },
-        { label: "ICO Development Company", href: "/ico-development-company" }, { label: "Blockchain Wallet Development Company", href: "/blockchain-wallet-development-company" }
+        { label: "POW Blockchain Development", href: "/solution/pow-blockchain-development" }, { label: "POA Blockchain Development", href: "/solution/poa-blockchain-development" },
+        { label: "DPOS Blockchain Development", href: "/solution/dpos-blockchain-development" }, { label: "DApp Development Company", href: "/solution/dapp-development-company" },
+        { label: "DeFi Development Company", href: "/solution/defi-development-company" }, { label: "DeFi Smart Contract Development", href: "/solution/defi-smart-contract-development" },
+        { label: "Smart Contract Development", href: "/solution/smart-contract-development" }, { label: "Smart Contract MLM Software", href: "/solution/smart-contract-mlm-software" },
+        { label: "ICO Development Company", href: "/solution/ico-development-company" }, { label: "Blockchain Wallet Development Company", href: "/solution/blockchain-wallet-development-company" }
       ]
     },
     {
@@ -153,10 +153,10 @@ export const megaMenuData = {
       subtitle: "Customized Applications for Every Industry",
       icon: "LayoutGrid",
       links: [
-        { label: "Social Media App Development", href: "/social-media-app-development" }, { label: "IoT Development", href: "/iot-development" },
-        { label: "Mobile Game Development", href: "/mobile-game-development" }, { label: "News & Web App Development", href: "/news-web-app-development" },
-        { label: "Cricket Fast Line App Development", href: "/cricket-fast-line-app-development" }, { label: "Education App Development", href: "/education-app-development" },
-        { label: "E-Learning App Development", href: "/e-learning-app-development" }, { label: "Magazine App Development", href: "/magazine-app-development" }
+        { label: "Social Media App Development", href: "/solution/social-media-app-development" }, { label: "IoT Development", href: "/solution/iot-development" },
+        { label: "Mobile Game Development", href: "/solution/mobile-game-development" }, { label: "News & Web App Development", href: "/solution/news-web-app-development" },
+        { label: "Cricket Fast Line App Development", href: "/solution/cricket-fast-line-app-development" }, { label: "Education App Development", href: "/solution/education-app-development" },
+        { label: "E-Learning App Development", href: "/solution/e-learning-app-development" }, { label: "Magazine App Development", href: "/solution/magazine-app-development" }
       ]
     },
     {
@@ -165,7 +165,7 @@ export const megaMenuData = {
       subtitle: "Building the Future with Web3",
       icon: "CloudRain", // Close approximation for the cloud/network icon
       links: [
-        { label: "Metaverse Development Company", href: "/metaverse-development-company" }, { label: "NFT marketplace development", href: "/nft-marketplace-development" }
+        { label: "Metaverse Development Company", href: "/solution/metaverse-development-company" }, { label: "NFT marketplace development", href: "/solution/nft-marketplace-development" }
       ]
     },
     {
@@ -174,17 +174,17 @@ export const megaMenuData = {
       subtitle: "Innovate Your Crypto Vision",
       icon: "Bitcoin",
       links: [
-        { label: "Wallet Development Company", href: "/wallet-development-company" }, { label: "Crypto Payment Gateway Development", href: "/crypto-payment-gateway-development" },
-        { label: "Crypto Wallet Development", href: "/crypto-wallet-development" }, { label: "Decentralized wallet Development", href: "/decentralized-wallet-development" },
-        { label: "Crypto Exchange Services", href: "/crypto-exchange-services" }, { label: "NFT Wallet Development Company", href: "/nft-wallet-development-company" },
-        { label: "Crypto MLM Software Development", href: "/crypto-mlm-software-development" }, { label: "White Label Cryptocurrency Wallet Development", href: "/white-label-cryptocurrency-wallet-development" },
-        { label: "Crypto White Paper Development", href: "/crypto-white-paper-development" }, { label: "Multi Currency Wallet Development Company", href: "/multi-currency-wallet-development-company" },
-        { label: "Decentralized Exchange Development", href: "/decentralized-exchange-development" }, { label: "Defi Wallet Development", href: "/defi-wallet-development" },
-        { label: "White Label Crypto Exchange Development", href: "/white-label-crypto-exchange-development" }, { label: "Smart Contract Wallet Development", href: "/smart-contract-wallet-development" },
-        { label: "Hybrid Crypto Exchange Development", href: "/hybrid-crypto-exchange-development" }, { label: "Blockchain Wallet Development", href: "/blockchain-wallet-development" },
-        { label: "Centralized Crypto Exchange Development", href: "/centralized-crypto-exchange-development" }, { label: "Crypto NFT Exchange Development", href: "/crypto-nft-exchange-development" },
-        { label: "Crypto Launchpad Development", href: "/crypto-launchpad-development" }, { label: "Mobile Crypto Wallet Development", href: "/mobile-crypto-wallet-development" },
-        { label: "OTC Crypto Exchange Development", href: "/otc-crypto-exchange-development" }, { label: "Web3 Wallet Development", href: "/web3-wallet-development" }
+        { label: "Wallet Development Company", href: "/solution/wallet-development-company" }, { label: "Crypto Payment Gateway Development", href: "/solution/crypto-payment-gateway-development" },
+        { label: "Crypto Wallet Development", href: "/solution/crypto-wallet-development" }, { label: "Decentralized wallet Development", href: "/solution/decentralized-wallet-development" },
+        { label: "Crypto Exchange Services", href: "/solution/crypto-exchange-services" }, { label: "NFT Wallet Development Company", href: "/solution/nft-wallet-development-company" },
+        { label: "Crypto MLM Software Development", href: "/solution/crypto-mlm-software-development" }, { label: "White Label Cryptocurrency Wallet Development", href: "/solution/white-label-cryptocurrency-wallet-development" },
+        { label: "Crypto White Paper Development", href: "/solution/crypto-white-paper-development" }, { label: "Multi Currency Wallet Development Company", href: "/solution/multi-currency-wallet-development-company" },
+        { label: "Decentralized Exchange Development", href: "/solution/decentralized-exchange-development" }, { label: "Defi Wallet Development", href: "/solution/defi-wallet-development" },
+        { label: "White Label Crypto Exchange Development", href: "/solution/white-label-crypto-exchange-development" }, { label: "Smart Contract Wallet Development", href: "/solution/smart-contract-wallet-development" },
+        { label: "Hybrid Crypto Exchange Development", href: "/solution/hybrid-crypto-exchange-development" }, { label: "Blockchain Wallet Development", href: "/solution/blockchain-wallet-development" },
+        { label: "Centralized Crypto Exchange Development", href: "/solution/centralized-crypto-exchange-development" }, { label: "Crypto NFT Exchange Development", href: "/solution/crypto-nft-exchange-development" },
+        { label: "Crypto Launchpad Development", href: "/solution/crypto-launchpad-development" }, { label: "Mobile Crypto Wallet Development", href: "/solution/mobile-crypto-wallet-development" },
+        { label: "OTC Crypto Exchange Development", href: "/solution/otc-crypto-exchange-development" }, { label: "Web3 Wallet Development", href: "/solution/web3-wallet-development" }
       ]
     }
   ],

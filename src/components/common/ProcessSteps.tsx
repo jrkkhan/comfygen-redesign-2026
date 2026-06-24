@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-const steps = [
+const defaultSteps = [
   { id: '01', title: 'Requirement Analysis', desc: 'We Map Goals, Scope, And Milestones Into A Clear Roadmap.', time: '1-2 weeks' },
   { id: '02', title: 'UI/UX Design & Design Phase', desc: 'We Create Wireframes And Prototypes To Visualize The Solutions.', time: '3-4 weeks' },
   { id: '03', title: 'Development', desc: 'We Build The Product Based On The Finalized Designs And Specifications.', time: '5-6 weeks' },
@@ -13,8 +13,22 @@ const steps = [
   { id: '07', title: 'Marketing & SEO', desc: 'We Help You Reach Your Target Audience And Grow Your Business.', time: 'Ongoing' },
 ];
 
-export const ProcessSteps = () => {
-  const [activeStep, setActiveStep] = useState('03');
+export interface ProcessStep {
+  id: string;
+  title: string;
+  desc: string;
+  time?: string;
+}
+
+export interface ProcessStepsProps {
+  title?: string;
+  subtitle?: string;
+  steps?: ProcessStep[];
+}
+
+export const ProcessSteps = ({ title, subtitle, steps }: ProcessStepsProps) => {
+  const displaySteps = steps && steps.length > 0 ? steps : defaultSteps;
+  const [activeStep, setActiveStep] = useState(displaySteps[0]?.id || '01');
 
   return (
     <section className="w-full py-20 lg:py-28 px-4 bg-white">
@@ -28,15 +42,17 @@ export const ProcessSteps = () => {
           </span>
 
           <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-slate-900 mb-6 leading-[1.25] tracking-tight">
-            A simple 7-step process for<br className="hidden lg:block" /> delivery development
+            {title ? title : <>A simple 7-step process for<br className="hidden lg:block" /> delivery development</>}
           </h2>
 
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4 pr-0 lg:pr-10">
-            As A Trusted Mobile App And Web Development Company, We Follow A Structured And Agile Website And Application Development Process To Deliver Custom, Scalable, And High-Quality Digital Solutions.
+            {subtitle ? subtitle : "As A Trusted Mobile App And Web Development Company, We Follow A Structured And Agile Website And Application Development Process To Deliver Custom, Scalable, And High-Quality Digital Solutions."}
           </p>
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-10 pr-0 lg:pr-10">
-            You Always Know What Stage Your Project Is In And What Comes Next.
-          </p>
+          {!subtitle && (
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-10 pr-0 lg:pr-10">
+              You Always Know What Stage Your Project Is In And What Comes Next.
+            </p>
+          )}
 
           {/* Illustration Placeholder */}
           <div className="w-full h-[300px] sm:h-[400px] rounded-3xl overflow-hidden shadow-2xl border border-slate-100 bg-slate-50 flex items-center justify-center">
@@ -61,7 +77,7 @@ export const ProcessSteps = () => {
               WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)'
             }}
           >
-            {steps.map((step) => {
+            {displaySteps.map((step) => {
               const isActive = activeStep === step.id;
 
               return (
