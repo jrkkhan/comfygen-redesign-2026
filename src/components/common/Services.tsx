@@ -31,7 +31,7 @@ const ServiceCard = ({ title, description, isBlueLink = false, className = "", c
 export interface ServiceItemData {
   title: string;
   description: string;
-  icon: React.ElementType;
+  icon?: React.ElementType;
   isBlueLink?: boolean;
   className?: string;
 }
@@ -56,14 +56,23 @@ export const Services = ({
   title = <><span className="text-primary !font-heading">Mobile and Web</span><br />App Development Services</>,
   subtitle = "Our Skilled Developers Build AI-Powered Apps With Modern Frameworks To Enhance Business Performance.",
   centerCardText = <>Everythings In<br />One Place</>,
-  services = defaultServices
+  services: displayServices = defaultServices
 }: ServicesProps) => {
-  const s0 = services[0] || defaultServices[0];
-  const s1 = services[1] || defaultServices[1];
-  const s2 = services[2] || defaultServices[2];
-  const s3 = services[3] || defaultServices[3];
-  const s4 = services[4] || defaultServices[4];
-  const s5 = services[5] || defaultServices[5];
+  const [s0, s1, s2, s3, s4, s5] = [
+    displayServices[0] || defaultServices[0],
+    displayServices[1] || defaultServices[1],
+    displayServices[2] || defaultServices[2],
+    displayServices[3] || defaultServices[3],
+    displayServices[4] || defaultServices[4],
+    displayServices[5] || defaultServices[5],
+  ];
+
+  const Icon0 = s0?.icon || Smartphone;
+  const Icon1 = s1?.icon || Smartphone;
+  const Icon2 = s2?.icon || Smartphone;
+  const Icon3 = s3?.icon || Smartphone;
+  const Icon4 = s4?.icon || Smartphone;
+  const Icon5 = s5?.icon || Smartphone;
 
   return (
     <section className="w-full py-24 px-4 bg-white relative z-20">
@@ -85,18 +94,18 @@ export const Services = ({
           {/* Column 1 */}
           <div className="flex flex-col gap-6">
             <ServiceCard title={s0.title} description={s0.description} isBlueLink={s0.isBlueLink} className={s0.className}>
-              <s0.icon className="w-24 h-24 text-slate-800 stroke-[1.2]" />
+              <Icon0 className="w-24 h-24 text-slate-800 stroke-[1.2]" />
             </ServiceCard>
 
             <ServiceCard title={s1.title} description={s1.description} isBlueLink={s1.isBlueLink} className={s1.className}>
-              <s1.icon className="w-24 h-24 text-slate-800 stroke-[1.2]" />
+              <Icon1 className="w-24 h-24 text-slate-800 stroke-[1.2]" />
             </ServiceCard>
           </div>
 
           {/* Column 2 */}
           <div className="flex flex-col gap-6">
             <ServiceCard title={s2.title} description={s2.description} isBlueLink={s2.isBlueLink} className={s2.className}>
-              <s2.icon className="w-24 h-24 text-slate-800 stroke-[1.2]" />
+              <Icon2 className="w-24 h-24 text-slate-800 stroke-[1.2]" />
             </ServiceCard>
 
             {/* Solid Blue Card */}
@@ -105,18 +114,18 @@ export const Services = ({
             </div>
 
             <ServiceCard title={s3.title} description={s3.description} isBlueLink={s3.isBlueLink} className={s3.className}>
-              <s3.icon className="w-24 h-24 text-slate-800 stroke-[1.2]" />
+              <Icon3 className="w-24 h-24 text-slate-800 stroke-[1.2]" />
             </ServiceCard>
           </div>
 
           {/* Column 3 */}
           <div className="flex flex-col gap-6">
             <ServiceCard title={s4.title} description={s4.description} isBlueLink={s4.isBlueLink} className={s4.className}>
-              <s4.icon className="w-24 h-24 text-slate-800 stroke-[1.2]" />
+              <Icon4 className="w-24 h-24 text-slate-800 stroke-[1.2]" />
             </ServiceCard>
 
             <ServiceCard title={s5.title} description={s5.description} isBlueLink={s5.isBlueLink} className={s5.className}>
-              <s5.icon className="w-24 h-24 text-slate-800 stroke-[1.2]" />
+              <Icon5 className="w-24 h-24 text-slate-800 stroke-[1.2]" />
             </ServiceCard>
           </div>
 

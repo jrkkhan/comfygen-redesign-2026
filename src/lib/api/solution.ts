@@ -21,6 +21,7 @@ export async function fetchSolutionData(slug: string): Promise<SolutionPageData 
         SolutionModulesSection: { populate: '*' },
         SolutionProblemsSection: { populate: '*' },
         SolutionOfferingsSection: { populate: '*' },
+        SolutionServiceSection: { populate: '*' },
         SolutionTechFeaturesSection: { populate: '*' },
         SolutionClonesSection: { populate: '*' },
         SolutionPricingSection: { populate: '*' },
@@ -78,6 +79,14 @@ export async function fetchSolutionData(slug: string): Promise<SolutionPageData 
               value: stat.description || stat.value || "", // Mapping Strapi's 'description' to 'value'
             })) 
           : mockSolutionData.aboutSection.stats,
+      },
+
+      servicesSection: {
+        heading: getComponentData(strapiData.SolutionServiceSection)?.heading || "Mobile and Web App Development Services",
+        subtitle: getComponentData(strapiData.SolutionServiceSection)?.subtitle || "Our Skilled Developers Build AI-Powered Apps With Modern Frameworks To Enhance Business Performance.",
+        items: extractItems(getComponentData(strapiData.SolutionServiceSection)?.card).length > 0 
+          ? extractItems(getComponentData(strapiData.SolutionServiceSection)?.card) 
+          : [], // Fallback to empty, Services component handles defaultServices
       },
 
       modulesSection: {

@@ -31,6 +31,15 @@ export interface SolutionPageData {
   };
 
   // 4. App Modules (Tablet UI)
+  servicesSection: {
+    heading: string;
+    subtitle: string;
+    items: Array<{
+      title: string;
+      description: string;
+      icon?: any;
+    }>;
+  };
   modulesSection: {
     heading: string;
     subHeading: string;

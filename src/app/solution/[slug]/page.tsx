@@ -15,6 +15,7 @@ import { TechStack } from "@/components/common/TechStack";
 import { WhyChooseUs } from "@/components/common/WhyChooseUs";
 import { CloneSolutions } from "@/components/common/solution/CloneSolutions";
 import { Portfolio } from "@/components/common/Portfolio";
+import { Services } from "@/components/common/Services";
 import { Metadata } from 'next';
 import { fetchSolutionData } from "@/lib/api/solution";
 import { notFound } from "next/navigation";
@@ -51,6 +52,7 @@ export default async function SolutionPage({ params }: { params: { slug: string 
 
   const { 
     heroSection, 
+    servicesSection,
     aboutSection, 
     modulesSection, 
     problemsSection, 
@@ -77,6 +79,13 @@ export default async function SolutionPage({ params }: { params: { slug: string 
         primaryButtonText="Book a Free Demo"
         secondaryButtonText="Explore Features"
         rightContent={<HeroBentoGrid />}
+      />
+
+      {/* Common Services Component */}
+      <Services 
+        title={servicesSection?.heading}
+        subtitle={servicesSection?.subtitle}
+        services={servicesSection?.items?.length > 0 ? servicesSection.items : undefined}
       />
 
       {/* 2. About info with bullet */}

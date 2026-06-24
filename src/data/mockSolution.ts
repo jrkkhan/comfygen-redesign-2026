@@ -30,6 +30,11 @@ export const mockSolutionData: SolutionPageData = {
       { label: "Restaurants Onboarded", value: "5000+" }
     ]
   },
+  servicesSection: {
+    heading: "Mobile and Web App Development Services",
+    subtitle: "Our Skilled Developers Build AI-Powered Apps With Modern Frameworks To Enhance Business Performance.",
+    items: []
+  },
   modulesSection: {
     heading: "Complete Ecosystem Architecture",
     subHeading: "A fully integrated suite of premium applications designed to streamline your food delivery operations, from customer ordering to final delivery.",
