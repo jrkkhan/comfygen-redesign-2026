@@ -17,6 +17,8 @@ const nataSans = localFont({
 });
 
 
+import { FloatingContact } from "@/components/common/FloatingContact";
+
 export const metadata: Metadata = {
   title: "Comfygen Redesign",
   description: "High performance, SEO optimized platform",
@@ -29,7 +31,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${roboto.variable} ${nataSans.variable} h-full antialiased`} suppressHydrationWarning>
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        {children}
+        <FloatingContact />
+      </body>
     </html>
   );
 }

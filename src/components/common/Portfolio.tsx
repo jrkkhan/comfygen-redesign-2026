@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 const portfolioProjects = [
@@ -17,7 +18,15 @@ const portfolioProjects = [
   }
 ];
 
-export const Portfolio = () => {
+export interface PortfolioProps {
+  buttonText?: string;
+  buttonLink?: string;
+}
+
+export const Portfolio = ({
+  buttonText = "View More Projects",
+  buttonLink = "/portfolio"
+}: PortfolioProps = {}) => {
   return (
     <section className="w-full py-20 lg:py-28 px-4 bg-[#f8fafc]">
       <div className="max-w-[1400px] mx-auto">
@@ -27,9 +36,9 @@ export const Portfolio = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-slate-900 leading-[1.2] tracking-tight max-w-2xl">
             Explore Our Mobile App<br className="hidden md:block" /> & Web Development Portfolio
           </h2>
-          <button className="bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3.5 rounded-full transition-colors shadow-lg shadow-primary/20 shrink-0">
-            View More Projects
-          </button>
+          <Link href={buttonLink} className="bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3.5 rounded-full transition-colors shadow-lg shadow-primary/20 shrink-0 inline-block text-center">
+            {buttonText}
+          </Link>
         </div>
 
         {/* Portfolio Grid */}
@@ -57,9 +66,9 @@ export const Portfolio = () => {
                 <p className="text-slate-500 text-sm  mb-6">
                   {project.desc}
                 </p>
-                <a href="/" className="flex items-center text-primary font-semibold text-sm hover:text-primary/80 transition-colors w-fit">
+                <Link href={buttonLink} className="flex items-center text-primary font-semibold text-sm hover:text-primary/80 transition-colors w-fit">
                   Explorer <ArrowRight className="w-4 h-4 ml-1.5" />
-                </a>
+                </Link>
               </div>
             </div>
           ))}

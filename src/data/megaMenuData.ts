@@ -39,7 +39,7 @@ export const megaMenuData = {
         { label: "Generative AI Development", href: "/generative-ai-development" },
         { label: "AI Interview Scheduling Software Development", href: "/ai-interview-scheduling-software-development" },
         { label: "Data Service", href: "/data-service" },
-        { label: "Data Analytics", href: "/data-analytics" },
+        { label: "Data Analytics", href: "/analytics-service-provider" },
         { label: "Tableau Consulting Services", href: "/tableau-consulting-services" },
         { label: "Hire Data Scientist", href: "/hire-data-scientist" },
         { label: "AWS Analytics Service", href: "/aws-analytics-service" },
@@ -77,7 +77,7 @@ export const megaMenuData = {
         { label: "Ethereum Token Development", href: "/ethereum-token-development" },
         { label: "Solana Token Development", href: "/solana-token-development" },
         { label: "Tron Token Development", href: "/tron-token-development" },
-        { label: "NFT Token Development", href: "/nft-token-development" },
+        { label: "NFT Token Development", href: "/nft-token-development-company" },
         { label: "Altcoin Development Services", href: "/altcoin-development-services" },
         { label: "P2P Crypto Exchange Development", href: "/p2p-crypto-exchange-development" },
         { label: "Crypto Trading Bot Development", href: "/crypto-trading-bot-development", isNew: true },
@@ -105,7 +105,7 @@ export const megaMenuData = {
       icon: "UserPlus",
       links: [
         { label: "Hire Mobile App Developer", href: "/hire-mobile-app-developer" },
-        { label: "Hire .Net Developer", href: "/hire-net-developer" },
+        { label: "Hire .Net Developer", href: "/hire-dot-net-developer" },
         { label: "Hire Blockchain Developer", href: "/hire-blockchain-developer" },
       ]
     }
@@ -113,7 +113,7 @@ export const megaMenuData = {
   serviceFeature: {
     image: "/images/hero/team-collaborating.webp",
     buttonText: "Connect to expert \u2192",
-    href: "#"
+    href: "/contact-us"
   },
   solutions: [
     {
@@ -191,7 +191,7 @@ export const megaMenuData = {
   solutionsFeature: {
     image: "/images/hero/team-collaborating.webp",
     buttonText: "Connect to expert \u2192",
-    href: "#"
+    href: "/contact-us"
   },
 
   industries: [
@@ -258,7 +258,7 @@ export const megaMenuData = {
   industriesFeature: {
     image: "/images/hero/team-collaborating.webp",
     buttonText: "Connect to expert \u2192",
-    href: "#"
+    href: "/contact-us"
   },
 
   company: [
@@ -273,7 +273,7 @@ export const megaMenuData = {
   companyFeature: {
     image: "/images/hero/team-collaborating.webp",
     buttonText: "Connect to expert \u2192",
-    href: "#"
+    href: "/contact-us"
   },
   companyBlog: {
     title: "Our Blog",

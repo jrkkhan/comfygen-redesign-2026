@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import {
   FaHeartPulse, FaBuildingColumns, FaShieldHalved, FaSackDollar, FaBagShopping,
   FaBox, FaGraduationCap, FaGamepad, FaHandHoldingHeart, FaClapperboard,
@@ -23,7 +24,15 @@ const industries = [
   { name: 'Travel & Hospitality', desc: 'Smart Booking Platforms And Management Tools For Seamless Travel Experiences.', icon: FaPlane, isNew: true },
 ];
 
-export const Industries = () => {
+export interface IndustriesProps {
+  buttonText?: string;
+  buttonLink?: string;
+}
+
+export const Industries = ({
+  buttonText = "Wanna Discuss",
+  buttonLink = "/contact-us"
+}: IndustriesProps = {}) => {
   return (
     <section className="w-full py-20 lg:py-28 px-4 bg-white">
       <div className="max-w-[1400px] mx-auto">
@@ -34,9 +43,9 @@ export const Industries = () => {
             Industries We Serve<br />
             <span className="text-slate-800 !font-heading">– Comfygen Technologies</span>
           </h2>
-          <button className="bg-primary hover:bg-primary/90 text-white font-medium px-6 py-3.5 rounded-full transition-colors shadow-[0_0_20px_rgba(1,88,230,0.3)] shrink-0 flex items-center gap-2">
-            <FaPhone className="w-4 h-4" /> Wanna Discuss
-          </button>
+          <Link href={buttonLink} className="bg-primary hover:bg-primary/90 text-white font-medium px-6 py-3.5 rounded-full transition-colors shadow-[0_0_20px_rgba(1,88,230,0.3)] shrink-0 flex items-center gap-2">
+            <FaPhone className="w-4 h-4" /> {buttonText}
+          </Link>
         </div>
 
         {/* Grid Section */}

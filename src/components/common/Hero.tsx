@@ -1,12 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { BentoGrid } from './BentoGrid';
 
 export interface HeroProps {
   title?: React.ReactNode;
   subtitle?: string;
   primaryButtonText?: string;
+  primaryButtonLink?: string;
   secondaryButtonText?: string;
+  secondaryButtonLink?: string;
 }
 
 export const Hero = ({
@@ -15,7 +18,9 @@ export const Hero = ({
   ),
   subtitle = "Are you looking to build powerful mobile application? Comfygen is a trusted AI-based mobile app & web development company. We design and build mobile apps and websites",
   primaryButtonText = "Lets Discuss",
-  secondaryButtonText = "Explore More"
+  primaryButtonLink = "/contact-us",
+  secondaryButtonText = "Explore More",
+  secondaryButtonLink = "/services"
 }: HeroProps) => {
   return (
     <section className="relative w-full pt-16 sm:pt-20 pb-24 px-4 flex flex-col items-center text-center z-10">
@@ -36,12 +41,12 @@ export const Hero = ({
 
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 sm:mb-6 w-full px-4">
-        <button className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-3.5 rounded-full font-semibold transition-all w-full sm:w-auto shadow-lg shadow-white/5">
+        <Link href={primaryButtonLink} className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-3.5 rounded-full font-semibold transition-all w-full sm:w-auto shadow-lg shadow-white/5 text-center">
           {primaryButtonText}
-        </button>
-        <button className="bg-[#080F1E] text-white hover:bg-black border border-transparent px-8 py-3.5 rounded-full font-semibold transition-all w-full sm:w-auto shadow-lg">
+        </Link>
+        <Link href={secondaryButtonLink} className="bg-[#080F1E] text-white hover:bg-black border border-transparent px-8 py-3.5 rounded-full font-semibold transition-all w-full sm:w-auto shadow-lg text-center">
           {secondaryButtonText}
-        </button>
+        </Link>
       </div>
 
       {/* Bento Box Stats Section */}

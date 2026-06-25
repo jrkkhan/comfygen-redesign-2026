@@ -4,22 +4,35 @@ import Image from 'next/image';
 interface AwardCardProps {
   title: string;
   imageSrc: string;
+  href?: string;
   className?: string;
 }
 
-const AwardCard = ({ title, imageSrc, className = "" }: AwardCardProps) => (
-  <div className={`bg-[#12182b] border border-white/[0.04] rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center hover:bg-[#1a2238] transition-colors duration-300 group ${className}`}>
-    <div className="relative h-16 sm:h-20 w-full mb-5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-      <Image 
-        src={imageSrc} 
-        alt={title} 
-        fill 
-        className="object-contain drop-shadow-md" 
-      />
+const AwardCard = ({ title, imageSrc, href, className = "" }: AwardCardProps) => {
+  const content = (
+    <div className={`bg-[#12182b] h-full border border-white/[0.04] rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center hover:bg-[#1a2238] transition-colors duration-300 group ${className}`}>
+      <div className="relative h-16 sm:h-20 w-full mb-5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+        <Image 
+          src={imageSrc} 
+          alt={title} 
+          fill 
+          className="object-contain drop-shadow-md" 
+        />
+      </div>
+      <span className="text-slate-200 text-xs sm:text-base font-medium  !font-heading">{title}</span>
     </div>
-    <span className="text-slate-200 text-xs sm:text-base font-medium  !font-heading">{title}</span>
-  </div>
-);
+  );
+
+  if (href) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className="block h-full">
+        {content}
+      </a>
+    );
+  }
+
+  return content;
+};
 
 export const Awards = () => {
   return (
@@ -45,15 +58,15 @@ export const Awards = () => {
 
           {/* Top Row: 3 Cards */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
-            <AwardCard title="Top Developers" imageSrc="/images/award/top-developers.webp" />
-            <AwardCard title="Superb" imageSrc="/images/award/superb.webp" />
-            <AwardCard title="Mobileappdaily" imageSrc="/images/award/mobileappdaily.webp" className="col-span-2 sm:col-span-1" />
+            <AwardCard href="https://www.topdevelopers.co/profile/comfygen" title="Top Developers" imageSrc="/images/award/top-developers.webp" />
+            <AwardCard href="https://clutch.co/profile/comfygen-technologies" title="Superb" imageSrc="/images/award/superb.webp" />
+            <AwardCard href="https://www.designrush.com/agency/profile/comfygen" title="Mobileappdaily" imageSrc="/images/award/mobileappdaily.webp" className="col-span-2 sm:col-span-1" />
           </div>
 
           {/* Bottom Row: 2 Cards (Wider) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-            <AwardCard title="Firms Top Ecommerce" imageSrc="/images/award/firms-top-ecommerce.webp" />
-            <AwardCard title="Firms Mobile App Development" imageSrc="/images/award/firms-mobile-app-development.webp" />
+            <AwardCard href="https://selectedfirms.co/agency/comfygen-private-limited" title="Firms Top Ecommerce" imageSrc="/images/award/firms-top-ecommerce.webp" />
+            <AwardCard href="https://www.goodfirms.co/company/comfygen-technologies" title="Firms Mobile App Development" imageSrc="/images/award/firms-mobile-app-development.webp" />
           </div>
 
         </div>

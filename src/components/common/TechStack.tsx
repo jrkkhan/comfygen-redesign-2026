@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -22,14 +23,43 @@ const techData: Record<string, string[]> = {
   'Database': [
     'MongoDB', 'MySQL', 'PostgreSQL', 'Redis', 'Oracle',
     'Firebase', 'Cassandra', 'Elasticsearch', 'DynamoDB', 'SQLite'
+  ],
+  'Cloud & DevOps': [
+    'AWS', 'Google Cloud', 'Azure', 'Docker', 'Kubernetes',
+    'Jenkins', 'Terraform', 'Ansible', 'CircleCI', 'GitHub Actions'
+  ],
+  'Payment Gateways': [
+    'Stripe', 'PayPal', 'Razorpay', 'Braintree', 'Square',
+    'Adyen', 'Authorize.Net', '2Checkout', 'Mollie', 'Skrill'
+  ],
+  'Security': [
+    'OAuth', 'JWT', 'SSL/TLS', 'bcrypt', 'Cloudflare',
+    'Keycloak', 'Auth0', 'Okta', 'Let\'s Encrypt', 'Sentinel'
+  ],
+  'UI/UX Design': [
+    'Figma', 'Adobe XD', 'Sketch', 'InVision', 'Zeplin',
+    'Framer', 'Principle', 'Balsamiq', 'Miro', 'Abstract'
+  ],
+  'Product Management': [
+    'Jira', 'Trello', 'Asana', 'Notion', 'Linear',
+    'ClickUp', 'Monday.com', 'Productboard', 'Aha!', 'Basecamp'
+  ],
+  'Artificial Intelligence': [
+    'OpenAI', 'TensorFlow', 'PyTorch', 'Keras', 'Hugging Face',
+    'LangChain', 'Scikit-learn', 'Midjourney', 'Claude', 'Gemini'
   ]
 };
 
-export const TechStack = () => {
-  const [activeTab, setActiveTab] = useState('Frontend');
+export interface TechStackProps {
+  buttonText?: string;
+  buttonLink?: string;
+}
 
-  // Provide fallback to frontend data if other tabs are clicked and empty
-  const currentTech = techData[activeTab] || techData['Frontend'];
+export const TechStack = ({
+  buttonText = "Hire Dedicated Developer",
+  buttonLink = "/contact-us"
+}: TechStackProps = {}) => {
+  const [activeTab, setActiveTab] = useState('Frontend');
 
   return (
     <section className="w-full py-20 lg:py-28 px-4 bg-[#0A0D27]">
@@ -61,9 +91,9 @@ export const TechStack = () => {
               />
             </div>
             {/* Hire Button */}
-            <button className="bg-primary hover:bg-primary/90 text-white font-medium px-7 py-2.5 rounded-full transition-colors flex items-center gap-2 text-sm shadow-[0_0_15px_rgba(1,88,230,0.3)]">
-              Hire Dedicated Developer <ArrowUpRight className="w-4 h-4" />
-            </button>
+            <Link href={buttonLink} className="bg-primary hover:bg-primary/90 text-white font-medium px-7 py-2.5 rounded-full transition-colors flex items-center gap-2 text-sm shadow-[0_0_15px_rgba(1,88,230,0.3)]">
+              {buttonText} <ArrowUpRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
 
@@ -84,20 +114,27 @@ export const TechStack = () => {
         </div>
 
         {/* Tech Grid Section */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          {currentTech.map((tech, idx) => (
-            <div
-              key={`${activeTab}-${idx}`}
-              // We simulate the "Backbone.js" active state from the design to make it look exactly like the screenshot, 
-              // while also enabling the same hover effect on all cards.
-              className={`h-[95px] rounded-xl flex items-center justify-center text-xl font-normal bg-white/5 border transition-all duration-300 hover:bg-[#151c33] hover:text-white text-white/90 hover:border-primary/60 cursor-pointer hover:shadow-[0_0_20px_rgba(1,88,230,0.15)] group ${tech === 'Backbone.js'
-                ? 'border-primary/50 text-white shadow-[0_0_15px_rgba(1,88,230,0.1)]'
-                : 'border-white/[0.02] text-slate-300'
-                }`}
+        <div>
+          {Object.entries(techData).map(([tabName, techs]) => (
+            <div 
+              key={tabName} 
+              className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 ${activeTab === tabName ? '' : 'hidden'}`}
             >
-              <span className="group-hover:scale-105 transition-transform duration-300 !font-heading ">
-                {tech}
-              </span>
+              {techs.map((tech, idx) => (
+                <div
+                  key={`${tabName}-${idx}`}
+                  // We simulate the "Backbone.js" active state from the design to make it look exactly like the screenshot, 
+                  // while also enabling the same hover effect on all cards.
+                  className={`h-[95px] rounded-xl flex items-center justify-center text-center px-4 text-lg lg:text-xl font-normal bg-white/5 border transition-all duration-300 hover:bg-[#151c33] hover:text-white text-white/90 hover:border-primary/60 cursor-pointer hover:shadow-[0_0_20px_rgba(1,88,230,0.15)] group ${tech === 'Backbone.js'
+                    ? 'border-primary/50 text-white shadow-[0_0_15px_rgba(1,88,230,0.1)]'
+                    : 'border-white/[0.02] text-slate-300'
+                    }`}
+                >
+                  <span className="group-hover:scale-105 transition-transform duration-300 !font-heading ">
+                    {tech}
+                  </span>
+                </div>
+              ))}
             </div>
           ))}
         </div>

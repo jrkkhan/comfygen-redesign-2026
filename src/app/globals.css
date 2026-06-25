@@ -61,3 +61,18 @@ button, button * {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Custom Scrollbar for Footer Links */
+.footer-scrollbar::-webkit-scrollbar {
+  width: 2px;
+}
+.footer-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.footer-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08); /* Very low visibility */
+  border-radius: 0px; /* Not rounded */
+}
+.footer-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15); /* Slightly more visible on hover */
+}

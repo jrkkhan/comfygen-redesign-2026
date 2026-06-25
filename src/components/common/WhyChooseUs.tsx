@@ -42,7 +42,7 @@ export const WhyChooseUs = ({
   };
 
   return (
-    <section className="w-full py-20 lg:py-28 relative overflow-hidden bg-white grid grid-cols-[1fr_min(1400px,100%)_1fr]">
+    <section className="w-full py-16 lg:py-20 relative overflow-hidden bg-white grid grid-cols-[1fr_min(1400px,100%)_1fr]">
       {/* Subtle Background Glow mimicking the design specifically behind the title */}
       <div className="col-span-full absolute top-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-full max-w-4xl h-[400px] bg-primary/20 blur-[80px] pointer-events-none rounded-full"></div>
 

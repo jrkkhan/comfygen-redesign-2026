@@ -75,12 +75,12 @@ export default async function DynamicPage({ params }: PageProps) {
   const mappedServices = servicesSection?.card?.map((item: any, index: number) => ({
     title: item.title,
     description: item.description,
-    icon: defaultIcons[index % defaultIcons.length],
+    icon: item.icon || defaultIcons[index % defaultIcons.length],
   })) || [];
 
   const aboutInfoSection = data?.aboutinfo?.[0];
   const aboutTitle = aboutInfoSection?.title || "About Us";
-  const aboutParagraphs = aboutInfoSection?.description 
+  const aboutParagraphs = aboutInfoSection?.description
     ? aboutInfoSection.description.split('\n\n').filter((p: string) => p.trim() !== '')
     : [];
   const aboutImage = aboutInfoSection?.img?.url ? `https://cms.comfygen.com${aboutInfoSection.img.url}` : "/images/mobile-app-development/mobile-app-development-aboutinfo.webp";
@@ -100,7 +100,7 @@ export default async function DynamicPage({ params }: PageProps) {
   const solutionCards = solutionSection?.cards?.map((card: any) => ({
     title: card.title,
     description: card.description,
-    icon: <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><path d="M12 16V12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><path d="M12 8H12.01" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+    icon: <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /><path d="M12 16V12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /><path d="M12 8H12.01" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
   })) || [];
 
   let apiFaqs = [];
@@ -134,8 +134,7 @@ export default async function DynamicPage({ params }: PageProps) {
                 rawTitle.includes("Development") ? (
                   <>
                     {rawTitle.split("Development")[0]}
-                    <span className="text-primary">Development</span>
-                    <br className="hidden md:block" />
+                    Development
                     {rawTitle.split("Development")[1]}
                   </>
                 ) : (
@@ -156,7 +155,7 @@ export default async function DynamicPage({ params }: PageProps) {
             services={mappedServices}
           />
         )}
-        
+
         {aboutTitle && aboutParagraphs.length > 0 && (
           <AboutInfo
             title={aboutTitle}
@@ -166,19 +165,19 @@ export default async function DynamicPage({ params }: PageProps) {
             buttonText={aboutButtonText}
           />
         )}
-        
+
         <Awards />
         <ProcessSteps />
-        
+
         {whyChooseReasons.length > 0 && (
           <WhyChooseUs
             title={whyChooseTitle}
             reasons={whyChooseReasons}
           />
         )}
-        
+
         <Portfolio />
-        
+
         {solutionCards.length > 0 && (
           <SolutionCards
             title={solutionTitle}
@@ -187,7 +186,7 @@ export default async function DynamicPage({ params }: PageProps) {
             isDark={false}
           />
         )}
-        
+
         <CallToAction
           title={<>Ready to Dominate the <br className="hidden md:block" /> Market?</>}
           description="We Build Custom Apps That Boost Orders, Retain Customers, And Help You Scale Your Business Faster."
@@ -199,7 +198,7 @@ export default async function DynamicPage({ params }: PageProps) {
         <Industries />
         <TechStack />
         <Team />
-        
+
         {apiFaqs.length > 0 && (
           <FAQ
             title="Frequently Asked Questions"
@@ -207,7 +206,7 @@ export default async function DynamicPage({ params }: PageProps) {
             faqs={apiFaqs}
           />
         )}
-        
+
         <Blog />
       </div>
       <Footer />

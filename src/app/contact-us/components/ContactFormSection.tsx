@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { Phone, Mail, Globe, MapPin, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 
+import { ContactForm } from '@/components/forms/ContactForm';
+
 const globalOffices = [
   {
     country: 'India',
@@ -26,62 +28,6 @@ const globalOffices = [
 ];
 
 export const ContactFormSection = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    countryCode: '+91',
-    phone: '',
-    subject: '',
-    message: ''
-  });
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-
-  const validateForm = () => {
-    const newErrors: Record<string, string> = {};
-    if (!formData.name.trim()) newErrors.name = "Name is required";
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      newErrors.email = "Invalid email format";
-    }
-    if (!formData.phone.trim()) {
-      newErrors.phone = "Phone is required";
-    } else if (!/^\d{5,15}$/.test(formData.phone.replace(/[\s-]/g, ''))) {
-      newErrors.phone = "Invalid phone number";
-    }
-    if (!formData.subject.trim()) newErrors.subject = "Subject is required";
-    if (!formData.message.trim()) {
-      newErrors.message = "Message is required";
-    } else if (formData.message.trim().length < 10) {
-      newErrors.message = "Message must be at least 10 characters";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validateForm()) return;
-    setIsSubmitting(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setSubmitSuccess(true);
-    setFormData({ name: '', email: '', countryCode: '+91', phone: '', subject: '', message: '' });
-    setTimeout(() => setSubmitSuccess(false), 5000);
-  };
-
   return (
     <section className="w-full pb-20 px-4">
       <div className="max-w-[1400px] mx-auto">
@@ -95,29 +41,29 @@ export const ContactFormSection = () => {
               <h2 className="text-2xl font-bold text-slate-900 mb-8 !font-heading">Direct Contact</h2>
 
               <div className="flex flex-col sm:flex-row flex-wrap gap-8 md:gap-12 mb-12">
-                <div className="flex flex-col items-start">
-                  <div className="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 border border-emerald-100">
+                <a href="tel:+919587867258" className="flex flex-col items-start group cursor-pointer">
+                  <div className="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 border border-emerald-100 group-hover:bg-emerald-100 group-hover:scale-105 transition-all">
                     <Phone className="w-6 h-6" />
                   </div>
-                  <p className="text-slate-500 font-medium text-sm mb-1">Phone Number</p>
-                  <p className="text-base font-bold text-slate-900">+91 9587867258</p>
-                </div>
+                  <p className="text-slate-500 font-medium text-sm mb-1 group-hover:text-slate-700 transition-colors">Phone Number</p>
+                  <p className="text-base font-bold text-slate-900 group-hover:text-emerald-600 transition-colors">+91 9587867258</p>
+                </a>
 
-                <div className="flex flex-col items-start">
-                  <div className="w-14 h-14 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-4 border border-blue-100">
+                <a href="mailto:sales@comfygen.com" className="flex flex-col items-start group cursor-pointer">
+                  <div className="w-14 h-14 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-4 border border-blue-100 group-hover:bg-blue-100 group-hover:scale-105 transition-all">
                     <Mail className="w-6 h-6" />
                   </div>
-                  <p className="text-slate-500 font-medium text-sm mb-1">Email Address</p>
-                  <p className="text-base font-bold text-slate-900">sales@comfygen.com</p>
-                </div>
+                  <p className="text-slate-500 font-medium text-sm mb-1 group-hover:text-slate-700 transition-colors">Email Address</p>
+                  <p className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">sales@comfygen.com</p>
+                </a>
 
-                <div className="flex flex-col items-start">
-                  <div className="w-14 h-14 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center mb-4 border border-amber-100">
+                <a href="https://www.comfygen.com" target="_blank" rel="noopener noreferrer" className="flex flex-col items-start group cursor-pointer">
+                  <div className="w-14 h-14 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center mb-4 border border-amber-100 group-hover:bg-amber-100 group-hover:scale-105 transition-all">
                     <Globe className="w-6 h-6" />
                   </div>
-                  <p className="text-slate-500 font-medium text-sm mb-1">Site Address</p>
-                  <p className="text-base font-bold text-slate-900">www.comfygen.com</p>
-                </div>
+                  <p className="text-slate-500 font-medium text-sm mb-1 group-hover:text-slate-700 transition-colors">Site Address</p>
+                  <p className="text-base font-bold text-slate-900 group-hover:text-amber-600 transition-colors">www.comfygen.com</p>
+                </a>
               </div>
 
               {/* World Map Illustration Graphic */}
@@ -142,61 +88,7 @@ export const ContactFormSection = () => {
               <h3 className="text-2xl font-bold text-slate-900 mb-2 !font-heading">Send us a Message</h3>
               <p className="text-slate-500 mb-8 text-sm">Fill out the form below and we'll get back to you within 24 hours.</p>
 
-              <form className="flex flex-col gap-5" onSubmit={handleSubmit} noValidate>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-2">Name</label>
-                    <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="John Doe" className={`w-full bg-white border ${errors.name ? 'border-red-400 focus:ring-red-200' : 'border-slate-200 focus:border-primary/50 focus:ring-primary/20'} rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:ring-2 transition-all text-slate-800 placeholder:text-slate-400`} />
-                    {errors.name && <p className="text-red-500 text-xs mt-1.5 font-medium">{errors.name}</p>}
-                  </div>
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-2">Email</label>
-                    <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="john@example.com" className={`w-full bg-white border ${errors.email ? 'border-red-400 focus:ring-red-200' : 'border-slate-200 focus:border-primary/50 focus:ring-primary/20'} rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:ring-2 transition-all text-slate-800 placeholder:text-slate-400`} />
-                    {errors.email && <p className="text-red-500 text-xs mt-1.5 font-medium">{errors.email}</p>}
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-2">Number</label>
-                    <div className={`flex w-full bg-white border ${errors.phone ? 'border-red-400 focus-within:ring-red-200' : 'border-slate-200 focus-within:border-primary/50 focus-within:ring-primary/20'} rounded-xl focus-within:ring-2 transition-all overflow-hidden`}>
-                      <select name="countryCode" value={formData.countryCode} onChange={handleChange} className="bg-transparent border-none text-slate-600 text-sm pl-4 pr-2 py-3.5 focus:outline-none cursor-pointer hover:text-slate-900 border-r border-slate-200/60 appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2364748b%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[position:right_10px_center] bg-[length:10px] pr-8">
-                        <option value="+91">🇮🇳 +91</option>
-                        <option value="+1">🇺🇸 +1</option>
-                        <option value="+44">🇬🇧 +44</option>
-                        <option value="+61">🇦🇺 +61</option>
-                        <option value="+971">🇦🇪 +971</option>
-                        <option value="+49">🇩🇪 +49</option>
-                        <option value="+33">🇫🇷 +33</option>
-                      </select>
-                      <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="98765 43210" className="w-full bg-transparent border-none px-4 py-3.5 text-sm focus:outline-none text-slate-800 placeholder:text-slate-400" />
-                    </div>
-                    {errors.phone && <p className="text-red-500 text-xs mt-1.5 font-medium">{errors.phone}</p>}
-                  </div>
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-2">Subject</label>
-                    <input type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder="Web Development" className={`w-full bg-white border ${errors.subject ? 'border-red-400 focus:ring-red-200' : 'border-slate-200 focus:border-primary/50 focus:ring-primary/20'} rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:ring-2 transition-all text-slate-800 placeholder:text-slate-400`} />
-                    {errors.subject && <p className="text-red-500 text-xs mt-1.5 font-medium">{errors.subject}</p>}
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-2">Project Details</label>
-                  <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Tell us about your project requirements..." rows={5} className={`w-full bg-white border ${errors.message ? 'border-red-400 focus:ring-red-200' : 'border-slate-200 focus:border-primary/50 focus:ring-primary/20'} rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:ring-2 transition-all resize-none text-slate-800 placeholder:text-slate-400`}></textarea>
-                  {errors.message && <p className="text-red-500 text-xs mt-1.5 font-medium">{errors.message}</p>}
-                </div>
-
-                <div className="pt-2">
-                  <button type="submit" disabled={isSubmitting} className={`w-full font-bold px-8 py-4 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 ${isSubmitting ? 'bg-primary/70 cursor-not-allowed shadow-none text-white/80' : 'bg-primary hover:bg-primary/90 text-white hover:shadow-primary/25 hover:-translate-y-0.5'}`}>
-                    {isSubmitting ? 'Sending Message...' : 'Send Message'}
-                  </button>
-                  {submitSuccess && (
-                    <p className="text-green-600 bg-green-50 p-3 rounded-lg border border-green-100 text-sm mt-4 font-medium flex items-center justify-center gap-2">
-                      <ShieldCheck className="w-5 h-5" /> Message sent! We'll get back to you shortly.
-                    </p>
-                  )}
-                </div>
-              </form>
+              <ContactForm variant="contact" />
             </div>
           </div>
         </div>
@@ -218,10 +110,10 @@ export const ContactFormSection = () => {
                 </div>
 
                 <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <Phone className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                    <p className="text-slate-700 font-medium">{office.phone}</p>
-                  </div>
+                  <a href={`tel:${office.phone.replace(/[\s-]/g, '')}`} className="flex items-start gap-3 group/phone cursor-pointer">
+                    <Phone className="w-5 h-5 text-primary shrink-0 mt-0.5 group-hover/phone:scale-110 transition-transform" />
+                    <p className="text-slate-700 font-medium group-hover/phone:text-primary transition-colors">{office.phone}</p>
+                  </a>
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                     <p className="text-slate-600 text-sm leading-relaxed">{office.location}</p>

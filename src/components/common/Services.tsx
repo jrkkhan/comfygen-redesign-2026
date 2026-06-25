@@ -1,22 +1,24 @@
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, Smartphone, Activity, BrainCircuit, Network, Component, ShoppingCart, icons } from 'lucide-react';
 
 interface ServiceCardProps {
   title: string;
   description: string;
+  link?: string;
   isBlueLink?: boolean;
   className?: string;
   children: React.ReactNode;
 }
 
-const ServiceCard = ({ title, description, isBlueLink = false, className = "", children }: ServiceCardProps) => (
+const ServiceCard = ({ title, description, link = "#", isBlueLink = false, className = "", children }: ServiceCardProps) => (
   <div className={`bg-white rounded-xl border border-slate-200 p-8 sm:p-10 flex flex-col relative overflow-hidden group hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-300 ${className}`}>
     <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-3  !font-heading tracking-tighter ">{title}</h3>
     <p className="text-slate-500 text-sm  mb-6">{description}</p>
 
-    <a href="/" className={`flex items-center text-sm font-semibold mb-8 w-fit ${isBlueLink ? 'text-primary' : 'text-slate-800 group-hover:text-primary'} transition-colors`}>
+    <Link href={link} className={`flex items-center text-sm font-semibold mb-8 w-fit ${isBlueLink ? 'text-primary' : 'text-slate-800 group-hover:text-primary'} transition-colors`}>
       Show More <ArrowRight className="w-4 h-4 ml-1" />
-    </a>
+    </Link>
 
     <div className="mt-auto flex justify-center relative pt-8 pb-4">
       {/* Glowing background blob behind the icon */}
@@ -31,6 +33,7 @@ const ServiceCard = ({ title, description, isBlueLink = false, className = "", c
 export interface ServiceItemData {
   title: string;
   description: string;
+  link?: string;
   icon?: string | React.ElementType;
   isBlueLink?: boolean;
   className?: string;
@@ -41,22 +44,26 @@ export interface ServicesProps {
   subtitle?: string;
   centerCardText?: React.ReactNode;
   services?: ServiceItemData[];
+  buttonText?: string;
+  buttonLink?: string;
 }
 
 const defaultServices: ServiceItemData[] = [
-  { title: "Mobile App Development", description: "We Have Skilled Android And iOS Developers Who Build Intuitive, Responsive Mobile Apps Tailored To Real Business Needs.", isBlueLink: true, className: "lg:min-h-[460px]", icon: Smartphone },
-  { title: "Blockchain App Development", description: "We Have Expertise In Custom Blockchain App Development Solutions Using Ethereum, Solana, Hyperledger, Stellar, And More.", icon: Network },
-  { title: "Healthcare App Development", description: "We Specialize In Healthcare App Development That Streamline Operations And Improve Patient Experiences", icon: Activity },
-  { title: "NFT Marketplace Development", description: "We Build Secure And Scalable NFT Marketplace Platforms For Minting, Buying, Selling, And Trading Digital Assets.", icon: Component },
-  { title: "AI App Development", description: "At Comfygen, We Provide Intelligent AI App Development Solutions That Automate Processes, Improve Decision-Making, And Unlock New Growth Opportunities.", className: "lg:min-h-[440px]", icon: BrainCircuit },
-  { title: "Ecommerce Web & App Development", description: "We Are A Top-Rated IT Solutions Company Providing Secure And Engaging ECommerce Web And Mobile App Development", icon: ShoppingCart }
+  { title: "Mobile App Development", description: "We Have Skilled Android And iOS Developers Who Build Intuitive, Responsive Mobile Apps Tailored To Real Business Needs.", link: "/mobile-app-development", isBlueLink: true, className: "lg:min-h-[460px]", icon: Smartphone },
+  { title: "Blockchain App Development", description: "We Have Expertise In Custom Blockchain App Development Solutions Using Ethereum, Solana, Hyperledger, Stellar, And More.", link: "/blockchain-development", icon: Network },
+  { title: "Healthcare App Development", description: "We Specialize In Healthcare App Development That Streamline Operations And Improve Patient Experiences", link: "/healthcare-app-development", icon: Activity },
+  { title: "NFT Marketplace Development", description: "We Build Secure And Scalable NFT Marketplace Platforms For Minting, Buying, Selling, And Trading Digital Assets.", link: "/solution/nft-marketplace-development", icon: Component },
+  { title: "AI App Development", description: "At Comfygen, We Provide Intelligent AI App Development Solutions That Automate Processes, Improve Decision-Making, And Unlock New Growth Opportunities.", link: "/ai-development", className: "lg:min-h-[440px]", icon: BrainCircuit },
+  { title: "Ecommerce Web & App Development", description: "We Are A Top-Rated IT Solutions Company Providing Secure And Engaging ECommerce Web And Mobile App Development", link: "/ecommerce-app-development", icon: ShoppingCart }
 ];
 
 export const Services = ({
   title = <><span className="text-primary !font-heading">Mobile and Web</span><br />App Development Services</>,
   subtitle = "Our Skilled Developers Build AI-Powered Apps With Modern Frameworks To Enhance Business Performance.",
   centerCardText = <>Everythings In<br />One Place</>,
-  services: displayServices = defaultServices
+  services: displayServices = defaultServices,
+  buttonText = "View More",
+  buttonLink = "#"
 }: ServicesProps) => {
   const [s0, s1, s2, s3, s4, s5] = [
     displayServices[0] || defaultServices[0],
@@ -101,18 +108,18 @@ export const Services = ({
 
           {/* Column 1 */}
           <div className="flex flex-col gap-6">
-            <ServiceCard title={s0.title} description={s0.description} isBlueLink={s0.isBlueLink} className={s0.className}>
+            <ServiceCard title={s0.title} description={s0.description} link={s0.link} isBlueLink={s0.isBlueLink} className={s0.className}>
               <Icon0 className="w-24 h-24 text-slate-800 stroke-[1.2]" />
             </ServiceCard>
 
-            <ServiceCard title={s1.title} description={s1.description} isBlueLink={s1.isBlueLink} className={s1.className}>
+            <ServiceCard title={s1.title} description={s1.description} link={s1.link} isBlueLink={s1.isBlueLink} className={s1.className}>
               <Icon1 className="w-24 h-24 text-slate-800 stroke-[1.2]" />
             </ServiceCard>
           </div>
 
           {/* Column 2 */}
           <div className="flex flex-col gap-6">
-            <ServiceCard title={s2.title} description={s2.description} isBlueLink={s2.isBlueLink} className={s2.className}>
+            <ServiceCard title={s2.title} description={s2.description} link={s2.link} isBlueLink={s2.isBlueLink} className={s2.className}>
               <Icon2 className="w-24 h-24 text-slate-800 stroke-[1.2]" />
             </ServiceCard>
 
@@ -121,18 +128,18 @@ export const Services = ({
               <h3 className="text-white text-3xl font-semibold tracking-tight !font-heading">{centerCardText}</h3>
             </div>
 
-            <ServiceCard title={s3.title} description={s3.description} isBlueLink={s3.isBlueLink} className={s3.className}>
+            <ServiceCard title={s3.title} description={s3.description} link={s3.link} isBlueLink={s3.isBlueLink} className={s3.className}>
               <Icon3 className="w-24 h-24 text-slate-800 stroke-[1.2]" />
             </ServiceCard>
           </div>
 
           {/* Column 3 */}
           <div className="flex flex-col gap-6">
-            <ServiceCard title={s4.title} description={s4.description} isBlueLink={s4.isBlueLink} className={s4.className}>
+            <ServiceCard title={s4.title} description={s4.description} link={s4.link} isBlueLink={s4.isBlueLink} className={s4.className}>
               <Icon4 className="w-24 h-24 text-slate-800 stroke-[1.2]" />
             </ServiceCard>
 
-            <ServiceCard title={s5.title} description={s5.description} isBlueLink={s5.isBlueLink} className={s5.className}>
+            <ServiceCard title={s5.title} description={s5.description} link={s5.link} isBlueLink={s5.isBlueLink} className={s5.className}>
               <Icon5 className="w-24 h-24 text-slate-800 stroke-[1.2]" />
             </ServiceCard>
           </div>
@@ -140,9 +147,9 @@ export const Services = ({
         </div>
 
         {/* View More Button */}
-        <button className="bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3.5 rounded-full transition-colors shadow-lg shadow-primary/20">
-          View More
-        </button>
+        <Link href={buttonLink} className="bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3.5 rounded-full transition-colors shadow-lg shadow-primary/20">
+          {buttonText}
+        </Link>
 
       </div>
     </section>

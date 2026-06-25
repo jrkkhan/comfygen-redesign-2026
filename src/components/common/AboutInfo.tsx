@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export interface AboutInfoProps {
   imageSrc?: string;
@@ -7,6 +8,7 @@ export interface AboutInfoProps {
   title?: React.ReactNode;
   paragraphs?: string[];
   buttonText?: string;
+  buttonLink?: string;
 }
 
 const defaultParagraphs = [
@@ -19,7 +21,8 @@ export const AboutInfo = ({
   imageAlt = "Team collaborating and high-fiving",
   title = "Powering Businesses with Scalable Mobile App and Web Development",
   paragraphs = defaultParagraphs,
-  buttonText = "Learn More"
+  buttonText = "Learn More",
+  buttonLink = "/about-us"
 }: AboutInfoProps) => {
   return (
     <section className="w-full py-20 lg:py-32 px-4 bg-[#f8fafc]">
@@ -48,9 +51,9 @@ export const AboutInfo = ({
             </p>
           ))}
           
-          <button className="bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3.5 rounded-full transition-colors shadow-lg shadow-primary/20 w-fit">
+          <Link href={buttonLink} className="bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3.5 rounded-full transition-colors shadow-lg shadow-primary/20 w-fit">
             {buttonText}
-          </button>
+          </Link>
         </div>
 
       </div>
