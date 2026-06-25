@@ -77,7 +77,9 @@ export default async function SolutionPage({ params }: { params: { slug: string 
         }
         description={heroSection.description}
         primaryButtonText="Book a Free Demo"
+        primaryButtonLink="/contact-us"
         secondaryButtonText="Explore Features"
+        secondaryButtonLink="#services"
         rightContent={<HeroBentoGrid />}
       />
 

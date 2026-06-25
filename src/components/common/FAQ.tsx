@@ -73,9 +73,14 @@ export const FAQ = ({
             {description}
           </p>
 
-          <button className="bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3.5 rounded-full transition-colors shadow-lg shadow-primary/20 mb-12 shrink-0">
+          <a 
+            href="https://wa.me/919587867258" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3.5 rounded-full transition-colors shadow-lg shadow-primary/20 mb-12 shrink-0 inline-block text-center"
+          >
             Still Have Question
-          </button>
+          </a>
 
           {/* Illustration Placeholder (Replacing SVG with a relevant Unsplash image) */}
           <div className="w-full max-w-md rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 bg-[#f8fafc] border border-slate-100 hidden md:block">

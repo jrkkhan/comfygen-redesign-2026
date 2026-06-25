@@ -1,3 +1,4 @@
+"use client";
 import React, { ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -27,6 +28,18 @@ export const HeroSectionTwo: React.FC<HeroSectionTwoProps> = ({
   imageAlt = "Hero Image",
   rightContent
 }) => {
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
+    if (link.startsWith('#') && link.length > 1) {
+      e.preventDefault();
+      const id = link.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <section
       className="relative w-full pt-32 pb-16 lg:pt-48 lg:pb-24 px-4 lg:px-8 overflow-hidden bg-white"
@@ -54,6 +67,7 @@ export const HeroSectionTwo: React.FC<HeroSectionTwoProps> = ({
             {primaryButtonText && (
               <Link
                 href={primaryButtonLink}
+                onClick={(e) => handleLinkClick(e, primaryButtonLink)}
                 className="bg-[#0158e6] hover:bg-blue-700 text-white font-medium px-8 py-3.5 rounded-full transition-colors "
               >
                 {primaryButtonText}
@@ -62,6 +76,7 @@ export const HeroSectionTwo: React.FC<HeroSectionTwoProps> = ({
             {secondaryButtonText && (
               <Link
                 href={secondaryButtonLink}
+                onClick={(e) => handleLinkClick(e, secondaryButtonLink)}
                 className="bg-white hover:bg-slate-50 text-slate-900 font-medium px-8 py-3.5 rounded-full transition-colors border border-slate-200 "
               >
                 {secondaryButtonText}

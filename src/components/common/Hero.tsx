@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -20,8 +21,20 @@ export const Hero = ({
   primaryButtonText = "Lets Discuss",
   primaryButtonLink = "/contact-us",
   secondaryButtonText = "Explore More",
-  secondaryButtonLink = "/services"
+  secondaryButtonLink = "#services"
 }: HeroProps) => {
+
+  const handleSecondaryClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (secondaryButtonLink.startsWith('#')) {
+      e.preventDefault();
+      const id = secondaryButtonLink.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <section className="relative w-full pt-16 sm:pt-20 pb-24 px-4 flex flex-col items-center text-center z-10">
       {/* Top Badge */}
@@ -44,7 +57,11 @@ export const Hero = ({
         <Link href={primaryButtonLink} className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-3.5 rounded-full font-semibold transition-all w-full sm:w-auto shadow-lg shadow-white/5 text-center">
           {primaryButtonText}
         </Link>
-        <Link href={secondaryButtonLink} className="bg-[#080F1E] text-white hover:bg-black border border-transparent px-8 py-3.5 rounded-full font-semibold transition-all w-full sm:w-auto shadow-lg text-center">
+        <Link 
+          href={secondaryButtonLink} 
+          onClick={handleSecondaryClick}
+          className="bg-[#080F1E] text-white hover:bg-black border border-transparent px-8 py-3.5 rounded-full font-semibold transition-all w-full sm:w-auto shadow-lg text-center"
+        >
           {secondaryButtonText}
         </Link>
       </div>

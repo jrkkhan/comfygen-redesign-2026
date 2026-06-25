@@ -90,7 +90,7 @@ export const Services = ({
   const Icon5 = getIcon(s5?.icon);
 
   return (
-    <section className="w-full py-24 px-4 bg-white relative z-20">
+    <section id="services" className="w-full py-24 px-4 bg-white relative z-20">
       <div className="max-w-[1400px] mx-auto flex flex-col items-center">
 
         {/* Section Heading */}

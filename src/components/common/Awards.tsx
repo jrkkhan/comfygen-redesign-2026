@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface AwardCardProps {
   title: string;
@@ -48,9 +49,9 @@ export const Awards = () => {
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed mb-10 max-w-lg">
             We Don't Just Deliver Solutions; We Build Lasting Partnerships. Discover The Success Stories And Feedback From Our Clients, Which Stand As A Testament.
           </p>
-          <button className="border border-primary text-white hover:bg-primary px-8 py-3.5 rounded-full text-sm font-medium transition-all  hover:shadow-[0_0_25px_rgba(1,88,230,0.4)]">
+          <Link href="/client-testimonials" className="border border-primary text-white hover:bg-primary px-8 py-3.5 rounded-full text-sm font-medium transition-all  hover:shadow-[0_0_25px_rgba(1,88,230,0.4)]">
             Know More
-          </button>
+          </Link>
         </div>
 
         {/* Right Column: Awards Grid */}

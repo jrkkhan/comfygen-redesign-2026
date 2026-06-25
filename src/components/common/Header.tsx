@@ -40,21 +40,21 @@ export const Header = ({ theme = 'dark' }: { theme?: 'light' | 'dark' }) => {
           {/* Right Actions */}
           <div className="flex items-center space-x-3 sm:space-x-4">
             {theme === 'light' ? (
-              <button className="relative hidden sm:inline-flex h-[46px] overflow-hidden rounded-full p-[2px] focus:outline-none transition-transform hover:scale-[1.02]">
+              <Link href="/contact-us#contact-form" className="relative hidden sm:inline-flex h-[46px] overflow-hidden rounded-full p-[2px] focus:outline-none transition-transform hover:scale-[1.02]">
                 <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,#0158E6_50%,transparent_100%)]" />
                 <span className="inline-flex h-full w-full items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-medium text-slate-900 backdrop-blur-3xl">
                   <Headphones className="w-4 h-4 mr-2 text-[#0158E6]" />
                   Get a Quote
                 </span>
-              </button>
+              </Link>
             ) : (
-              <button className="relative hidden sm:inline-flex h-[46px] overflow-hidden rounded-full p-[2px] focus:outline-none transition-transform hover:scale-[1.02] ">
+              <Link href="/contact-us#contact-form" className="relative hidden sm:inline-flex h-[46px] overflow-hidden rounded-full p-[2px] focus:outline-none transition-transform hover:scale-[1.02] ">
                 <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,#0158E6_50%,transparent_100%)]" />
                 <span className="inline-flex h-full w-full items-center justify-center rounded-full bg-[#080F1E] px-6 py-3 text-sm font-medium text-white backdrop-blur-3xl">
                   <Headphones className="w-4 h-4 mr-2 text-white" />
                   Get a Quote
                 </span>
-              </button>
+              </Link>
             )}
             <button
               onClick={() => setIsMegaMenuOpen(true)}

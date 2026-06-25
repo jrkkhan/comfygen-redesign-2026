@@ -29,7 +29,7 @@ const globalOffices = [
 
 export const ContactFormSection = () => {
   return (
-    <section className="w-full pb-20 px-4">
+    <section id="contact-form" className="w-full pb-20 px-4">
       <div className="max-w-[1400px] mx-auto">
 
         {/* Main Contact Form & Direct Info Container */}

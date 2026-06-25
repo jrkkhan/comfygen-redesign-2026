@@ -1,7 +1,20 @@
+"use client";
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
 export const CareersHero = () => {
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
+    if (link.startsWith('#') && link.length > 1) {
+      e.preventDefault();
+      const id = link.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <section className="w-full pt-40 pb-20 px-4 bg-slate-900 relative overflow-hidden">
       {/* Background elements */}
@@ -25,6 +38,7 @@ export const CareersHero = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a 
             href="#open-positions" 
+            onClick={(e) => handleLinkClick(e, '#open-positions')}
             className="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-full font-medium transition-all shadow-lg shadow-primary/25 flex items-center justify-center group"
           >
             View Open Positions
@@ -32,6 +46,7 @@ export const CareersHero = () => {
           </a>
           <a 
             href="#perks" 
+            onClick={(e) => handleLinkClick(e, '#perks')}
             className="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-full font-medium transition-all backdrop-blur-md flex items-center justify-center"
           >
             Learn About Our Culture

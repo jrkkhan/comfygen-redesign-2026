@@ -1,3 +1,4 @@
+"use client";
 import React, { ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -27,6 +28,18 @@ export const HeroSectionThree: React.FC<HeroSectionThreeProps> = ({
   imageAlt = "Hero Image",
   rightContent
 }) => {
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
+    if (link.startsWith('#') && link.length > 1) {
+      e.preventDefault();
+      const id = link.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <section
       className="relative w-full min-h-screen flex items-center pt-24 pb-12 px-4 lg:px-8 overflow-hidden bg-slate-950"
@@ -54,6 +67,7 @@ export const HeroSectionThree: React.FC<HeroSectionThreeProps> = ({
             {primaryButtonText && (
               <Link
                 href={primaryButtonLink}
+                onClick={(e) => handleLinkClick(e, primaryButtonLink)}
                 className="bg-[#0158e6] hover:bg-blue-600 text-white font-medium px-8 py-3.5 rounded-full transition-colors shadow-lg shadow-[#0158e6]/20"
               >
                 {primaryButtonText}
@@ -62,6 +76,7 @@ export const HeroSectionThree: React.FC<HeroSectionThreeProps> = ({
             {secondaryButtonText && (
               <Link
                 href={secondaryButtonLink}
+                onClick={(e) => handleLinkClick(e, secondaryButtonLink)}
                 className="bg-transparent hover:bg-white/10 text-white font-medium px-8 py-3.5 rounded-full transition-colors border border-white/20"
               >
                 {secondaryButtonText}
