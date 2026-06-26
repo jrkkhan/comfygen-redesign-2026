@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
+import Image from 'next/image';
 import { Play, ArrowLeft, ArrowRight } from 'lucide-react';
 
 const GoogleBadge = () => (
@@ -178,10 +179,11 @@ export const Testimonials = ({ reviews, videos }: TestimonialsProps) => {
                         className="relative w-full h-full cursor-pointer group/video"
                         onClick={() => setPlayingVideoId(video.id)}
                       >
-                        <img
+                        <Image
                           src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`}
                           alt={video.name}
-                          className="w-full h-full object-cover group-hover/video:scale-105 transition-transform duration-500"
+                          fill
+                          className="object-cover group-hover/video:scale-105 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-black/10 group-hover/video:bg-black/20 transition-colors flex items-center justify-center">
                           <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white group-hover/video:scale-110 transition-transform duration-300">

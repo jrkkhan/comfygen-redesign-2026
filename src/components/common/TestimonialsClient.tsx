@@ -3,6 +3,7 @@
 import React, { useState, useRef } from 'react';
 import { Play, ArrowLeft, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const GoogleBadge = () => (
   <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 group-hover:bg-white/10 transition-colors shrink-0">
@@ -194,10 +195,11 @@ export const TestimonialsClient = ({ heading, subheading, reviews, videos }: Tes
                           className="relative w-full h-full cursor-pointer group"
                           onClick={() => setPlayingVideoId(video.id)}
                         >
-                          <img
+                          <Image
                             src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`}
                             alt={video.name}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-500"
                           />
                           <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">
                             <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white shadow-[0_0_20px_rgba(1,88,230,0.6)] group-hover:scale-110 transition-transform duration-300">
