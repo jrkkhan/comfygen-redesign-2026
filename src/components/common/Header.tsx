@@ -21,7 +21,7 @@ export const Header = ({ theme = 'dark' }: { theme?: 'light' | 'dark' }) => {
                 alt="Comfygen Logo"
                 width={240}
                 height={60}
-                className="w-full h-auto"
+                style={{ width: '100%', height: 'auto' }}
                 priority
               />
             </div>

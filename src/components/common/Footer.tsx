@@ -133,7 +133,7 @@ export const Footer = () => {
                   alt="Comfygen Logo"
                   width={200}
                   height={50}
-                  className="w-full h-auto"
+                  style={{ width: '100%', height: 'auto' }}
                   priority
                 />
               </div>
