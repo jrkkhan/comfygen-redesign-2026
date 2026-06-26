@@ -14,7 +14,7 @@ export const Header = ({ theme = 'dark' }: { theme?: 'light' | 'dark' }) => {
       <header className="w-full pt-8 px-4 md:px-8 relative z-50">
         <div className="max-w-[1400px] mx-auto flex items-center justify-between pb-8 relative">
           {/* Logo Section */}
-          <Link href="/" className="flex flex-col cursor-pointer">
+          <Link href="/" aria-label="Home" className="flex flex-col cursor-pointer">
             <Image
               src={theme === 'light' ? "/logos/comfygen-logo-colorfull.svg" : "/logos/comfygen-logo.svg"}
               alt="Comfygen Logo"
