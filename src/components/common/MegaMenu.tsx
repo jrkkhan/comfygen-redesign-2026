@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { X, Search, Sparkles, Settings, Lightbulb, Factory, Building2, ArrowRight, User, Box, LayoutGrid, CloudRain, Bitcoin, HeartPulse, Wallet, GraduationCap, ShoppingCart, Heart, Smartphone, BrainCircuit, Link as LinkIcon, Coins, Code, UserPlus, Undo2 } from 'lucide-react';
 import { megaMenuData } from '@/data/megaMenuData';
 
@@ -17,6 +18,7 @@ interface MegaMenuProps {
 type TabType = 'service' | 'solutions' | 'industries' | 'company';
 
 export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
+  const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -27,6 +29,54 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
   const [activeServiceCategory, setActiveServiceCategory] = useState(0);
   const [activeSolutionCategory, setActiveSolutionCategory] = useState(0);
   const [activeIndustryCategory, setActiveIndustryCategory] = useState(0);
+
+  useEffect(() => {
+    if (isOpen) {
+      let found = false;
+
+      // Check Company
+      if (megaMenuData.company.some(item => item.href === pathname)) {
+        setActiveTab('company');
+        found = true;
+      }
+      
+      // Check Service
+      if (!found) {
+        for (let i = 0; i < megaMenuData.service.length; i++) {
+          if (megaMenuData.service[i].links.some(l => l.href === pathname)) {
+            setActiveTab('service');
+            setActiveServiceCategory(i);
+            found = true;
+            break;
+          }
+        }
+      }
+
+      // Check Solutions
+      if (!found) {
+        for (let i = 0; i < megaMenuData.solutions.length; i++) {
+          if (megaMenuData.solutions[i].links.some(l => l.href === pathname)) {
+            setActiveTab('solutions');
+            setActiveSolutionCategory(i);
+            found = true;
+            break;
+          }
+        }
+      }
+
+      // Check Industries
+      if (!found) {
+        for (let i = 0; i < megaMenuData.industries.length; i++) {
+          if (megaMenuData.industries[i].links.some(l => l.href === pathname)) {
+            setActiveTab('industries');
+            setActiveIndustryCategory(i);
+            found = true;
+            break;
+          }
+        }
+      }
+    }
+  }, [isOpen, pathname]);
 
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearching, setIsSearching] = useState(false);
@@ -63,14 +113,14 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
 
   return createPortal(
     <div className="fixed inset-0 z-[9999] bg-[#F8FAFC] flex flex-col overflow-y-auto">
-      <div className="max-w-[1600px] w-full mx-auto px-4 md:px-8 pt-6 pb-24 md:py-10 flex flex-col min-h-screen">
+      <div className="max-w-[1600px] w-full mx-auto px-4 md:px-8 pt-6 pb-24 md:py-6 2xl:py-10 flex flex-col min-h-screen">
 
         {/* Top Bar */}
-        <div className="flex items-center justify-between mb-8 sm:mb-12 gap-8 shrink-0">
+        <div className="flex items-center justify-between mb-6 2xl:mb-12 gap-8 shrink-0">
           {/* Logo */}
           <Link href="/" className="shrink-0 cursor-pointer" onClick={handleClose}>
             <div
-              className="w-[180px] sm:w-[240px] h-[45px] sm:h-[60px] bg-primary"
+              className="w-[180px] sm:w-[200px] 2xl:w-[240px] h-[45px] sm:h-[50px] 2xl:h-[60px] bg-primary"
               style={{
                 maskImage: 'url(/logos/comfygen-logo.svg)',
                 maskSize: 'contain',
@@ -175,53 +225,53 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
         ) : (
           <>
             {/* Tabs Row */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 sm:mb-12 shrink-0">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 2xl:gap-4 mb-6 2xl:mb-12 shrink-0">
               {/* Service Tab */}
               <button
                 onClick={() => setActiveTab('service')}
-                className={`flex items-center justify-center gap-3 p-4 md:p-6 rounded-2xl border transition-all ${activeTab === 'service'
+                className={`flex items-center justify-center gap-2 2xl:gap-3 p-4 2xl:p-6 rounded-xl 2xl:rounded-2xl border transition-all ${activeTab === 'service'
                     ? 'bg-white border-primary shadow-lg shadow-primary/10 text-primary'
                     : 'bg-transparent border-slate-200 text-slate-600 hover:bg-white hover:border-slate-300'
                   }`}
               >
-                <Settings className="w-5 h-5 md:w-6 md:h-6" />
-                <span className="font-heading font-medium text-lg md:text-xl">Service</span>
+                <Settings className="w-4 h-4 md:w-5 md:h-5 2xl:w-6 2xl:h-6" />
+                <span className="font-heading font-medium text-[15px] md:text-lg 2xl:text-xl">Service</span>
               </button>
 
               {/* Solutions Tab */}
               <button
                 onClick={() => setActiveTab('solutions')}
-                className={`flex items-center justify-center gap-3 p-4 md:p-6 rounded-2xl border transition-all ${activeTab === 'solutions'
+                className={`flex items-center justify-center gap-2 2xl:gap-3 p-4 2xl:p-6 rounded-xl 2xl:rounded-2xl border transition-all ${activeTab === 'solutions'
                     ? 'bg-white border-primary shadow-lg shadow-primary/10 text-primary'
                     : 'bg-transparent border-slate-200 text-slate-600 hover:bg-white hover:border-slate-300'
                   }`}
               >
-                <Lightbulb className="w-5 h-5 md:w-6 md:h-6" />
-                <span className="font-heading font-medium text-lg md:text-xl">Solutions</span>
+                <Lightbulb className="w-4 h-4 md:w-5 md:h-5 2xl:w-6 2xl:h-6" />
+                <span className="font-heading font-medium text-[15px] md:text-lg 2xl:text-xl">Solutions</span>
               </button>
 
               {/* Industries Tab */}
               <button
                 onClick={() => setActiveTab('industries')}
-                className={`flex items-center justify-center gap-3 p-4 md:p-6 rounded-2xl border transition-all ${activeTab === 'industries'
+                className={`flex items-center justify-center gap-2 2xl:gap-3 p-4 2xl:p-6 rounded-xl 2xl:rounded-2xl border transition-all ${activeTab === 'industries'
                     ? 'bg-white border-primary shadow-lg shadow-primary/10 text-primary'
                     : 'bg-transparent border-slate-200 text-slate-600 hover:bg-white hover:border-slate-300'
                   }`}
               >
-                <Factory className="w-5 h-5 md:w-6 md:h-6" />
-                <span className="font-heading font-medium text-lg md:text-xl">Industries</span>
+                <Factory className="w-4 h-4 md:w-5 md:h-5 2xl:w-6 2xl:h-6" />
+                <span className="font-heading font-medium text-[15px] md:text-lg 2xl:text-xl">Industries</span>
               </button>
 
               {/* Company Tab */}
               <button
                 onClick={() => setActiveTab('company')}
-                className={`flex items-center justify-center gap-3 p-4 md:p-6 rounded-2xl border transition-all ${activeTab === 'company'
+                className={`flex items-center justify-center gap-2 2xl:gap-3 p-4 2xl:p-6 rounded-xl 2xl:rounded-2xl border transition-all ${activeTab === 'company'
                     ? 'bg-white border-primary shadow-lg shadow-primary/10 text-primary'
                     : 'bg-transparent border-slate-200 text-slate-600 hover:bg-white hover:border-slate-300'
                   }`}
               >
-                <Building2 className="w-5 h-5 md:w-6 md:h-6" />
-                <span className="font-heading font-medium text-lg md:text-xl">Company</span>
+                <Building2 className="w-4 h-4 md:w-5 md:h-5 2xl:w-6 2xl:h-6" />
+                <span className="font-heading font-medium text-[15px] md:text-lg 2xl:text-xl">Company</span>
               </button>
             </div>
 
@@ -231,7 +281,7 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                 <div className="flex flex-col lg:flex-row gap-8">
 
                   {/* Left Column: Categories List */}
-                  <div className="w-full lg:w-[350px] flex flex-col gap-2 shrink-0">
+                  <div className="w-full lg:w-[330px] 2xl:w-[350px] flex flex-col gap-1.5 2xl:gap-2 shrink-0">
                     {megaMenuData.service.map((category, idx) => {
                       const Icon = iconMap[category.icon] || Settings;
                       const isActive = activeServiceCategory === idx;
@@ -239,7 +289,7 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                         <div key={category.id} className="flex flex-col">
                           <button
                             onClick={() => setActiveServiceCategory(idx)}
-                            className={`w-full text-left flex items-start gap-4 p-4 rounded-xl transition-all ${isActive
+                            className={`w-full text-left flex items-start gap-3 2xl:gap-4 p-3 2xl:p-4 rounded-xl transition-all ${isActive
                                 ? 'bg-primary/5 border border-primary/10'
                                 : 'bg-transparent border border-transparent hover:bg-white hover:border-slate-200'
                               }`}
@@ -247,11 +297,11 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                             <div className={`mt-1 shrink-0 ${isActive ? 'text-primary' : 'text-slate-600'}`}>
                               <Icon className="w-6 h-6" />
                             </div>
-                            <div>
-                              <p className={`font-bold text-[16px] mb-1 ${isActive ? 'text-slate-900' : 'text-slate-700'}`}>
+                            <div className="overflow-hidden">
+                              <p className={`font-bold text-[15px] 2xl:text-[16px] whitespace-nowrap truncate mb-0.5 2xl:mb-1 ${isActive ? 'text-slate-900' : 'text-slate-700'}`}>
                                 {category.title}
                               </p>
-                              <p className="text-slate-500 text-[13px]">{category.subtitle}</p>
+                              <p className="text-slate-500 text-[12px] 2xl:text-[13px] truncate">{category.subtitle}</p>
                             </div>
                           </button>
 
@@ -272,19 +322,21 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                   </div>
 
                   {/* Middle Column: Links Grid */}
-                  <div className="hidden lg:block flex-1 lg:border-l border-slate-200 lg:pl-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                      {megaMenuData.service[activeServiceCategory]?.links.map((link, idx) => (
+                  <div className="hidden lg:block flex-1 lg:border-l border-slate-200 lg:pl-6 2xl:pl-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 2xl:gap-x-8 2xl:gap-y-6">
+                      {megaMenuData.service[activeServiceCategory]?.links.map((link, idx) => {
+                        const isLinkActive = pathname === link.href;
+                        return (
                         <a
                           key={idx}
                           href={link.href}
-                          className="group flex items-center text-[14px] text-slate-600 hover:text-primary transition-colors font-sans"
+                          className={`group flex items-center text-[14px] transition-colors font-sans ${isLinkActive ? 'text-primary font-bold' : 'text-slate-600 hover:text-primary'}`}
                         >
                           <span className="line-clamp-2 leading-relaxed flex-1">
                             {link.label}
                           </span>
                           {/* Hover Arrow */}
-                          <ArrowRight className="w-3.5 h-3.5 ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all shrink-0 text-primary" />
+                          <ArrowRight className={`w-3.5 h-3.5 ml-2 transition-all shrink-0 text-primary ${isLinkActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'}`} />
 
                           {/* New Badge */}
                           {link.isNew && (
@@ -293,12 +345,12 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                             </span>
                           )}
                         </a>
-                      ))}
+                      )})}
                     </div>
                   </div>
 
                   {/* Right Column: Featured Card */}
-                  <div className="w-full lg:w-[350px] shrink-0 h-[300px] relative rounded-2xl overflow-hidden mt-8 lg:mt-0 mb-12 lg:mb-0">
+                  <div className="w-full lg:w-[280px] 2xl:w-[350px] shrink-0 h-[220px] 2xl:h-[300px] relative rounded-2xl overflow-hidden mt-6 lg:mt-0 mb-10 lg:mb-0">
                     <Image
                       src={megaMenuData.serviceFeature.image}
                       alt="Connect to expert"
@@ -321,7 +373,7 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                 <div className="flex flex-col lg:flex-row gap-8">
 
                   {/* Left Column: Categories List */}
-                  <div className="w-full lg:w-[350px] flex flex-col gap-2 shrink-0">
+                  <div className="w-full lg:w-[330px] 2xl:w-[350px] flex flex-col gap-1.5 2xl:gap-2 shrink-0">
                     {megaMenuData.solutions.map((category, idx) => {
                       const Icon = iconMap[category.icon] || Settings;
                       const isActive = activeSolutionCategory === idx;
@@ -329,7 +381,7 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                         <div key={category.id} className="flex flex-col">
                           <button
                             onClick={() => setActiveSolutionCategory(idx)}
-                            className={`w-full text-left flex items-start gap-4 p-4 rounded-xl transition-all ${isActive
+                            className={`w-full text-left flex items-start gap-3 2xl:gap-4 p-3 2xl:p-4 rounded-xl transition-all ${isActive
                                 ? 'bg-primary/5 border border-primary/10'
                                 : 'bg-transparent border border-transparent hover:bg-white hover:border-slate-200'
                               }`}
@@ -337,11 +389,11 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                             <div className={`mt-1 shrink-0 ${isActive ? 'text-primary' : 'text-slate-600'}`}>
                               <Icon className="w-6 h-6" />
                             </div>
-                            <div>
-                              <p className={`font-bold text-[16px] mb-1 ${isActive ? 'text-slate-900' : 'text-slate-700'}`}>
+                            <div className="overflow-hidden">
+                              <p className={`font-bold text-[15px] 2xl:text-[16px] whitespace-nowrap truncate mb-0.5 2xl:mb-1 ${isActive ? 'text-slate-900' : 'text-slate-700'}`}>
                                 {category.title}
                               </p>
-                              <p className="text-slate-500 text-[13px]">{category.subtitle}</p>
+                              <p className="text-slate-500 text-[12px] 2xl:text-[13px] truncate">{category.subtitle}</p>
                             </div>
                           </button>
 
@@ -362,26 +414,28 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                   </div>
 
                   {/* Middle Column: Links Grid */}
-                  <div className="hidden lg:block flex-1 lg:border-l border-slate-200 lg:pl-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                      {megaMenuData.solutions[activeSolutionCategory]?.links.map((link, idx) => (
+                  <div className="hidden lg:block flex-1 lg:border-l border-slate-200 lg:pl-6 2xl:pl-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 2xl:gap-x-8 2xl:gap-y-6">
+                      {megaMenuData.solutions[activeSolutionCategory]?.links.map((link, idx) => {
+                        const isLinkActive = pathname === link.href;
+                        return (
                         <a
                           key={idx}
                           href={link.href}
-                          className="group flex items-center text-[14px] text-slate-600 hover:text-primary transition-colors font-sans"
+                          className={`group flex items-center text-[14px] transition-colors font-sans ${isLinkActive ? 'text-primary font-bold' : 'text-slate-600 hover:text-primary'}`}
                         >
                           <span className="line-clamp-2 leading-relaxed flex-1">
                             {link.label}
                           </span>
                           {/* Hover Arrow */}
-                          <ArrowRight className="w-3.5 h-3.5 ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all shrink-0 text-primary" />
+                          <ArrowRight className={`w-3.5 h-3.5 ml-2 transition-all shrink-0 text-primary ${isLinkActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'}`} />
                         </a>
-                      ))}
+                      )})}
                     </div>
                   </div>
 
                   {/* Right Column: Featured Card */}
-                  <div className="w-full lg:w-[350px] shrink-0 h-[300px] relative rounded-2xl overflow-hidden mt-8 lg:mt-0 mb-12 lg:mb-0">
+                  <div className="w-full lg:w-[280px] 2xl:w-[350px] shrink-0 h-[220px] 2xl:h-[300px] relative rounded-2xl overflow-hidden mt-6 lg:mt-0 mb-10 lg:mb-0">
                     <Image
                       src={megaMenuData.solutionsFeature.image}
                       alt="Connect to expert"
@@ -407,7 +461,7 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                 <div className="flex flex-col lg:flex-row gap-8">
 
                   {/* Left Column: Categories List */}
-                  <div className="w-full lg:w-[350px] flex flex-col gap-2 shrink-0">
+                  <div className="w-full lg:w-[330px] 2xl:w-[350px] flex flex-col gap-1.5 2xl:gap-2 shrink-0">
                     {megaMenuData.industries.map((category, idx) => {
                       const Icon = iconMap[category.icon] || Settings;
                       const isActive = activeIndustryCategory === idx;
@@ -415,7 +469,7 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                         <div key={category.id} className="flex flex-col">
                           <button
                             onClick={() => setActiveIndustryCategory(idx)}
-                            className={`w-full text-left flex items-start gap-4 p-4 rounded-xl transition-all ${isActive
+                            className={`w-full text-left flex items-start gap-3 2xl:gap-4 p-3 2xl:p-4 rounded-xl transition-all ${isActive
                                 ? 'bg-primary/5 border border-primary/10'
                                 : 'bg-transparent border border-transparent hover:bg-white hover:border-slate-200'
                               }`}
@@ -423,11 +477,11 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                             <div className={`mt-1 shrink-0 ${isActive ? 'text-primary' : 'text-slate-600'}`}>
                               <Icon className="w-6 h-6" />
                             </div>
-                            <div>
-                              <p className={`font-bold text-[16px] mb-1 ${isActive ? 'text-slate-900' : 'text-slate-700'}`}>
+                            <div className="overflow-hidden">
+                              <p className={`font-bold text-[15px] 2xl:text-[16px] whitespace-nowrap truncate mb-0.5 2xl:mb-1 ${isActive ? 'text-slate-900' : 'text-slate-700'}`}>
                                 {category.title}
                               </p>
-                              <p className="text-slate-500 text-[13px]">{category.subtitle}</p>
+                              <p className="text-slate-500 text-[12px] 2xl:text-[13px] truncate">{category.subtitle}</p>
                             </div>
                           </button>
 
@@ -448,26 +502,28 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                   </div>
 
                   {/* Middle Column: Links Grid */}
-                  <div className="hidden lg:block flex-1 lg:border-l border-slate-200 lg:pl-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                      {megaMenuData.industries[activeIndustryCategory]?.links.map((link, idx) => (
+                  <div className="hidden lg:block flex-1 lg:border-l border-slate-200 lg:pl-6 2xl:pl-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 2xl:gap-x-8 2xl:gap-y-6">
+                      {megaMenuData.industries[activeIndustryCategory]?.links.map((link, idx) => {
+                        const isLinkActive = pathname === link.href;
+                        return (
                         <a
                           key={idx}
                           href={link.href}
-                          className="group flex items-center text-[14px] text-slate-600 hover:text-primary transition-colors font-sans"
+                          className={`group flex items-center text-[14px] transition-colors font-sans ${isLinkActive ? 'text-primary font-bold' : 'text-slate-600 hover:text-primary'}`}
                         >
                           <span className="line-clamp-2 leading-relaxed flex-1">
                             {link.label}
                           </span>
                           {/* Hover Arrow */}
-                          <ArrowRight className="w-3.5 h-3.5 ml-2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all shrink-0 text-primary" />
+                          <ArrowRight className={`w-3.5 h-3.5 ml-2 transition-all shrink-0 text-primary ${isLinkActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'}`} />
                         </a>
-                      ))}
+                      )})}
                     </div>
                   </div>
 
                   {/* Right Column: Featured Card */}
-                  <div className="w-full lg:w-[350px] shrink-0 h-[300px] relative rounded-2xl overflow-hidden mt-8 lg:mt-0 mb-12 lg:mb-0">
+                  <div className="w-full lg:w-[280px] 2xl:w-[350px] shrink-0 h-[220px] 2xl:h-[300px] relative rounded-2xl overflow-hidden mt-6 lg:mt-0 mb-10 lg:mb-0">
                     <Image
                       src={megaMenuData.industriesFeature.image}
                       alt="Connect to expert"
@@ -490,30 +546,32 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
               )}
 
               {activeTab === 'company' && (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-max">
-                    {megaMenuData.company.map((item, idx) => (
+                <div className="flex flex-col lg:flex-row gap-8">
+                  <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4 2xl:gap-6 auto-rows-max">
+                    {megaMenuData.company.map((item, idx) => {
+                      const isActive = pathname === item.href;
+                      return (
                       <a
                         key={idx}
                         href={item.href}
-                        className={`group flex flex-col p-6 rounded-xl border transition-all ${item.isActive
+                        className={`group flex flex-col p-4 2xl:p-6 rounded-xl border transition-all ${isActive
                             ? 'border-primary bg-primary/5'
                             : 'border-transparent hover:border-slate-200 hover:bg-white'
                           }`}
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <p className={`font-bold text-[16px] transition-colors ${item.isActive ? 'text-primary' : 'text-slate-900 group-hover:text-primary'}`}>
+                          <p className={`font-bold text-[16px] transition-colors ${isActive ? 'text-primary' : 'text-slate-900 group-hover:text-primary'}`}>
                             {item.title}
                           </p>
-                          <ArrowRight className={`w-4 h-4 transition-colors ${item.isActive ? 'text-primary' : 'text-slate-400 group-hover:text-primary'}`} />
+                          <ArrowRight className={`w-4 h-4 transition-colors ${isActive ? 'text-primary' : 'text-slate-400 group-hover:text-primary'}`} />
                         </div>
                         <p className="text-slate-500 text-[13px]">{item.desc}</p>
                       </a>
-                    ))}
+                    )})}
                   </div>
 
                   {/* Right Column: Featured Card */}
-                  <div className="lg:col-span-1 w-full shrink-0 h-[300px] relative rounded-2xl overflow-hidden mt-8 lg:mt-0 mb-12 lg:mb-0">
+                  <div className="w-full lg:w-[280px] 2xl:w-[350px] shrink-0 h-[220px] 2xl:h-[300px] relative rounded-2xl overflow-hidden mt-6 lg:mt-0 mb-10 lg:mb-0">
                     <Image
                       src={megaMenuData.companyFeature.image}
                       alt="Connect to expert"

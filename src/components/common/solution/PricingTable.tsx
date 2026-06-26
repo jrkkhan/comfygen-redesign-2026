@@ -72,7 +72,7 @@ export const PricingTable = ({ sectionData }: PricingTableProps) => {
     <section className="py-20 bg-slate-50">
       <div className="max-w-[1400px] mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">{sectionData?.heading || "Transparent & Flexible Pricing"}</h2>
+          <h2 className="text-balance text-3xl md:text-4xl font-bold text-slate-900 mb-4">{sectionData?.heading || "Transparent & Flexible Pricing"}</h2>
           <p className="text-slate-600 max-w-2xl mx-auto">{sectionData?.subHeading || "Choose a plan that fits your business stage. No hidden fees, just high-quality development."}</p>
         </div>
 
@@ -93,7 +93,7 @@ export const PricingTable = ({ sectionData }: PricingTableProps) => {
               )}
               
               <div className="mb-8">
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">{plan.name}</h3>
+                <h3 className="text-balance text-2xl font-bold text-slate-900 mb-2">{plan.name}</h3>
                 <p className="text-slate-500 text-sm mb-6 h-10">{plan.description}</p>
                 <div className="flex items-baseline gap-2">
                   <span className="text-4xl font-extrabold text-slate-900">{plan.price}</span>

@@ -55,21 +55,21 @@ export const FAQ = ({
   };
 
   return (
-    <section className="w-full py-20 lg:py-28 px-4 bg-white">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+    <section className="w-full py-16 xl:py-16 2xl:py-28 px-4 bg-white">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 2xl:gap-20 items-start">
 
         {/* Left Column (Sticky Content) */}
         <div className="flex flex-col items-start lg:sticky lg:top-32">
           {/* Badge */}
-          <span className="border !font-heading border-slate-200 bg-[#FAFAFA] text-slate-800 text-sm font-semibold px-4 py-1.5 rounded-full w-fit mb-6 ">
+          <span className="border !font-heading border-slate-200 bg-[#FAFAFA] text-slate-800 text-sm font-semibold px-4 py-1.5 rounded-full w-fit mb-4 2xl:mb-6 ">
             Good to know
           </span>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-slate-900 mb-6 leading-[1.2] tracking-tight">
+          <h2 className="text-balance text-3xl sm:text-4xl 2xl:text-[44px] font-bold text-slate-900 mb-4 2xl:mb-6 leading-[1.2] tracking-tight">
             {title}
           </h2>
 
-          <p className="text-slate-500 text-sm sm:text-base leading-relaxed mb-8 pr-0 md:pr-10">
+          <p className="text-slate-500 text-sm sm:text-base leading-relaxed mb-6 2xl:mb-8 pr-0 md:pr-10">
             {description}
           </p>
 
@@ -77,7 +77,7 @@ export const FAQ = ({
             href="https://wa.me/919587867258" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3.5 rounded-full transition-colors shadow-lg shadow-primary/20 mb-12 shrink-0 inline-block text-center"
+            className="bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3.5 rounded-full transition-colors shadow-lg shadow-primary/20 mb-8 2xl:mb-12 shrink-0 inline-block text-center"
           >
             Still Have Question
           </a>
@@ -89,13 +89,13 @@ export const FAQ = ({
               alt="Team Discussion FAQ"
               width={800}
               height={533}
-              className="w-full h-[280px] object-cover hover:scale-105 transition-transform duration-700"
+              className="w-full h-[220px] 2xl:h-[280px] object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>
         </div>
 
         {/* Right Column (Accordion List) */}
-        <div className="flex flex-col gap-3 sm:gap-4">
+        <div className="flex flex-col gap-2 sm:gap-3 2xl:gap-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
 
@@ -110,8 +110,8 @@ export const FAQ = ({
                   }`}
               >
                 {/* FAQ Question Header */}
-                <div className="flex justify-between items-center p-5 sm:p-6">
-                  <h3 className={`text-base sm:text-lg font-bold pr-4 transition-colors ${isOpen ? 'text-white' : 'text-slate-800'}`}>
+                <div className="flex justify-between items-center p-4 xl:p-5 2xl:p-6">
+                  <h3 className={`text-balance text-base sm:text-lg font-bold pr-4 transition-colors ${isOpen ? 'text-white' : 'text-slate-800'}`}>
                     {faq.question}
                   </h3>
 
@@ -124,7 +124,7 @@ export const FAQ = ({
 
                 {/* FAQ Answer Body */}
                 <div
-                  className={`px-5 sm:px-6 transition-all duration-300 ease-in-out grid ${isOpen ? 'grid-rows-[1fr] opacity-100 pb-6' : 'grid-rows-[0fr] opacity-0 pb-0'}`}
+                  className={`px-4 xl:px-5 2xl:px-6 transition-all duration-300 ease-in-out grid ${isOpen ? 'grid-rows-[1fr] opacity-100 pb-4 xl:pb-5 2xl:pb-6' : 'grid-rows-[0fr] opacity-0 pb-0'}`}
                 >
                   <div className="overflow-hidden">
                     <p className={`text-sm leading-relaxed ${isOpen ? 'text-blue-50/90' : 'text-slate-500'}`}>

@@ -30,7 +30,7 @@ export const OurGeography = () => {
     <section className="py-16 lg:py-24 px-4 bg-[#FAFAFA] font-sans overflow-hidden">
       <div className="max-w-[1200px] mx-auto text-center">
         {/* Heading Section */}
-        <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-slate-900 mb-6 leading-[1.25] tracking-tight">
+        <h2 className="text-balance text-3xl sm:text-4xl lg:text-[42px] font-bold text-slate-900 mb-6 leading-[1.25] tracking-tight">
           Our Geography
         </h2>
         <p className="text-slate-600 text-base sm:text-lg max-w-3xl mx-auto mb-16 leading-relaxed">
@@ -41,7 +41,7 @@ export const OurGeography = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16 max-w-5xl mx-auto">
           {locations.map((loc, idx) => (
             <div key={idx} className="flex flex-col items-center p-6 lg:p-6 bg-white border border-slate-200 rounded-2xl hover:border-slate-300 hover:-translate-y-1 transition-all duration-300">
-              <h3 className={`text-lg font-bold mb-1.5 ${loc.color}`}>
+              <h3 className={`text-balance text-lg font-bold mb-1.5 ${loc.color}`}>
                 {loc.country}
               </h3>
               <p className="text-slate-500 text-[14px]">

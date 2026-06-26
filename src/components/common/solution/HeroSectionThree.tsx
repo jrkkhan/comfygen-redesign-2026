@@ -55,7 +55,7 @@ export const HeroSectionThree: React.FC<HeroSectionThreeProps> = ({
             </div>
           )}
 
-          <h1 className="text-3xl sm:text-4xl lg:text-[48px] font-bold text-white mb-6 leading-[1.25] tracking-tight !font-heading">
+          <h1 className="text-balance text-3xl sm:text-4xl lg:text-[48px] font-bold text-white mb-6 leading-[1.25] tracking-tight !font-heading">
             {title}
           </h1>
 

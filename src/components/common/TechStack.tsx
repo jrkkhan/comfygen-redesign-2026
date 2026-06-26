@@ -62,24 +62,24 @@ export const TechStack = ({
   const [activeTab, setActiveTab] = useState('Frontend');
 
   return (
-    <section className="w-full py-20 lg:py-28 px-4 bg-[#0A0D27]">
+    <section className="w-full py-16 xl:py-16 2xl:py-28 px-4 bg-[#0A0D27]">
       <div className="max-w-[1400px] mx-auto">
 
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-14">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 2xl:gap-8 mb-8 2xl:mb-14">
           <div className="flex flex-col">
             {/* Tag */}
-            <span className="bg-white/10 border border-white/10 text-white text-xs font-medium  tracking-wider px-4 py-1.5 rounded-full w-fit mb-5 ">
+            <span className="bg-white/10 border border-white/10 text-white text-xs font-medium  tracking-wider px-4 py-1.5 rounded-full w-fit mb-3 2xl:mb-5 ">
               Tools we trust
             </span>
             {/* Title */}
-            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-white leading-[1.25] tracking-tight max-w-2xl">
+            <h2 className="text-balance text-3xl sm:text-4xl 2xl:text-[44px] font-bold text-white leading-[1.25] tracking-tight max-w-2xl">
               Tech Stack for Building Apps and Websites Developments
             </h2>
           </div>
 
           {/* Top Right: Avatars and Button */}
-          <div className="flex flex-col items-start md:items-center gap-5 shrink-0">
+          <div className="flex flex-col items-start md:items-center gap-4 2xl:gap-5 shrink-0">
             {/* Avatars */}
             <div className="flex">
               <Image
@@ -87,7 +87,7 @@ export const TechStack = ({
                 alt="Our Developers"
                 width={200}
                 height={56}
-                className="h-14 w-auto object-contain"
+                className="h-12 2xl:h-14 w-auto object-contain"
               />
             </div>
             {/* Hire Button */}
@@ -98,7 +98,7 @@ export const TechStack = ({
         </div>
 
         {/* Tabs Section */}
-        <div className="flex flex-wrap gap-2.5 sm:gap-3 mb-10">
+        <div className="flex flex-wrap gap-2.5 sm:gap-3 mb-8 2xl:mb-10">
           {tabs.map(tab => (
             <button
               key={tab}
@@ -125,7 +125,7 @@ export const TechStack = ({
                   key={`${tabName}-${idx}`}
                   // We simulate the "Backbone.js" active state from the design to make it look exactly like the screenshot, 
                   // while also enabling the same hover effect on all cards.
-                  className={`h-[95px] rounded-xl flex items-center justify-center text-center px-4 text-lg lg:text-xl font-normal bg-white/5 border transition-all duration-300 hover:bg-[#151c33] hover:text-white text-white/90 hover:border-primary/60 cursor-pointer hover:shadow-[0_0_20px_rgba(1,88,230,0.15)] group ${tech === 'Backbone.js'
+                  className={`h-[85px] 2xl:h-[95px] rounded-xl flex items-center justify-center text-center px-4 text-lg lg:text-xl font-normal bg-white/5 border transition-all duration-300 hover:bg-[#151c33] hover:text-white text-white/90 hover:border-primary/60 cursor-pointer hover:shadow-[0_0_20px_rgba(1,88,230,0.15)] group ${tech === 'Backbone.js'
                     ? 'border-primary/50 text-white shadow-[0_0_15px_rgba(1,88,230,0.1)]'
                     : 'border-white/[0.02] text-slate-300'
                     }`}

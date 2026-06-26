@@ -34,21 +34,21 @@ export const Footer = () => {
   const isContactPage = pathname === '/contact-us';
 
   return (
-    <footer className="w-full bg-[#0A0D27] pt-20 border-t border-white/5 relative z-10">
+    <footer className="w-full bg-[#0A0D27] pt-16 xl:pt-16 2xl:pt-20 border-t border-white/5 relative z-10">
       <div className="max-w-[1400px] mx-auto px-4">
 
         {/* Conditionally hide top contact section on Contact page */}
         {!isContactPage && (
           <>
             {/* Top Contact Form & Info Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-24">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 2xl:gap-20 mb-16 2xl:mb-24">
 
               {/* Left Side: Contact Information */}
               <div className="flex flex-col justify-center">
-                <h2 className="text-3xl sm:text-4xl md:text-[44px] font-bold text-white mb-5 leading-[1.1] tracking-tight">
+                <h2 className="text-balance text-3xl sm:text-4xl 2xl:text-[44px] font-bold text-white mb-4 2xl:mb-5 leading-[1.1] tracking-tight">
                   Tell us what you're<br />planning to build.
                 </h2>
-                <p className="text-slate-400 mb-12 text-[15px] max-w-md leading-relaxed">
+                <p className="text-slate-400 mb-8 2xl:mb-12 text-[15px] max-w-md leading-relaxed">
                   Share Your Idea And We'll Come Back Within One Business Day With Next Steps.
                 </p>
 
@@ -78,20 +78,20 @@ export const Footer = () => {
               </div>
 
               {/* Right Side: Contact Form Card */}
-              <div className="bg-white rounded-[32px] p-8 sm:p-10  relative">
+              <div className="bg-white rounded-[32px] p-6 2xl:p-10 relative">
 
-                <h3 className="text-2xl font-bold text-slate-900 mb-2 !font-heading">Send us a Message</h3>
+                <h3 className="text-balance text-2xl font-bold text-slate-900 mb-2 !font-heading">Send us a Message</h3>
                 <p className="text-slate-500 mb-8 text-sm">Fill out the form below and we'll get back to you within 24 hours.</p>
                 <ContactForm variant="footer" />
               </div>
             </div>
 
             {/* Global Offices Section */}
-            <div className="mb-16">
+            <div className="mb-10 2xl:mb-16">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                 {globalOffices.map((office, index) => (
-                  <div key={index} className="  border border-white/10 rounded-2xl px-8 p-6 group hover:bg-white/5 transition-colors">
-                    <h4 className="text-lg font-bold text-white mb-4 uppercase tracking-wide flex items-center gap-2 !font-heading">
+                  <div key={index} className="border border-white/10 rounded-2xl px-6 p-5 2xl:px-8 2xl:p-6 group hover:bg-white/5 transition-colors">
+                    <h4 className="text-balance text-base 2xl:text-lg font-bold text-white mb-3 2xl:mb-4 uppercase tracking-wide flex items-center gap-2 !font-heading">
                       <span className="text-[22px] leading-none mb-0.5">{office.flag}</span>
                       {office.country}
                     </h4>
@@ -117,12 +117,12 @@ export const Footer = () => {
 
       {/* Full Width Separator */}
       {!isContactPage && (
-        <div className="w-full border-t border-white/5 mb-16"></div>
+        <div className="w-full border-t border-white/5 mb-10 2xl:mb-16"></div>
       )}
 
-      <div className="w-full max-w-[95%] 2xl:max-w-[1700px] mx-auto px-4 lg:px-8">
+      <div className="w-full max-w-[1400px] mx-auto px-4">
         {/* Footer Links & Info Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6 mb-10 2xl:mb-16">
 
           {/* Company Details */}
           <div className="lg:col-span-1 pr-4">
@@ -155,14 +155,14 @@ export const Footer = () => {
               </a>
             </div>
             {/* Certification Badges */}
-            <div className="flex gap-4 mt-2 p-4 rounded-2xl border border-white/10 w-fit">
-              <div className="relative w-16 h-14 transition-transform hover:-translate-y-1 duration-300">
+            <div className="flex gap-2 2xl:gap-4 mt-2 p-2.5 2xl:p-4 rounded-xl 2xl:rounded-2xl border border-white/10 w-fit">
+              <div className="relative w-12 h-10 2xl:w-16 2xl:h-14 transition-transform hover:-translate-y-1 duration-300">
                 <Image src="/images/certifications/iso-9001.webp" alt="ISO 9001:2015 Certified" fill className="object-contain" unoptimized />
               </div>
-              <div className="relative w-16 h-14 transition-transform hover:-translate-y-1 duration-300">
+              <div className="relative w-12 h-10 2xl:w-16 2xl:h-14 transition-transform hover:-translate-y-1 duration-300">
                 <Image src="/images/certifications/iso-20000.webp" alt="ISO/IEC 20000-1:2018 Certified" fill className="object-contain" unoptimized />
               </div>
-              <div className="relative w-16 h-14 transition-transform hover:-translate-y-1 duration-300">
+              <div className="relative w-12 h-10 2xl:w-16 2xl:h-14 transition-transform hover:-translate-y-1 duration-300">
                 <Image src="/images/certifications/iso-27001.webp" alt="ISO 27001 Certified" fill className="object-contain" unoptimized />
               </div>
             </div>
@@ -170,8 +170,8 @@ export const Footer = () => {
 
           {footerData.map((column, index) => (
             <div key={index} className="lg:pl-8 lg:border-l border-white/5 lg:col-span-1">
-              <h4 className="text-white font-medium mb-6 capitalize  text-[15px]">{column.title}</h4>
-              <ul className="flex flex-col gap-3.5 max-h-[340px] overflow-y-auto footer-scrollbar pr-2">
+              <h4 className="text-balance text-white font-medium mb-4 2xl:mb-6 capitalize text-[15px]">{column.title}</h4>
+              <ul className="flex flex-col gap-3 2xl:gap-3.5 max-h-[320px] 2xl:max-h-[340px] overflow-y-auto footer-scrollbar pr-2">
                 {column.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <a href={link.href} className="text-slate-400 hover:text-white text-[13px] transition-colors leading-relaxed block">

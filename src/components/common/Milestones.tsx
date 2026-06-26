@@ -47,7 +47,7 @@ export const Milestones = () => {
           <div className="inline-block border border-blue-200 bg-blue-50 text-[#0158E6] px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide mb-3">
             Our Achievements
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-slate-900 leading-[1.2] tracking-tight font-heading">
+          <h2 className="text-balance text-3xl sm:text-4xl lg:text-[44px] font-bold text-slate-900 leading-[1.2] tracking-tight font-heading">
             Comfygen Technologies Milestones
           </h2>
         </div>
@@ -74,7 +74,7 @@ export const Milestones = () => {
                     <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center mb-5 border border-white/20">
                       <Globe className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-white text-2xl lg:text-[28px] font-bold mb-3 leading-tight">
+                    <h3 className="text-balance text-white text-2xl lg:text-[28px] font-bold mb-3 leading-tight">
                       Global <br /> Collaboration
                     </h3>
                     <p className="text-white/80 text-sm leading-relaxed line-clamp-3">
@@ -97,14 +97,14 @@ export const Milestones = () => {
                     <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-100 transition-all duration-500">
                       {React.cloneElement(item.icon as React.ReactElement<any>, { className: "w-6 h-6 text-[#0158E6]" })}
                     </div>
-                    <h3 className={`text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br ${item.gradient} tracking-tighter leading-none opacity-90 group-hover:scale-105 origin-bottom-right transition-transform duration-500`}>
+                    <h3 className={`text-balance text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br ${item.gradient} tracking-tighter leading-none opacity-90 group-hover:scale-105 origin-bottom-right transition-transform duration-500`}>
                       {item.number}
                     </h3>
                   </div>
 
                   {/* Bottom: Text Content */}
                   <div>
-                    <h4 className="text-xl lg:text-2xl font-bold text-slate-900 mb-2 group-hover:text-[#0158E6] transition-colors duration-300">
+                    <h4 className="text-balance text-xl lg:text-2xl font-bold text-slate-900 mb-2 group-hover:text-[#0158E6] transition-colors duration-300">
                       {item.title}
                     </h4>
                     <p className="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-3">

@@ -31,31 +31,31 @@ export const ProcessSteps = ({ title, subtitle, steps }: ProcessStepsProps) => {
   const [activeStep, setActiveStep] = useState(displaySteps[0]?.id || '01');
 
   return (
-    <section className="w-full py-20 lg:py-28 px-4 bg-white">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+    <section className="w-full py-16 xl:py-20 2xl:py-28 px-4 bg-white">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 2xl:gap-20 items-start">
 
         {/* Left Column (Sticky) */}
-        <div className="flex flex-col lg:sticky lg:top-32">
+        <div className="flex flex-col lg:sticky lg:top-24 2xl:top-32">
           {/* Badge */}
-          <span className="border !font-heading border-slate-200 bg-[#FAFAFA] text-slate-800 text-sm font-semibold px-4 py-1.5 rounded-full w-fit mb-6 ">
+          <span className="border !font-heading border-slate-200 bg-[#FAFAFA] text-slate-800 text-sm font-semibold px-4 py-1.5 rounded-full w-fit mb-4 2xl:mb-6 ">
             How we work
           </span>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-slate-900 mb-6 leading-[1.25] tracking-tight">
+          <h2 className="text-balance text-3xl sm:text-4xl 2xl:text-[42px] font-bold text-slate-900 mb-4 2xl:mb-6 leading-[1.25] tracking-tight">
             {title ? title : <>A simple 7-step process for<br className="hidden lg:block" /> delivery development</>}
           </h2>
 
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-4 pr-0 lg:pr-10">
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-3 2xl:mb-4 pr-0 lg:pr-10">
             {subtitle ? subtitle : "As A Trusted Mobile App And Web Development Company, We Follow A Structured And Agile Website And Application Development Process To Deliver Custom, Scalable, And High-Quality Digital Solutions."}
           </p>
           {!subtitle && (
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-10 pr-0 lg:pr-10">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 2xl:mb-10 pr-0 lg:pr-10">
               You Always Know What Stage Your Project Is In And What Comes Next.
             </p>
           )}
 
           {/* Illustration Placeholder */}
-          <div className="w-full h-[300px] sm:h-[400px] rounded-3xl overflow-hidden shadow-2xl border border-slate-100 bg-slate-50 flex items-center justify-center">
+          <div className="w-full h-[250px] sm:h-[300px] xl:h-[350px] 2xl:h-[400px] rounded-3xl overflow-hidden shadow-2xl border border-slate-100 bg-slate-50 flex items-center justify-center">
             <Image
               src="/images/process/custom-process.webp"
               alt="Team discussing project requirements on screen"
@@ -71,10 +71,10 @@ export const ProcessSteps = ({ title, subtitle, steps }: ProcessStepsProps) => {
 
           {/* List Container with Custom Scrollbar */}
           <div 
-            className="flex flex-col gap-4 max-h-[850px] overflow-y-auto pr-2 sm:pr-6 pb-10 [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-slate-200 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-slate-300 transition-all"
+            className="flex flex-col gap-4 max-h-[500px] lg:max-h-[600px] 2xl:max-h-[850px] overflow-y-auto pr-2 sm:pr-6 pb-6 2xl:pb-10 [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-slate-200 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-slate-300 transition-all"
             style={{
-              maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
-              WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)'
+              maskImage: 'linear-gradient(to bottom, transparent, black 3%, black 97%, transparent)',
+              WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 3%, black 97%, transparent)'
             }}
           >
             {displaySteps.map((step) => {
@@ -84,7 +84,7 @@ export const ProcessSteps = ({ title, subtitle, steps }: ProcessStepsProps) => {
                 <div
                   key={step.id}
                   onMouseEnter={() => setActiveStep(step.id)}
-                  className={`cursor-pointer border transition-all duration-300 p-6 sm:p-8 flex flex-col relative group
+                  className={`cursor-pointer border transition-all duration-300 p-5 xl:p-6 2xl:p-8 flex flex-col relative group
                     ${isActive
                       ? 'bg-primary border-primary text-white   scale-[1.02] z-10'
                       : 'bg-[#fafafa] border-slate-200 text-slate-900 hover:bg-slate-100 hover:border-slate-200'
@@ -98,7 +98,7 @@ export const ProcessSteps = ({ title, subtitle, steps }: ProcessStepsProps) => {
                       {step.time}
                     </span>
                   </div>
-                  <h3 className={`text-lg sm:text-xl font-bold mb-3 transition-colors ${isActive ? 'text-white' : 'text-slate-900'}`}>
+                  <h3 className={`text-balance text-lg sm:text-xl font-bold mb-3 transition-colors ${isActive ? 'text-white' : 'text-slate-900'}`}>
                     {step.title}
                   </h3>
                   <p className={`text-sm leading-relaxed transition-colors ${isActive ? 'text-white/90' : 'text-slate-500'}`}>

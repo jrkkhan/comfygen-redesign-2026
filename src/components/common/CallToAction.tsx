@@ -94,21 +94,21 @@ export const CallToAction = ({
     }
   };
   return (
-    <section className="w-full py-12 lg:py-16 px-4">
-      <div className={`max-w-[1400px] mx-auto  overflow-hidden px-8 py-10 lg:px-16 lg:py-14 relative flex flex-col md:flex-row items-center ${isDark ? 'bg-[#0A0D27]' : 'bg-[#fafafa] border border-slate-200'}`}>
+    <section className="w-full py-10 2xl:py-16 px-4">
+      <div className={`max-w-[1400px] mx-auto rounded-[32px] overflow-hidden px-8 py-8 lg:px-12 lg:py-10 2xl:px-16 2xl:py-14 relative flex flex-col md:flex-row items-center ${isDark ? 'bg-[#0A0D27]' : 'bg-[#fafafa] border border-slate-200'}`}>
 
         {/* Left Content */}
-        <div className="w-full md:w-3/5 lg:w-1/2 relative z-10 space-y-4 lg:space-y-6">
-          <h2 className={`text-3xl sm:text-3xl lg:text-4xl font-bold leading-tight tracking-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
+        <div className="w-full md:w-3/5 lg:w-1/2 relative z-10 space-y-4 2xl:space-y-6">
+          <h2 className={`text-balance text-2xl sm:text-3xl 2xl:text-4xl font-bold leading-tight tracking-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
             {title}
           </h2>
-          <p className={`text-base md:text-lg max-w-xl leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
+          <p className={`text-[15px] md:text-base 2xl:text-lg max-w-xl leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
             {description}
           </p>
-          <div className="pt-4">
+          <div className="pt-2 2xl:pt-4">
             <a
               href={buttonLink}
-              className={`inline-block px-8 py-3 rounded-full font-medium transition-all duration-300 ${isDark
+              className={`inline-block px-6 py-2.5 2xl:px-8 2xl:py-3 rounded-full font-medium transition-all duration-300 ${isDark
                 ? 'bg-primary text-white hover:bg-blue-700'
                 : 'bg-primary text-white hover:bg-blue-700 hover:shadow-lg'
                 }`}

@@ -20,7 +20,7 @@ export const HeroBentoGrid = () => {
           <div className="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform backdrop-blur-md border border-white/10">
             <Smartphone className="w-6 h-6" />
           </div>
-          <h3 className="text-white font-bold text-xl mb-2">Native iOS & Android</h3>
+          <h3 className="text-balance text-white font-bold text-xl mb-2">Native iOS & Android</h3>
           <p className="text-slate-400 text-sm leading-relaxed">Built with high-performance frameworks for both major platforms natively.</p>
         </div>
       </div>
@@ -36,7 +36,7 @@ export const HeroBentoGrid = () => {
       {/* Middle Right: Feature */}
       <div className="col-span-1 bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 flex flex-col justify-center hover:bg-white/10 transition-colors group">
         <Layers className="w-6 h-6 text-purple-400 mb-3 group-hover:rotate-12 transition-transform" />
-        <h3 className="text-white font-bold mb-1">White-Label</h3>
+        <h3 className="text-balance text-white font-bold mb-1">White-Label</h3>
         <p className="text-slate-400 text-xs">100% Brand Ownership</p>
       </div>
 
@@ -46,7 +46,7 @@ export const HeroBentoGrid = () => {
           <ShieldCheck className="w-7 h-7" />
         </div>
         <div>
-          <h3 className="text-white font-bold text-lg mb-1">Enterprise-Grade Security</h3>
+          <h3 className="text-balance text-white font-bold text-lg mb-1">Enterprise-Grade Security</h3>
           <p className="text-slate-400 text-sm">End-to-end encryption & secure cloud infrastructure.</p>
         </div>
       </div>

@@ -39,30 +39,33 @@ export const CloneSolutions = ({ sectionData }: CloneSolutionsProps) => {
   };
 
   return (
-    <section className="py-16 lg:py-24 bg-slate-900 text-white border-y border-slate-800 overflow-hidden">
+    <section className="py-12 lg:py-16 2xl:py-24 bg-slate-900 text-white border-y border-slate-800 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4">
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 2xl:gap-12 items-center">
           
           {/* Left Side: Content & Tabs */}
           <div className="text-left w-full">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+            <h2 className="text-balance text-3xl md:text-4xl 2xl:text-5xl font-bold mb-4 2xl:mb-6 leading-tight">
               {sectionData?.heading ? (
                 <span dangerouslySetInnerHTML={{ __html: sectionData.heading.replace('Clone', '<span class="text-blue-500">Clone</span>') }} />
               ) : (
                 <>Looking for a <br /> Specific <span className="text-blue-500">Market Clone?</span></>
               )}
             </h2>
-            <p className="text-slate-400 text-lg md:text-xl w-full mb-10 leading-relaxed pr-0 lg:pr-8">
+            <p className="text-slate-400 text-[15px] md:text-base 2xl:text-xl w-full mb-4 leading-relaxed pr-0 lg:pr-8">
               {sectionData?.subHeading || "We provide highly customizable, ready-to-launch clone scripts inspired by industry leaders to get your business off the ground in weeks, not months."}
             </p>
+            <p className="text-slate-400 text-sm md:text-[15px] 2xl:text-lg w-full mb-6 2xl:mb-10 leading-relaxed pr-0 lg:pr-8">
+              Whether you're looking to launch a robust food delivery service, a hyper-local grocery platform, or an on-demand logistics network, our turnkey solutions have you covered. Built with cutting-edge technology, these clones are fully scalable, secure, and ready to be tailored precisely to your brand's unique identity.
+            </p>
             
-            <div className="flex flex-wrap gap-3 mb-12">
+            <div className="flex flex-wrap gap-2.5 2xl:gap-3 mb-8 2xl:mb-12">
               {finalClones.map((clone, idx) => (
                 <button 
                   key={idx} 
                   onClick={() => setActiveIndex(idx)}
-                  className={`border px-5 py-2.5 md:px-6 md:py-3 rounded-full font-medium transition-all duration-300 ${
+                  className={`border px-4 py-2 md:px-5 md:py-2.5 2xl:px-6 2xl:py-3 rounded-full font-medium transition-all duration-300 text-sm 2xl:text-base ${
                     activeIndex === idx 
                       ? 'bg-blue-600 border-blue-500 shadow-[0_0_20px_rgba(37,99,235,0.3)] text-white scale-105' 
                       : 'bg-slate-800 border-slate-700 text-slate-300 hover:bg-slate-700 hover:text-white'
@@ -124,7 +127,7 @@ export const CloneSolutions = ({ sectionData }: CloneSolutionsProps) => {
                   {/* Categories */}
                   <div className="px-4 py-4 xl:py-5">
                     <div className="flex justify-between items-end mb-3">
-                      <h3 className="text-sm xl:text-base font-bold">{labels.categoriesTitle}</h3>
+                      <h3 className="text-balance text-sm xl:text-base font-bold">{labels.categoriesTitle}</h3>
                       <span className={`text-[10px] xl:text-xs font-semibold ${activeCloneStyle.brandColor}`}>See all</span>
                     </div>
                     <div className="flex gap-3 overflow-x-auto pb-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
@@ -141,7 +144,7 @@ export const CloneSolutions = ({ sectionData }: CloneSolutionsProps) => {
 
                   {/* Top Rated Providers */}
                   <div className="px-4 pb-4">
-                    <h3 className="text-sm xl:text-base font-bold mb-3">{labels.listTitle}</h3>
+                    <h3 className="text-balance text-sm xl:text-base font-bold mb-3">{labels.listTitle}</h3>
                     <div className="flex flex-col gap-4">
                       {/* Provider Card 1 */}
                       <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100">
@@ -153,7 +156,7 @@ export const CloneSolutions = ({ sectionData }: CloneSolutionsProps) => {
                         </div>
                         <div className="p-3 xl:p-4">
                           <div className="flex justify-between items-start mb-1">
-                            <h4 className="text-xs xl:text-sm font-bold text-slate-900">Premium Service Provider</h4>
+                            <h4 className="text-balance text-xs xl:text-sm font-bold text-slate-900">Premium Service Provider</h4>
                             <div className="flex items-center gap-0.5 text-[10px] xl:text-xs font-bold">
                               <Star className="w-3 h-3 text-yellow-400 fill-yellow-400" /> 4.9
                             </div>
@@ -173,7 +176,7 @@ export const CloneSolutions = ({ sectionData }: CloneSolutionsProps) => {
                         </div>
                         <div className="p-3 xl:p-4">
                           <div className="flex justify-between items-start mb-1">
-                            <h4 className="text-xs xl:text-sm font-bold text-slate-900">Standard Provider</h4>
+                            <h4 className="text-balance text-xs xl:text-sm font-bold text-slate-900">Standard Provider</h4>
                             <div className="flex items-center gap-0.5 text-[10px] xl:text-xs font-bold">
                               <Star className="w-3 h-3 text-yellow-400 fill-yellow-400" /> 4.5
                             </div>

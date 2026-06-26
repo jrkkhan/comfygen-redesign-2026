@@ -25,11 +25,11 @@ export const AboutInfo = ({
   buttonLink = "/about-us"
 }: AboutInfoProps) => {
   return (
-    <section className="w-full py-20 lg:py-32 px-4 bg-[#f8fafc]">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <section className="w-full py-16 lg:py-20 2xl:py-32 px-4 bg-[#f8fafc]">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 2xl:gap-20 items-center">
         
         {/* Left: Image Container */}
-        <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[650px] rounded-3xl overflow-hidden">
+        <div className="relative w-full aspect-square rounded-3xl overflow-hidden">
           <Image 
             src={imageSrc} 
             alt={imageAlt} 
@@ -41,12 +41,12 @@ export const AboutInfo = ({
 
         {/* Right: Text Content */}
         <div className="flex flex-col">
-          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-slate-900 mb-6 leading-[1.25] tracking-tight">
+          <h2 className="text-balance text-3xl sm:text-4xl 2xl:text-[42px] font-bold text-slate-900 mb-4 2xl:mb-6 leading-[1.25] tracking-tight">
             {title}
           </h2>
           
           {paragraphs.map((text, idx) => (
-            <p key={idx} className={`text-slate-600 text-sm sm:text-base leading-relaxed ${idx === paragraphs.length - 1 ? 'mb-10' : 'mb-6'}`}>
+            <p key={idx} className={`text-slate-600 text-sm sm:text-base leading-relaxed ${idx === paragraphs.length - 1 ? 'mb-8 2xl:mb-10' : 'mb-4 2xl:mb-6'}`}>
               {text}
             </p>
           ))}

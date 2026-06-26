@@ -15,7 +15,7 @@ export const SolutionUseCases = () => {
     <section className="py-20 bg-slate-50">
       <div className="max-w-[1400px] mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">One Solution, Multiple Industries</h2>
+          <h2 className="text-balance text-3xl md:text-4xl font-bold text-slate-900 mb-4">One Solution, Multiple Industries</h2>
           <p className="text-slate-600 max-w-2xl mx-auto">Our robust on-demand delivery architecture can be customized for various business models beyond just food.</p>
         </div>
 
@@ -28,7 +28,7 @@ export const SolutionUseCases = () => {
                   <Icon className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-1">{item.title}</h3>
+                  <h3 className="text-balance text-lg font-bold text-slate-900 mb-1">{item.title}</h3>
                   <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
                 </div>
               </div>

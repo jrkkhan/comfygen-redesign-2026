@@ -262,7 +262,7 @@ export const megaMenuData = {
   },
 
   company: [
-    { title: "About Us", desc: "Who we are & what we do", href: "/about-us", isActive: true },
+    { title: "About Us", desc: "Who we are & what we do", href: "/about-us" },
     { title: "Our Portfolio", desc: "Showcasing Our Successful Projects", href: "/portfolio" },
     { title: "Career At Comfygen", desc: "Join Our Dynamic Team Today", href: "/career-at-comfygen" },
     { title: "Life at Comfygen", desc: "Experience Our Collaborative Work Culture", href: "/life-at-comfygen" },

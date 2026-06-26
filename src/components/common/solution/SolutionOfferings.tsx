@@ -55,16 +55,16 @@ export const SolutionOfferings = ({ sectionData }: SolutionOfferingsProps) => {
   const finalSolutions = sectionData?.items || fallbackSolutions;
 
   return (
-    <section className="min-h-[100svh] flex flex-col justify-center py-12 bg-white relative overflow-hidden">
+    <section className="py-12 xl:py-16 2xl:py-24 bg-white relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 relative z-10 w-full">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3 tracking-tight">{sectionData?.heading || "Solutions We Offer"}</h2>
-          <p className="text-slate-600 text-base max-w-2xl mx-auto leading-relaxed">
+        <div className="text-center mb-6 2xl:mb-10">
+          <h2 className="text-balance text-3xl md:text-4xl font-bold text-slate-900 mb-3 tracking-tight">{sectionData?.heading || "Solutions We Offer"}</h2>
+          <p className="text-slate-600 text-[15px] md:text-base max-w-2xl mx-auto leading-relaxed">
             {sectionData?.subHeading || "From multi-vendor aggregators to dedicated apps, we build scalable platforms tailored for diverse business models."}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 auto-rows-[160px] lg:auto-rows-[180px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 2xl:gap-5">
           
           {finalSolutions.map((item, idx) => {
             const Icon = item.icon || genericIcons[idx % genericIcons.length];
@@ -74,16 +74,16 @@ export const SolutionOfferings = ({ sectionData }: SolutionOfferingsProps) => {
             // --- Card 1: Aggregator Platform (User's preferred design) ---
             if (idx === 0) {
               return (
-                <div key={idx} className="lg:col-span-2 lg:row-span-1 rounded-3xl bg-gradient-to-r from-blue-50 to-indigo-50/50 p-5 lg:p-6 relative overflow-hidden group shadow-[inset_0_0_0_1px_rgba(226,232,240,1)] hover:shadow-lg transition-all duration-300">
+                <div key={idx} className="lg:col-span-2 lg:row-span-1 rounded-2xl 2xl:rounded-3xl bg-gradient-to-r from-blue-50 to-indigo-50/50 p-4 xl:p-5 2xl:p-6 relative overflow-hidden group shadow-[inset_0_0_0_1px_rgba(226,232,240,1)] hover:shadow-lg transition-all duration-300">
                   <div className="absolute right-0 top-0 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
                   <div className="relative z-10 flex flex-col justify-center h-full">
-                    <div className="flex items-center gap-4 mb-3">
-                      <div className="w-12 h-12 shrink-0 bg-white text-blue-600 rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-500">
-                        <Icon className="w-6 h-6" />
+                    <div className="flex items-center gap-3 2xl:gap-4 mb-2 2xl:mb-3">
+                      <div className="w-10 h-10 2xl:w-12 2xl:h-12 shrink-0 bg-white text-blue-600 rounded-lg 2xl:rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-500">
+                        <Icon className="w-5 h-5 2xl:w-6 2xl:h-6" />
                       </div>
-                      <h3 className="text-xl lg:text-2xl font-bold text-slate-900 tracking-tight leading-tight">{item.title}</h3>
+                      <h3 className="text-balance text-lg xl:text-xl 2xl:text-2xl font-bold text-slate-900 tracking-tight leading-tight">{item.title}</h3>
                     </div>
-                    <p className="text-slate-600 text-sm leading-relaxed max-w-sm line-clamp-2">
+                    <p className="text-slate-600 text-[13px] 2xl:text-sm leading-relaxed max-w-sm line-clamp-2">
                       {item.description}
                     </p>
                   </div>
@@ -105,15 +105,15 @@ export const SolutionOfferings = ({ sectionData }: SolutionOfferingsProps) => {
 
             if (isWide) {
               return (
-                <div key={idx} className={`lg:col-span-2 lg:row-span-1 rounded-3xl bg-white border border-slate-100 p-5 lg:p-6 hover:shadow-xl ${theme.border} transition-all duration-300 group`}>
+                <div key={idx} className={`lg:col-span-2 lg:row-span-1 rounded-2xl 2xl:rounded-3xl bg-white border border-slate-100 p-4 xl:p-5 2xl:p-6 hover:shadow-xl ${theme.border} transition-all duration-300 group`}>
                   <div className="flex flex-col justify-center h-full">
-                    <div className="flex items-center gap-4 mb-3">
-                      <div className={`w-12 h-12 shrink-0 ${theme.bg} ${theme.text} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
-                        <Icon className="w-6 h-6" />
+                    <div className="flex items-center gap-3 2xl:gap-4 mb-2 2xl:mb-3">
+                      <div className={`w-10 h-10 2xl:w-12 2xl:h-12 shrink-0 ${theme.bg} ${theme.text} rounded-lg 2xl:rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
+                        <Icon className="w-5 h-5 2xl:w-6 2xl:h-6" />
                       </div>
-                      <h3 className="text-xl lg:text-2xl font-bold text-slate-900 tracking-tight leading-tight">{item.title}</h3>
+                      <h3 className="text-balance text-lg xl:text-xl 2xl:text-2xl font-bold text-slate-900 tracking-tight leading-tight">{item.title}</h3>
                     </div>
-                    <p className="text-slate-500 text-sm leading-relaxed max-w-sm line-clamp-2">
+                    <p className="text-slate-500 text-[13px] 2xl:text-sm leading-relaxed max-w-sm line-clamp-2">
                       {item.description}
                     </p>
                   </div>
@@ -122,12 +122,12 @@ export const SolutionOfferings = ({ sectionData }: SolutionOfferingsProps) => {
             }
 
             return (
-              <div key={idx} className={`lg:col-span-1 lg:row-span-1 rounded-3xl bg-white border border-slate-100 p-5 lg:p-6 hover:shadow-xl ${theme.border} transition-all duration-300 group flex flex-col justify-center`}>
-                <div className={`w-10 h-10 lg:w-12 lg:h-12 shrink-0 ${theme.bg} ${theme.text} rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
-                  <Icon className="w-5 h-5 lg:w-6 lg:h-6" />
+              <div key={idx} className={`lg:col-span-1 lg:row-span-1 rounded-2xl 2xl:rounded-3xl bg-white border border-slate-100 p-4 xl:p-5 2xl:p-6 hover:shadow-xl ${theme.border} transition-all duration-300 group flex flex-col justify-center`}>
+                <div className={`w-10 h-10 2xl:w-12 2xl:h-12 shrink-0 ${theme.bg} ${theme.text} rounded-lg 2xl:rounded-xl flex items-center justify-center mb-2 2xl:mb-3 group-hover:scale-110 transition-transform`}>
+                  <Icon className="w-5 h-5 2xl:w-6 2xl:h-6" />
                 </div>
-                <h3 className="text-lg lg:text-xl font-bold text-slate-900 mb-2 leading-tight">{item.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed line-clamp-2">{item.description}</p>
+                <h3 className="text-balance text-[17px] xl:text-lg 2xl:text-xl font-bold text-slate-900 mb-1 2xl:mb-2 leading-tight">{item.title}</h3>
+                <p className="text-slate-500 text-[13px] 2xl:text-sm leading-relaxed line-clamp-2">{item.description}</p>
               </div>
             );
           })}

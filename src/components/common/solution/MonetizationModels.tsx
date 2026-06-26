@@ -37,7 +37,7 @@ export const MonetizationModels = () => {
     <section className="py-20 bg-white">
       <div className="max-w-[1400px] mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">How Can You Make Money?</h2>
+          <h2 className="text-balance text-3xl md:text-4xl font-bold text-slate-900 mb-4">How Can You Make Money?</h2>
           <p className="text-slate-600 max-w-2xl mx-auto">Explore multiple revenue streams and proven business models for your food delivery startup.</p>
         </div>
 
@@ -49,7 +49,7 @@ export const MonetizationModels = () => {
                 <div className={`w-14 h-14 rounded-xl ${model.bg} ${model.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                   <Icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{model.title}</h3>
+                <h3 className="text-balance text-xl font-bold text-slate-900 mb-3">{model.title}</h3>
                 <p className="text-slate-600 leading-relaxed">{model.description}</p>
               </div>
             )

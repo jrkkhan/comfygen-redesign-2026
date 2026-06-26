@@ -24,7 +24,7 @@ export const Leadership = () => {
               Our Leadership Team
             </div>
 
-            <h2 className="text-4xl sm:text-5xl   font-bold mb-4 leading-tight font-heading text-white tracking-tight">
+            <h2 className="text-balance text-4xl sm:text-5xl   font-bold mb-4 leading-tight font-heading text-white tracking-tight">
               Mr. Saddam Husen
             </h2>
             <div className="inline-block mb-10">

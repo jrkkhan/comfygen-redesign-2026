@@ -20,18 +20,18 @@ export const Header = ({ theme = 'dark' }: { theme?: 'light' | 'dark' }) => {
               alt="Comfygen Logo"
               width={240}
               height={60}
-              className="w-[180px] sm:w-[240px] h-auto"
+              className="w-[180px] sm:w-[240px] lg:w-[200px] xl:w-[200px] 2xl:w-[240px]   h-auto"
               priority
             />
           </Link>
 
           {/* Center Contact Info (Pill) */}
           <div className={`hidden lg:flex items-center space-x-6 rounded-full px-8 py-3 backdrop-blur-sm bg-transparent ${theme === 'light' ? 'border border-slate-300' : 'border border-white/10'}`}>
-            <a href="mailto:sales@comfygen.com" className={`flex items-center text-base transition-colors ${theme === 'light' ? 'text-slate-700 hover:text-primary' : 'text-slate-200 hover:text-white'}`}>
+            <a href="mailto:sales@comfygen.com" className={`flex items-center text-sm 2xl:text-base transition-colors ${theme === 'light' ? 'text-slate-700 hover:text-primary' : 'text-slate-200 hover:text-white'}`}>
               <Mail className="w-4 h-4 mr-2" />
               sales@comfygen.com
             </a>
-            <a href="tel:+919587867258" className={`flex items-center text-base transition-colors ${theme === 'light' ? 'text-slate-700 hover:text-primary' : 'text-slate-200 hover:text-white'}`}>
+            <a href="tel:+919587867258" className={`flex items-center text-sm 2xl:text-base transition-colors ${theme === 'light' ? 'text-slate-700 hover:text-primary' : 'text-slate-200 hover:text-white'}`}>
               <Phone className="w-4 h-4 mr-2" />
               +91 9587867258
             </a>
@@ -64,7 +64,7 @@ export const Header = ({ theme = 'dark' }: { theme?: 'light' | 'dark' }) => {
               <Menu className="w-5 h-5" />
             </button>
           </div>
-          
+
           {/* Light Theme Divider Line */}
           {theme === 'light' && (
             <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-slate-300/80 to-transparent" />

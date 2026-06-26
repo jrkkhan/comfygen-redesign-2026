@@ -42,14 +42,14 @@ export const WhyChooseUs = ({
   };
 
   return (
-    <section className="w-full py-16 lg:py-20 relative overflow-hidden bg-white grid grid-cols-[1fr_min(1400px,100%)_1fr]">
+    <section className="w-full py-16 xl:py-16 2xl:py-20 relative overflow-hidden bg-white grid grid-cols-[1fr_min(1400px,100%)_1fr]">
       {/* Subtle Background Glow mimicking the design specifically behind the title */}
       <div className="col-span-full absolute top-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-full max-w-4xl h-[400px] bg-primary/20 blur-[80px] pointer-events-none rounded-full"></div>
 
       {/* Header Section Container */}
-      <div className="col-start-2 w-full px-4 mb-12 lg:mb-16 z-10 relative">
+      <div className="col-start-2 w-full px-4 mb-8 xl:mb-10 2xl:mb-16 z-10 relative">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-slate-900 leading-[1.25] tracking-tight max-w-3xl">
+          <h2 className="text-balance text-3xl sm:text-4xl 2xl:text-[42px] font-bold text-slate-900 leading-[1.25] tracking-tight max-w-3xl">
             {title}
           </h2>
 
@@ -83,10 +83,10 @@ export const WhyChooseUs = ({
           {reasons.map((item) => (
             <div
               key={item.id}
-              className="min-w-[100%] sm:min-w-[calc(50%-12px)] md:min-w-[calc(33.33%-16px)] lg:min-w-[calc(25%-18px)] bg-[#FAFAFA] border border-slate-200 p-8 sm:p-10 flex flex-col snap-start hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 group"
+              className="min-w-[100%] sm:min-w-[calc(50%-12px)] md:min-w-[calc(33.33%-16px)] lg:min-w-[calc(25%-18px)] bg-[#FAFAFA] border border-slate-200 p-6 xl:p-8 2xl:p-10 flex flex-col snap-start hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 group"
             >
-              <span className="text-primary text-xl sm:text-2xl font-bold mb-6 block">{item.id}</span>
-              <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 group-hover:text-primary transition-colors">
+              <span className="text-primary text-xl sm:text-2xl font-bold mb-4 2xl:mb-6 block">{item.id}</span>
+              <h3 className="text-balance text-base sm:text-lg 2xl:text-xl font-bold text-slate-900 mb-3 2xl:mb-4 group-hover:text-primary transition-colors">
                 {item.title}
               </h3>
               <p className="text-slate-500 text-sm leading-relaxed">

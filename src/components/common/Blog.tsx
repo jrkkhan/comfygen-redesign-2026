@@ -33,12 +33,12 @@ const blogs = [
 
 export const Blog = () => {
   return (
-    <section className="w-full py-20 lg:py-28 px-4 bg-[#fafcff]">
+    <section className="w-full py-16 xl:py-16 2xl:py-28 px-4 bg-[#fafcff]">
       <div className="max-w-[1400px] mx-auto">
         
         {/* Header Section */}
-        <div className="text-center mb-14 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-slate-900 mb-5 tracking-tight">
+        <div className="text-center mb-10 2xl:mb-16">
+          <h2 className="text-balance text-3xl sm:text-4xl 2xl:text-[42px] font-bold text-slate-900 mb-3 2xl:mb-5 tracking-tight">
             Latest From Our Blog
           </h2>
           <p className="text-slate-500 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
@@ -47,7 +47,7 @@ export const Blog = () => {
         </div>
 
         {/* Blog Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-14">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 2xl:gap-8 mb-10 2xl:mb-14">
           {blogs.map(blog => (
             <div 
               key={blog.id} 
@@ -56,9 +56,9 @@ export const Blog = () => {
                 ${blog.isActive ? 'border-primary/40 shadow-xl shadow-primary/5 ring-1 ring-primary/10' : 'border-slate-100 hover:border-primary/30'}`}
             >
               {/* Text Content (Left side on Desktop) */}
-              <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10 w-full sm:w-1/2 order-2 sm:order-1">
+              <div className="flex flex-col justify-center p-6 lg:p-6 2xl:p-10 w-full sm:w-1/2 order-2 sm:order-1">
                 <h3 
-                  className={`text-xl sm:text-2xl font-bold mb-4 sm:mb-6 transition-colors leading-snug tracking-tight
+                  className={`text-lg sm:text-xl 2xl:text-2xl font-bold mb-3 sm:mb-4 2xl:mb-6 transition-colors leading-snug tracking-tight
                     ${blog.isActive ? 'text-primary' : 'text-slate-900 group-hover:text-primary'}`}
                 >
                   {blog.title}
@@ -69,7 +69,7 @@ export const Blog = () => {
               </div>
 
               {/* Image (Right side on Desktop) */}
-              <div className="w-full sm:w-1/2 h-[220px] sm:h-auto sm:min-h-[260px] overflow-hidden shrink-0 order-1 sm:order-2 relative bg-slate-100">
+              <div className="w-full sm:w-1/2 aspect-video overflow-hidden shrink-0 order-1 sm:order-2 relative bg-slate-100">
                 <img 
                   src={blog.image} 
                   alt={blog.title} 

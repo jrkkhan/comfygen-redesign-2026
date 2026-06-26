@@ -45,18 +45,18 @@ export const ProblemStatement = ({ sectionData }: ProblemStatementProps) => {
   const finalProblems = sectionData?.items || fallbackProblems;
 
   return (
-    <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
+    <section className="py-16 xl:py-16 2xl:py-28 bg-white relative overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-rose-50/50 to-transparent pointer-events-none"></div>
       <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-rose-100/40 rounded-full blur-[120px] pointer-events-none"></div>
       
       <div className="max-w-[1400px] mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center mb-10 md:mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-100 text-rose-600 font-semibold text-sm mb-6">
+        <div className="max-w-4xl mx-auto text-center mb-8 2xl:mb-14">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-100 text-rose-600 font-semibold text-sm mb-4 2xl:mb-6">
             <AlertCircle className="w-4 h-4" />
             <span>The Industry Challenge</span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold !font-heading text-slate-900 mb-6 leading-tight">
+          <h2 className="text-balance text-3xl md:text-4xl 2xl:text-5xl font-bold !font-heading text-slate-900 mb-4 2xl:mb-6 leading-tight">
             {sectionData?.heading ? (
               <span dangerouslySetInnerHTML={{ __html: sectionData.heading.replace('Problems', '<span class="text-rose-600">Problems</span>') }} />
             ) : (
@@ -64,28 +64,28 @@ export const ProblemStatement = ({ sectionData }: ProblemStatementProps) => {
               <span className="inline-block">Food Delivery App Development</span></>
             )}
           </h2>
-          <p className="text-slate-600 text-lg md:text-xl leading-relaxed">
+          <p className="text-slate-600 text-[15px] md:text-base 2xl:text-xl leading-relaxed">
             {sectionData?.subHeading || "We understand the exact hurdles you face. Relying on third-party platforms destroys margins and limits your growth. It's time to take back control."}
           </p>
         </div>
 
         {/* 5 Cards Layout using a 5-column grid so they all appear in ONE row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 lg:gap-3 2xl:gap-5">
           {finalProblems.map((item, idx) => {
             const Icon = genericIcons[idx % genericIcons.length];
 
             return (
               <div 
                 key={idx} 
-                className="group relative bg-white border border-slate-200 rounded-3xl p-5 lg:p-6 shadow-sm hover:shadow-xl hover:border-rose-200 transition-all duration-500 flex flex-col"
+                className="group relative bg-white border border-slate-200 rounded-2xl 2xl:rounded-3xl p-4 2xl:p-6 hover:border-rose-200 transition-all duration-500 flex flex-col"
               >
                 {/* Problem Section */}
-                <div className="mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-rose-50 flex items-center justify-center text-rose-500 mb-5 group-hover:scale-110 group-hover:bg-rose-500 group-hover:text-white transition-all duration-500">
-                    <Icon className="w-6 h-6" />
+                <div className="mb-4 2xl:mb-6">
+                  <div className="w-10 h-10 2xl:w-12 2xl:h-12 rounded-xl 2xl:rounded-2xl bg-rose-50 flex items-center justify-center text-rose-500 mb-3 2xl:mb-5 group-hover:scale-110 group-hover:bg-rose-500 group-hover:text-white transition-all duration-500">
+                    <Icon className="w-5 h-5 2xl:w-6 2xl:h-6" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2 leading-tight">{item.title}</h3>
-                  <p className="text-slate-600 leading-relaxed text-sm">
+                  <h3 className="text-balance text-[16px] 2xl:text-lg font-bold text-slate-900 mb-2 leading-tight">{item.title}</h3>
+                  <p className="text-slate-600 leading-relaxed text-[13px] 2xl:text-sm">
                     {item.problem}
                   </p>
                 </div>

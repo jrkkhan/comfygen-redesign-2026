@@ -319,7 +319,7 @@ export const AppModulesTab = ({ sectionData }: AppModulesTabProps) => {
     <section className="py-20 lg:py-28 bg-slate-50 relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold !font-heading text-slate-900 mb-6 tracking-tight">{sectionData?.heading || "Complete Ecosystem Architecture"}</h2>
+          <h2 className="text-balance text-3xl md:text-4xl lg:text-5xl font-bold !font-heading text-slate-900 mb-6 tracking-tight">{sectionData?.heading || "Complete Ecosystem Architecture"}</h2>
           <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto font-medium">{sectionData?.subHeading || "A fully integrated suite of premium applications designed to scale across any on-demand business model instantly."}</p>
         </div>
 
@@ -330,7 +330,7 @@ export const AppModulesTab = ({ sectionData }: AppModulesTabProps) => {
             <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 font-bold text-sm capitalize mb-6 border border-blue-100">
               {activeData.label}
             </div>
-            <h3 className="text-3xl md:text-4xl font-black text-slate-900 mb-8 leading-tight">Empower your ecosystem with <span className="text-[#0158e6]">robust tools.</span></h3>
+            <h3 className="text-balance text-3xl md:text-4xl font-black text-slate-900 mb-8 leading-tight">Empower your ecosystem with <span className="text-[#0158e6]">robust tools.</span></h3>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-4">
               {activeData.features.map((feature, idx) => (

@@ -55,7 +55,7 @@ export const HeroSectionTwo: React.FC<HeroSectionTwoProps> = ({
             </div>
           )}
 
-          <h1 className="text-3xl sm:text-4xl lg:text-[48px] font-bold text-slate-900 mb-6 leading-[1.25] tracking-tight">
+          <h1 className="text-balance text-3xl sm:text-4xl lg:text-[48px] font-bold text-slate-900 mb-6 leading-[1.25] tracking-tight">
             {title}
           </h1>
 

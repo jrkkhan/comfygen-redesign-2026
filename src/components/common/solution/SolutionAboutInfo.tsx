@@ -46,7 +46,7 @@ export const SolutionAboutInfo = ({
 
         {/* Right: Text Content */}
         <div className="flex flex-col">
-          <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-bold text-slate-900 mb-6 leading-[1.25] tracking-tight">
+          <h2 className="text-balance text-3xl sm:text-4xl lg:text-[40px] font-bold text-slate-900 mb-6 leading-[1.25] tracking-tight">
             {title}
           </h2>
           

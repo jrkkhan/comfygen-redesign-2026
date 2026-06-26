@@ -27,9 +27,9 @@ const ClutchBadge = () => (
 const DesignRushBadge = () => (
   <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 group-hover:bg-white/10 transition-colors shrink-0">
     <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 0L24 12L12 24L0 12L12 0Z" fill="#00D0C5"/>
-      <path d="M12 6L18 12L12 18L6 12L12 6Z" fill="#12182b"/>
-      <circle cx="12" cy="12" r="3.5" fill="#00D0C5"/>
+      <path d="M12 0L24 12L12 24L0 12L12 0Z" fill="#00D0C5" />
+      <path d="M12 6L18 12L12 18L6 12L12 6Z" fill="#12182b" />
+      <circle cx="12" cy="12" r="3.5" fill="#00D0C5" />
     </svg>
     <span className="text-white text-[10px] font-bold tracking-widest uppercase mt-0.5">DesignRush</span>
   </div>
@@ -88,14 +88,14 @@ export const TestimonialsClient = ({ heading, subheading, reviews, videos }: Tes
   };
 
   return (
-    <section className="w-full py-20 lg:py-28 px-4 bg-[#0A0D27]">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section className="w-full py-16 xl:py-16 2xl:py-28 px-4 bg-[#0A0D27]">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 2xl:gap-12 items-center">
 
         {/* Left Column */}
         <div className="lg:col-span-6 flex flex-col items-start pr-0 lg:pr-8">
 
           {/* Tabs */}
-          <div className="flex items-center bg-[#12182b] rounded-full p-0.5 mb-10 w-fit border border-white/[0.04]">
+          <div className="flex items-center bg-[#12182b] rounded-full p-0.5 mb-8 2xl:mb-10 w-fit border border-white/[0.04]">
             <button
               onClick={() => setActiveTab('reviews')}
               className={`px-8 py-2.5 rounded-full text-sm font-medium transition-all ${activeTab === 'reviews'
@@ -116,10 +116,10 @@ export const TestimonialsClient = ({ heading, subheading, reviews, videos }: Tes
             </button>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-white mb-6 leading-[1.25] tracking-tight">
+          <h2 className="text-balance text-3xl sm:text-4xl 2xl:text-[44px] font-bold text-white mb-4 2xl:mb-6 leading-[1.25] tracking-tight">
             {heading}
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base leading-relaxed mb-10 max-w-lg">
+          <p className="text-slate-400 text-sm sm:text-base leading-relaxed mb-8 2xl:mb-10 max-w-lg">
             {subheading}
           </p>
 
@@ -129,10 +129,10 @@ export const TestimonialsClient = ({ heading, subheading, reviews, videos }: Tes
         </div>
 
         {/* Right Column */}
-        <div className="lg:col-span-6 w-full relative min-h-[450px] min-w-0">
+        <div className="lg:col-span-6 w-full relative min-h-[380px] xl:min-h-[420px] 2xl:min-h-[450px] min-w-0">
           {/* Reviews Grid */}
           <div className={`transition-all duration-500 absolute w-full ${activeTab === 'reviews' ? 'opacity-100 translate-y-0 z-10 relative' : 'opacity-0 translate-y-4 z-0 hidden'}`}>
-            <div 
+            <div
               ref={scrollRef}
               onScroll={handleScroll}
               className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-4 pb-4 w-full"
@@ -142,28 +142,29 @@ export const TestimonialsClient = ({ heading, subheading, reviews, videos }: Tes
                   {chunk.map(review => {
                     const platformLower = (review.platform || '').trim().toLowerCase();
                     return (
-                    <div key={review.id} className="bg-[#12182b] border border-white/5 rounded-xl p-6 hover:bg-[#1a2238] transition-colors group flex flex-col justify-between">
-                      <div>
-                        <div className="flex justify-between items-start mb-6 gap-2">
-                          <div className="flex flex-col gap-1">
-                            <h3 className="text-white font-semibold text-base leading-tight">{review.name}</h3>
-                            <span className="text-slate-400 text-xs leading-tight">{review.location}</span>
+                      <div key={review.id} className="bg-[#12182b] border border-white/5 rounded-xl p-4 xl:p-5 2xl:p-6 hover:bg-[#1a2238] transition-colors group flex flex-col justify-between">
+                        <div>
+                          <div className="flex justify-between items-start mb-4 2xl:mb-6 gap-2">
+                            <div className="flex flex-col gap-1">
+                              <h3 className="text-balance text-white font-semibold text-base leading-tight">{review.name}</h3>
+                              <span className="text-slate-400 text-xs leading-tight">{review.location}</span>
+                            </div>
+                            {platformLower === 'google' && <GoogleBadge />}
+                            {platformLower === 'clutch' && <ClutchBadge />}
+                            {platformLower === 'designrush' && <DesignRushBadge />}
+                            {!['google', 'clutch', 'designrush'].includes(platformLower) && review.platform && (
+                              <span className="text-white text-xs font-bold bg-white/5 border border-white/10 px-3 py-1 rounded-full group-hover:bg-white/10 transition-colors whitespace-nowrap shrink-0">
+                                {review.platform}
+                              </span>
+                            )}
                           </div>
-                          {platformLower === 'google' && <GoogleBadge />}
-                          {platformLower === 'clutch' && <ClutchBadge />}
-                          {platformLower === 'designrush' && <DesignRushBadge />}
-                          {!['google', 'clutch', 'designrush'].includes(platformLower) && review.platform && (
-                            <span className="text-white text-xs font-bold bg-white/5 border border-white/10 px-3 py-1 rounded-full group-hover:bg-white/10 transition-colors whitespace-nowrap shrink-0">
-                              {review.platform}
-                            </span>
-                          )}
+                          <p className="text-slate-300 text-sm leading-relaxed line-clamp-[7]">
+                            {review.text}
+                          </p>
                         </div>
-                        <p className="text-slate-300 text-sm leading-relaxed">
-                          {review.text}
-                        </p>
                       </div>
-                    </div>
-                  )})}
+                    )
+                  })}
                 </div>
               ))}
             </div>
@@ -176,7 +177,7 @@ export const TestimonialsClient = ({ heading, subheading, reviews, videos }: Tes
                 {videos.map(video => (
                   <div key={video.id} className="bg-[#12182b] border border-white/[0.04] rounded-2xl p-4 flex flex-col hover:bg-[#1a2238] transition-colors">
                     <div className="mb-4 px-2 pt-2">
-                      <h3 className="text-white font-semibold text-base mb-0.5">{video.name}</h3>
+                      <h3 className="text-balance text-white font-semibold text-base mb-0.5">{video.name}</h3>
                       <span className="text-slate-400 text-xs">{video.app}</span>
                     </div>
                     <div className="w-full aspect-[9/16] rounded-xl overflow-hidden bg-black/20">
@@ -189,12 +190,12 @@ export const TestimonialsClient = ({ heading, subheading, reviews, videos }: Tes
                           title={`Testimonial by ${video.name}`}
                         />
                       ) : (
-                        <div 
+                        <div
                           className="relative w-full h-full cursor-pointer group"
                           onClick={() => setPlayingVideoId(video.id)}
                         >
-                          <img 
-                            src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`} 
+                          <img
+                            src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`}
                             alt={video.name}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           />
@@ -228,13 +229,13 @@ export const TestimonialsClient = ({ heading, subheading, reviews, videos }: Tes
                 >
                   <ArrowLeft className="w-4 h-4" />
                 </button>
-                
+
                 <div className="flex gap-2">
                   {reviewChunks.map((_, idx) => (
                     <button
                       key={idx}
                       onClick={() => scrollToChunk(idx)}
-                      className="w-10 h-10 flex items-center justify-center group"
+                      className="w-6 h-6 flex items-center justify-center group"
                       aria-label={`Go to slide ${idx + 1}`}
                     >
                       <div className={`h-1.5 rounded-full transition-all duration-300 ${activeChunk === idx ? 'bg-primary w-6' : 'bg-white/20 w-1.5 group-hover:bg-white/40'}`} />
