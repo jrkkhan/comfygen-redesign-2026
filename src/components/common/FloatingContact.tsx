@@ -14,7 +14,7 @@ export const FloatingContact = () => {
         href="https://t.me/COMFYGENTECH"
         target="_blank"
         rel="noopener noreferrer"
-        className={`flex items-center gap-3 bg-[#006294] text-white p-3.5 rounded-full shadow-lg hover:bg-[#004d73] hover:scale-105 hover:-translate-y-1 transition-all duration-300 ${isOpen ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-50 pointer-events-none'}`}
+        className={`flex items-center gap-3 bg-[#24A1DE] text-white p-3.5 rounded-full shadow-lg hover:bg-[#1f8cbf] hover:scale-105 hover:-translate-y-1 transition-all duration-300 ${isOpen ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-50 pointer-events-none'}`}
         aria-label="Contact on Telegram"
       >
         <span className="text-sm font-medium pr-1 pl-2 hidden sm:block whitespace-nowrap">Telegram</span>
@@ -28,7 +28,7 @@ export const FloatingContact = () => {
         href="https://wa.me/919587867258"
         target="_blank"
         rel="noopener noreferrer"
-        className={`flex items-center gap-3 bg-[#117C3D] text-white p-3.5 rounded-full shadow-lg hover:bg-[#0c592a] hover:scale-105 hover:-translate-y-1 transition-all duration-300 delay-75 ${isOpen ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-50 pointer-events-none'}`}
+        className={`flex items-center gap-3 bg-[#00A300] text-white p-3.5 rounded-full shadow-lg hover:bg-[#008a00] hover:scale-105 hover:-translate-y-1 transition-all duration-300 delay-75 ${isOpen ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-50 pointer-events-none'}`}
         aria-label="Contact on WhatsApp"
       >
         <span className="text-sm font-medium pr-1 pl-2 hidden sm:block whitespace-nowrap">WhatsApp</span>

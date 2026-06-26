@@ -51,7 +51,11 @@ export const AboutInfo = ({
             </p>
           ))}
           
-          <Link href={buttonLink} className="bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3.5 rounded-full transition-colors shadow-lg shadow-primary/20 w-fit">
+          <Link 
+            href={buttonLink} 
+            aria-label={buttonText === "Learn More" ? "Learn more about Comfygen" : undefined}
+            className="bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3.5 rounded-full transition-colors shadow-lg shadow-primary/20 w-fit"
+          >
             {buttonText}
           </Link>
         </div>
