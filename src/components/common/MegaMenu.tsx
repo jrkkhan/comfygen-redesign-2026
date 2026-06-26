@@ -206,7 +206,8 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
             {searchResults.length > 0 ? (
               <div className="w-full flex flex-col">
                 {searchResults.map((result, idx) => (
-                  <a
+                  <Link
+onClick={handleClose}
                     key={idx}
                     href={result.href}
                     className="group flex items-center justify-between py-4 border-b border-slate-200 hover:border-primary transition-colors"
@@ -215,7 +216,7 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                       {result.label}
                     </span>
                     <ArrowRight className="w-5 h-5 text-primary opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                  </a>
+                  </Link>
                 ))}
               </div>
             ) : (
@@ -309,10 +310,10 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                           {isActive && (
                             <div className="lg:hidden grid grid-cols-1 gap-3 pt-2 pb-4 pl-[3.75rem] pr-4">
                               {category.links.map((link, lIdx) => (
-                                <a key={lIdx} href={link.href} className="text-[14px] text-slate-600 hover:text-primary flex items-start">
+                                <Link onClick={handleClose} key={lIdx} href={link.href} className="text-[14px] text-slate-600 hover:text-primary flex items-start">
                                   <ArrowRight className="w-3.5 h-3.5 mt-0.5 mr-2 text-primary opacity-70 shrink-0" />
                                   <span className="line-clamp-2">{link.label}</span>
-                                </a>
+                                </Link>
                               ))}
                             </div>
                           )}
@@ -327,7 +328,8 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                       {megaMenuData.service[activeServiceCategory]?.links.map((link, idx) => {
                         const isLinkActive = pathname === link.href;
                         return (
-                        <a
+                        <Link
+onClick={handleClose}
                           key={idx}
                           href={link.href}
                           className={`group flex items-center text-[14px] transition-colors font-sans ${isLinkActive ? 'text-primary font-bold' : 'text-slate-600 hover:text-primary'}`}
@@ -344,7 +346,7 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                               New
                             </span>
                           )}
-                        </a>
+                        </Link>
                       )})}
                     </div>
                   </div>
@@ -359,12 +361,13 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                       unoptimized
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                    <a
+                    <Link
+onClick={handleClose}
                       href={megaMenuData.serviceFeature.href}
                       className="absolute bottom-0 right-0 bg-primary hover:bg-primary/90 text-white font-medium px-8 py-4 rounded-tl-3xl transition-colors shadow-lg z-10"
                     >
                       {megaMenuData.serviceFeature.buttonText}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               )}
@@ -401,10 +404,10 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                           {isActive && (
                             <div className="lg:hidden grid grid-cols-1 gap-3 pt-2 pb-4 pl-[3.75rem] pr-4">
                               {category.links.map((link, lIdx) => (
-                                <a key={lIdx} href={link.href} className="text-[14px] text-slate-600 hover:text-primary flex items-start">
+                                <Link onClick={handleClose} key={lIdx} href={link.href} className="text-[14px] text-slate-600 hover:text-primary flex items-start">
                                   <ArrowRight className="w-3.5 h-3.5 mt-0.5 mr-2 text-primary opacity-70 shrink-0" />
                                   <span className="line-clamp-2">{link.label}</span>
-                                </a>
+                                </Link>
                               ))}
                             </div>
                           )}
@@ -419,7 +422,8 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                       {megaMenuData.solutions[activeSolutionCategory]?.links.map((link, idx) => {
                         const isLinkActive = pathname === link.href;
                         return (
-                        <a
+                        <Link
+onClick={handleClose}
                           key={idx}
                           href={link.href}
                           className={`group flex items-center text-[14px] transition-colors font-sans ${isLinkActive ? 'text-primary font-bold' : 'text-slate-600 hover:text-primary'}`}
@@ -429,7 +433,7 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                           </span>
                           {/* Hover Arrow */}
                           <ArrowRight className={`w-3.5 h-3.5 ml-2 transition-all shrink-0 text-primary ${isLinkActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'}`} />
-                        </a>
+                        </Link>
                       )})}
                     </div>
                   </div>
@@ -447,12 +451,13 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
 
                     {/* Connect to Expert Button */}
-                    <a
+                    <Link
+onClick={handleClose}
                       href={megaMenuData.solutionsFeature.href}
                       className="absolute bottom-0 right-0 bg-primary hover:bg-primary/90 text-white font-medium px-8 py-4 rounded-tl-3xl transition-colors shadow-lg z-10"
                     >
                       {megaMenuData.solutionsFeature.buttonText}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               )}
@@ -489,10 +494,10 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                           {isActive && (
                             <div className="lg:hidden grid grid-cols-1 gap-3 pt-2 pb-4 pl-[3.75rem] pr-4">
                               {category.links.map((link, lIdx) => (
-                                <a key={lIdx} href={link.href} className="text-[14px] text-slate-600 hover:text-primary flex items-start">
+                                <Link onClick={handleClose} key={lIdx} href={link.href} className="text-[14px] text-slate-600 hover:text-primary flex items-start">
                                   <ArrowRight className="w-3.5 h-3.5 mt-0.5 mr-2 text-primary opacity-70 shrink-0" />
                                   <span className="line-clamp-2">{link.label}</span>
-                                </a>
+                                </Link>
                               ))}
                             </div>
                           )}
@@ -507,7 +512,8 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                       {megaMenuData.industries[activeIndustryCategory]?.links.map((link, idx) => {
                         const isLinkActive = pathname === link.href;
                         return (
-                        <a
+                        <Link
+onClick={handleClose}
                           key={idx}
                           href={link.href}
                           className={`group flex items-center text-[14px] transition-colors font-sans ${isLinkActive ? 'text-primary font-bold' : 'text-slate-600 hover:text-primary'}`}
@@ -517,7 +523,7 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                           </span>
                           {/* Hover Arrow */}
                           <ArrowRight className={`w-3.5 h-3.5 ml-2 transition-all shrink-0 text-primary ${isLinkActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0'}`} />
-                        </a>
+                        </Link>
                       )})}
                     </div>
                   </div>
@@ -535,12 +541,13 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
 
                     {/* Connect to Expert Button */}
-                    <a
+                    <Link
+onClick={handleClose}
                       href={megaMenuData.industriesFeature.href}
                       className="absolute bottom-0 right-0 bg-primary hover:bg-primary/90 text-white font-medium px-8 py-4 rounded-tl-3xl transition-colors shadow-lg z-10"
                     >
                       {megaMenuData.industriesFeature.buttonText}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               )}
@@ -551,7 +558,8 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                     {megaMenuData.company.map((item, idx) => {
                       const isActive = pathname === item.href;
                       return (
-                      <a
+                      <Link
+onClick={handleClose}
                         key={idx}
                         href={item.href}
                         className={`group flex flex-col p-4 2xl:p-6 rounded-xl border transition-all ${isActive
@@ -566,7 +574,7 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                           <ArrowRight className={`w-4 h-4 transition-colors ${isActive ? 'text-primary' : 'text-slate-400 group-hover:text-primary'}`} />
                         </div>
                         <p className="text-slate-500 text-[13px]">{item.desc}</p>
-                      </a>
+                      </Link>
                     )})}
                   </div>
 
@@ -580,12 +588,13 @@ export const MegaMenu = ({ isOpen, onClose }: MegaMenuProps) => {
                       unoptimized
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                    <a
+                    <Link
+onClick={handleClose}
                       href={megaMenuData.companyFeature.href}
                       className="absolute bottom-0 right-0 bg-primary hover:bg-primary/90 text-white font-medium px-8 py-4 rounded-tl-3xl transition-colors shadow-lg z-10"
                     >
                       {megaMenuData.companyFeature.buttonText}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               )}
