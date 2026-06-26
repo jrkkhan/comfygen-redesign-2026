@@ -15,14 +15,16 @@ export const Header = ({ theme = 'dark' }: { theme?: 'light' | 'dark' }) => {
         <div className="max-w-[1400px] mx-auto flex items-center justify-between pb-8 relative">
           {/* Logo Section */}
           <Link href="/" aria-label="Home" className="flex flex-col cursor-pointer">
-            <Image
-              src={theme === 'light' ? "/logos/comfygen-logo-colorfull.svg" : "/logos/comfygen-logo.svg"}
-              alt="Comfygen Logo"
-              width={240}
-              height={60}
-              className="w-[180px] sm:w-[240px] lg:w-[200px] xl:w-[200px] 2xl:w-[240px]   h-auto"
-              priority
-            />
+            <div className="w-[180px] sm:w-[240px] lg:w-[200px] xl:w-[200px] 2xl:w-[240px]">
+              <Image
+                src={theme === 'light' ? "/logos/comfygen-logo-colorfull.svg" : "/logos/comfygen-logo.svg"}
+                alt="Comfygen Logo"
+                width={240}
+                height={60}
+                className="w-full h-auto"
+                priority
+              />
+            </div>
           </Link>
 
           {/* Center Contact Info (Pill) */}

@@ -8,17 +8,13 @@
     "start": "next start",
     "lint": "eslint"
   },
-  "browserslist": {
-    "production": [
-      "last 2 Chrome versions",
-      "last 2 Firefox versions",
-      "last 2 Edge versions",
-      "last 2 Safari versions"
-    ],
-    "development": [
-      "last 1 Chrome version"
-    ]
-  },
+  "browserslist": [
+    ">0.3%",
+    "not dead",
+    "not op_mini all",
+    "last 2 versions",
+    "not ie <= 11"
+  ],
   "dependencies": {
     "@fontsource/nata-sans": "^5.2.2",
     "@google/genai": "^2.9.0",

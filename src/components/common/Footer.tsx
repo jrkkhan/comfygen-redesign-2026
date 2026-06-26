@@ -127,14 +127,16 @@ export const Footer = () => {
           {/* Company Details */}
           <div className="lg:col-span-1 pr-4">
             <div className="flex flex-col cursor-pointer mb-6">
-              <Image
-                src="/logos/comfygen-logo.svg"
-                alt="Comfygen Logo"
-                width={200}
-                height={50}
-                className="w-[150px] sm:w-[180px] h-auto"
-                priority
-              />
+              <div className="w-[150px] sm:w-[180px]">
+                <Image
+                  src="/logos/comfygen-logo.svg"
+                  alt="Comfygen Logo"
+                  width={200}
+                  height={50}
+                  className="w-full h-auto"
+                  priority
+                />
+              </div>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-8">
               Comfygen Technologies founded in 2019 with a vision to deliver reliable and scalable digital solutions, Comfygen Technologies provides comprehensive IT consulting, software development, Application Development and digital transformation services.
