@@ -61,6 +61,7 @@ export const ProcessSteps = ({ title, subtitle, steps }: ProcessStepsProps) => {
               alt="Team discussing project requirements on screen"
               width={1024}
               height={683}
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="w-full h-full object-cover"
             />
           </div>

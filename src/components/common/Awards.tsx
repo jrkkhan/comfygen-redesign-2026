@@ -18,6 +18,7 @@ const AwardCard = ({ title, imageSrc, href, className = "" }: AwardCardProps) =>
           alt={title} 
           fill 
           sizes="(max-width: 768px) 50vw, 25vw"
+          quality={60}
           className="object-contain drop-shadow-md" 
         />
       </div>
