@@ -16,11 +16,6 @@
     "not ie <= 11"
   ],
   "dependencies": {
-    "@fontsource/nata-sans": "^5.2.2",
-    "@google/genai": "^2.9.0",
-    "cheerio": "^1.2.0",
-    "dotenv": "^17.4.2",
-    "jsdom": "^29.1.1",
     "lucide-react": "^1.18.0",
     "next": "16.2.9",
     "qs": "^6.15.2",
@@ -30,13 +25,17 @@
     "sharp": "^0.35.1"
   },
   "devDependencies": {
+    "@google/genai": "^2.10.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/qs": "^6.15.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cheerio": "^1.2.0",
+    "dotenv": "^17.4.2",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
+    "jsdom": "^29.1.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
