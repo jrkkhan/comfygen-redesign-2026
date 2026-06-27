@@ -2,19 +2,19 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { Header } from "@/components/common/Header";
 import { Hero } from "@/components/common/Hero";
-import { Services } from "@/components/common/Services";
-import { AboutInfo } from "@/components/common/AboutInfo";
-import { Awards } from "@/components/common/Awards";
+const Services = dynamic(() => import("@/components/common/Services").then(mod => mod.Services));
+const AboutInfo = dynamic(() => import("@/components/common/AboutInfo").then(mod => mod.AboutInfo));
+const Awards = dynamic(() => import("@/components/common/Awards").then(mod => mod.Awards));
 const ProcessSteps = dynamic(() => import("@/components/common/ProcessSteps").then(mod => mod.ProcessSteps));
 const WhyChooseUs = dynamic(() => import("@/components/common/WhyChooseUs").then(mod => mod.WhyChooseUs));
-import { Portfolio } from "@/components/common/Portfolio";
+const Portfolio = dynamic(() => import("@/components/common/Portfolio").then(mod => mod.Portfolio));
 const Testimonials = dynamic(() => import("@/components/common/Testimonials").then(mod => mod.Testimonials));
-import { Industries } from "@/components/common/Industries";
-import { TechStack } from "@/components/common/TechStack";
-import { Team } from "@/components/common/Team";
-import { FAQ } from "@/components/common/FAQ";
-import { Blog } from "@/components/common/Blog";
-import { Footer } from "@/components/common/Footer";
+const Industries = dynamic(() => import("@/components/common/Industries").then(mod => mod.Industries));
+const TechStack = dynamic(() => import("@/components/common/TechStack").then(mod => mod.TechStack));
+const Team = dynamic(() => import("@/components/common/Team").then(mod => mod.Team));
+const FAQ = dynamic(() => import("@/components/common/FAQ").then(mod => mod.FAQ));
+const Blog = dynamic(() => import("@/components/common/Blog").then(mod => mod.Blog));
+const Footer = dynamic(() => import("@/components/common/Footer").then(mod => mod.Footer));
 
 export default function Home() {
   return (

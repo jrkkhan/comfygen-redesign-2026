@@ -20,7 +20,6 @@ export const BentoGrid = () => {
         {/* Box 2: Wide Image (Top Middle) */}
         <div className="md:col-span-2 row-span-1 rounded-2xl overflow-hidden relative group min-h-[180px] md:min-h-0">
           <Image
-            priority
             src="/images/hero/team-collaborating.webp"
             alt="Team collaborating"
             width={348}
