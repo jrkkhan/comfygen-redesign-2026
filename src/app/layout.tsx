@@ -17,8 +17,8 @@ const nataSans = localFont({
 });
 
 
-import { FloatingContact } from "@/components/common/FloatingContact";
-
+import dynamic from 'next/dynamic';
+const FloatingContact = dynamic(() => import("@/components/common/FloatingContact").then(mod => mod.FloatingContact));
 import type { Viewport } from "next";
 
 export const viewport: Viewport = {

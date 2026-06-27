@@ -4,7 +4,9 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Mail, Phone, Headphones, Menu } from 'lucide-react';
-import { MegaMenu } from './MegaMenu';
+import dynamic from 'next/dynamic';
+
+const MegaMenu = dynamic(() => import('./MegaMenu').then(mod => mod.MegaMenu), { ssr: false });
 
 export const Header = ({ theme = 'dark' }: { theme?: 'light' | 'dark' }) => {
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
