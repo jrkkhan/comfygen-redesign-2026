@@ -3,25 +3,25 @@
 import React from 'react';
 import Link from 'next/link';
 import {
-  FaHeartPulse, FaBuildingColumns, FaShieldHalved, FaSackDollar, FaBagShopping,
-  FaBox, FaGraduationCap, FaGamepad, FaHandHoldingHeart, FaClapperboard,
-  FaUtensils, FaMugHot, FaPlane, FaWandMagicSparkles, FaPaperPlane, FaPhone
-} from 'react-icons/fa6';
+  HeartPulse, Landmark, Shield, CircleDollarSign, ShoppingBag,
+  Package, GraduationCap, Gamepad2, HeartHandshake, Clapperboard,
+  Utensils, Coffee, Plane, Wand2, Send, Phone
+} from 'lucide-react';
 
 const industries = [
-  { name: 'Healthcare', desc: 'Secure Mobile And Web Apps To Enhance Patient Care And Efficiency.', icon: FaHeartPulse, isActive: true },
-  { name: 'Finance', desc: 'Robust Software For Banking, Fintech, And Blockchain Solutions.', icon: FaBuildingColumns },
-  { name: 'Insurance', desc: 'Streamlined Platforms For Policy Management And Claims Processing.', icon: FaShieldHalved },
-  { name: 'FinTech', desc: 'Innovative Financial Technology Apps For A Seamless User Experience.', icon: FaSackDollar },
-  { name: 'E-commerce', desc: 'Scalable Online Stores And Apps For Retail Operations.', icon: FaBagShopping },
-  { name: 'FMCG', desc: 'Supply Chain And Inventory Software For Consumer Goods.', icon: FaBox },
-  { name: 'Education', desc: 'E-Learning Platforms And Edtech Solutions For Global Audiences.', icon: FaGraduationCap },
-  { name: 'Gaming', desc: 'Immersive Gaming Applications For Various Platforms.', icon: FaGamepad },
-  { name: 'Dating', desc: 'User-Focused Platforms With Smart Matchmaking Algorithms.', icon: FaHandHoldingHeart },
-  { name: 'Media', desc: 'Quality Streaming Ensures Seamless Content Management.', icon: FaClapperboard },
-  { name: 'Food', desc: 'Innovative Tech For Delivery And Restaurant Management.', icon: FaUtensils },
-  { name: 'Lifestyle', desc: 'Personalized Digital Platforms For Enhanced Daily Living.', icon: FaMugHot },
-  { name: 'Travel & Hospitality', desc: 'Smart Booking Platforms And Management Tools For Seamless Travel Experiences.', icon: FaPlane, isNew: true },
+  { name: 'Healthcare', desc: 'Secure Mobile And Web Apps To Enhance Patient Care And Efficiency.', icon: HeartPulse, isActive: true },
+  { name: 'Finance', desc: 'Robust Software For Banking, Fintech, And Blockchain Solutions.', icon: Landmark },
+  { name: 'Insurance', desc: 'Streamlined Platforms For Policy Management And Claims Processing.', icon: Shield },
+  { name: 'FinTech', desc: 'Innovative Financial Technology Apps For A Seamless User Experience.', icon: CircleDollarSign },
+  { name: 'E-commerce', desc: 'Scalable Online Stores And Apps For Retail Operations.', icon: ShoppingBag },
+  { name: 'FMCG', desc: 'Supply Chain And Inventory Software For Consumer Goods.', icon: Package },
+  { name: 'Education', desc: 'E-Learning Platforms And Edtech Solutions For Global Audiences.', icon: GraduationCap },
+  { name: 'Gaming', desc: 'Immersive Gaming Applications For Various Platforms.', icon: Gamepad2 },
+  { name: 'Dating', desc: 'User-Focused Platforms With Smart Matchmaking Algorithms.', icon: HeartHandshake },
+  { name: 'Media', desc: 'Quality Streaming Ensures Seamless Content Management.', icon: Clapperboard },
+  { name: 'Food', desc: 'Innovative Tech For Delivery And Restaurant Management.', icon: Utensils },
+  { name: 'Lifestyle', desc: 'Personalized Digital Platforms For Enhanced Daily Living.', icon: Coffee },
+  { name: 'Travel & Hospitality', desc: 'Smart Booking Platforms And Management Tools For Seamless Travel Experiences.', icon: Plane, isNew: true },
 ];
 
 export interface IndustriesProps {
@@ -44,7 +44,7 @@ export const Industries = ({
             <span className="text-slate-800 !font-heading">– Comfygen Technologies</span>
           </h2>
           <Link href={buttonLink} className="bg-primary hover:bg-primary/90 text-white font-medium px-6 py-3.5 rounded-full transition-colors shadow-[0_0_20px_rgba(1,88,230,0.3)] shrink-0 flex items-center gap-2">
-            <FaPhone className="w-4 h-4" /> {buttonText}
+            <Phone className="w-4 h-4" /> {buttonText}
           </Link>
         </div>
 
@@ -89,7 +89,7 @@ export const Industries = ({
               {/* Left AI Text Content */}
               <div className="flex flex-col flex-1 w-full">
                 <div className="w-8 h-8 rounded-lg flex items-center justify-start text-white mb-2 2xl:mb-3">
-                  <FaWandMagicSparkles className="w-5 h-5" fill="currentColor" />
+                  <Wand2 className="w-5 h-5" />
                 </div>
                 <h3 className="text-balance text-lg md:text-xl 2xl:text-2xl font-bold text-white mb-1 2xl:mb-2">
                   Artificial Intelligence
@@ -101,10 +101,10 @@ export const Industries = ({
 
               {/* Mock Input Bar (Right Aligned on Desktop) */}
               <div className="bg-white rounded-full p-1.5 flex items-center gap-2 2xl:gap-3 w-full md:w-auto md:min-w-[200px] 2xl:min-w-[220px] shadow-2xl">
-                <FaWandMagicSparkles className="w-4 h-4 text-slate-400 ml-3 shrink-0" />
+                <Wand2 className="w-4 h-4 text-slate-400 ml-3 shrink-0" />
                 <span className="text-slate-600 text-xs sm:text-sm font-medium flex-1 whitespace-nowrap">Generate Image</span>
                 <button aria-label="Generate Image" className="w-7 h-7 2xl:w-8 2xl:h-8 rounded-full bg-primary flex items-center justify-center text-white shadow-md hover:bg-primary/90 transition-colors shrink-0">
-                  <FaPaperPlane className="w-3 h-3 2xl:w-3.5 2xl:h-3.5 mr-0.5 mt-0.5" />
+                  <Send className="w-3 h-3 2xl:w-3.5 2xl:h-3.5 mr-0.5 mt-0.5" />
                 </button>
               </div>
 
