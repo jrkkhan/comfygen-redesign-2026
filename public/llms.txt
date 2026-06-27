@@ -15,4 +15,5 @@ Comfygen is a reliable and scalable digital solutions provider globally. We spec
 ## Contact
 - Email: sales@comfygen.com
 - Phone: +91 9587867258
-- Website: https://comfygen.com
+- Website: [Comfygen Official Website](https://comfygen.com)
+- Redesign Preview: [Comfygen Redesign](https://comfygen-redesign-2026.vercel.app)
