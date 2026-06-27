@@ -1,4 +1,5 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import { Header } from "@/components/common/Header";
 import { Footer } from "@/components/common/Footer";
 import { HeroSectionThree } from "@/components/common/solution/HeroSectionThree";
@@ -8,11 +9,11 @@ import { SolutionAboutInfo } from "@/components/common/solution/SolutionAboutInf
 import { AppModulesTab } from "@/components/common/solution/AppModulesTab";
 import { AdvancedTechFeatures } from "@/components/common/solution/AdvancedTechFeatures";
 import { SolutionOfferings } from "@/components/common/solution/SolutionOfferings";
-import { ProcessSteps } from "@/components/common/ProcessSteps";
+const ProcessSteps = dynamic(() => import("@/components/common/ProcessSteps").then(mod => mod.ProcessSteps));
 import { FAQ } from "@/components/common/FAQ";
 import { PricingTable } from "@/components/common/solution/PricingTable";
 import { TechStack } from "@/components/common/TechStack";
-import { WhyChooseUs } from "@/components/common/WhyChooseUs";
+const WhyChooseUs = dynamic(() => import("@/components/common/WhyChooseUs").then(mod => mod.WhyChooseUs));
 import { CloneSolutions } from "@/components/common/solution/CloneSolutions";
 import { Portfolio } from "@/components/common/Portfolio";
 import { Services } from "@/components/common/Services";

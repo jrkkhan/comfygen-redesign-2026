@@ -1,13 +1,14 @@
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { Header } from "@/components/common/Header";
 import { Hero } from "@/components/common/Hero";
 import { Services } from "@/components/common/Services";
 import { AboutInfo } from "@/components/common/AboutInfo";
 import { Awards } from "@/components/common/Awards";
-import { ProcessSteps } from "@/components/common/ProcessSteps";
-import { WhyChooseUs } from "@/components/common/WhyChooseUs";
+const ProcessSteps = dynamic(() => import("@/components/common/ProcessSteps").then(mod => mod.ProcessSteps));
+const WhyChooseUs = dynamic(() => import("@/components/common/WhyChooseUs").then(mod => mod.WhyChooseUs));
 import { Portfolio } from "@/components/common/Portfolio";
-import { Testimonials } from "@/components/common/Testimonials";
+const Testimonials = dynamic(() => import("@/components/common/Testimonials").then(mod => mod.Testimonials));
 import { Industries } from "@/components/common/Industries";
 import { TechStack } from "@/components/common/TechStack";
 import { Team } from "@/components/common/Team";
