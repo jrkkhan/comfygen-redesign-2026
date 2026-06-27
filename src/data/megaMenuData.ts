@@ -201,10 +201,10 @@ export const megaMenuData = {
       subtitle: "Transforming Healthcare with Smart Apps",
       icon: "HeartPulse",
       links: [
-        { label: "Healthcare App Development", href: "/healthcare-app-development" }, { label: "Doctor Appointment App Development", href: "/doctor-appointment-app-development" },
-        { label: "Medicine Delivery App Development", href: "/medicine-delivery-app-development" }, { label: "Clinical App Development", href: "/clinical-app-development" },
-        { label: "Pharmacy App Development", href: "/pharmacy-app-development" }, { label: "Telemedicine App Development", href: "/telemedicine-app-development" },
-        { label: "Laboratory App Development", href: "/laboratory-app-development" }, { label: "Health Tracking App Development", href: "/health-tracking-app-development" }
+        { label: "Healthcare App Development", href: "/industry/healthcare-app-development" }, { label: "Doctor Appointment App Development", href: "/industry/doctor-appointment-app-development" },
+        { label: "Medicine Delivery App Development", href: "/industry/medicine-delivery-app-development" }, { label: "Clinical App Development", href: "/industry/clinical-app-development" },
+        { label: "Pharmacy App Development", href: "/industry/pharmacy-app-development" }, { label: "Telemedicine App Development", href: "/industry/telemedicine-app-development" },
+        { label: "Laboratory App Development", href: "/industry/laboratory-app-development" }, { label: "Health Tracking App Development", href: "/industry/health-tracking-app-development" }
       ]
     },
     {
@@ -213,13 +213,13 @@ export const megaMenuData = {
       subtitle: "Transforming Financial Ideas into Apps",
       icon: "Wallet",
       links: [
-        { label: "Finance App Development", href: "/finance-app-development" }, { label: "Credit Scoring App Development", href: "/credit-scoring-app-development" },
-        { label: "Personal Finance App Development", href: "/personal-finance-app-development" }, { label: "P2P Payment App Development", href: "/p2p-payment-app-development" },
-        { label: "Mobile Banking App Development", href: "/mobile-banking-app-development" }, { label: "Car Finance App Development", href: "/car-finance-app-development" },
-        { label: "UPI Payment App Development", href: "/upi-payment-app-development" }, { label: "Truck Finance App Development", href: "/truck-finance-app-development" },
-        { label: "NeoBank App Development", href: "/neobank-app-development" }, { label: "eWallet App Development", href: "/ewallet-app-development" },
-        { label: "Banking Software Development", href: "/banking-software-development" }, { label: "Insurance App Development", href: "/insurance-app-development" },
-        { label: "Islamic Banking App Development", href: "/islamic-banking-app-development" }
+        { label: "Finance App Development", href: "/industry/finance-app-development" }, { label: "Credit Scoring App Development", href: "/industry/credit-scoring-app-development" },
+        { label: "Personal Finance App Development", href: "/industry/personal-finance-app-development" }, { label: "P2P Payment App Development", href: "/industry/p2p-payment-app-development" },
+        { label: "Mobile Banking App Development", href: "/industry/mobile-banking-app-development" }, { label: "Car Finance App Development", href: "/industry/car-finance-app-development" },
+        { label: "UPI Payment App Development", href: "/industry/upi-payment-app-development" }, { label: "Truck Finance App Development", href: "/industry/truck-finance-app-development" },
+        { label: "NeoBank App Development", href: "/industry/neobank-app-development" }, { label: "eWallet App Development", href: "/industry/ewallet-app-development" },
+        { label: "Banking Software Development", href: "/industry/banking-software-development" }, { label: "Insurance App Development", href: "/industry/insurance-app-development" },
+        { label: "Islamic Banking App Development", href: "/industry/islamic-banking-app-development" }
       ]
     },
     {
@@ -228,9 +228,9 @@ export const megaMenuData = {
       subtitle: "Customized Applications for Every Industry",
       icon: "GraduationCap",
       links: [
-        { label: "Education App Development", href: "/education-app-development" }, { label: "E-Learning App Development", href: "/e-learning-app-development" },
-        { label: "Tutor App Development", href: "/tutor-app-development" }, { label: "Language learning App Development", href: "/language-learning-app-development" },
-        { label: "Exam Preparation App Development", href: "/exam-preparation-app-development" }
+        { label: "Education App Development", href: "/industry/education-app-development" }, { label: "E-Learning App Development", href: "/industry/e-learning-app-development" },
+        { label: "Tutor App Development", href: "/industry/tutor-app-development" }, { label: "Language learning App Development", href: "/industry/language-learning-app-development" },
+        { label: "Exam Preparation App Development", href: "/industry/exam-preparation-app-development" }
       ]
     },
     {
@@ -239,9 +239,9 @@ export const megaMenuData = {
       subtitle: "Empowering Seamless Online Shopping",
       icon: "ShoppingCart",
       links: [
-        { label: "Ecommerce App Development", href: "/ecommerce-app-development" }, { label: "Fashion App Development", href: "/fashion-app-development" },
-        { label: "Grocery App Development", href: "/grocery-app-development" }, { label: "FMCG App Development", href: "/fmcg-app-development" },
-        { label: "Fashion App Development", href: "/fashion-app-development" }, { label: "Quick Ecommerce Development", href: "/quick-ecommerce-development" }
+        { label: "Ecommerce App Development", href: "/industry/ecommerce-app-development" }, { label: "Fashion App Development", href: "/industry/fashion-app-development" },
+        { label: "Grocery App Development", href: "/industry/grocery-app-development" }, { label: "FMCG App Development", href: "/industry/fmcg-app-development" },
+        { label: "Quick Ecommerce Development", href: "/industry/quick-ecommerce-development" }
       ]
     },
     {
@@ -250,8 +250,8 @@ export const megaMenuData = {
       subtitle: "Smart Solutions for Digital Romance",
       icon: "Heart",
       links: [
-        { label: "Dating App Development", href: "/dating-app-development" }, { label: "Social Dating App Development", href: "/social-dating-app-development" },
-        { label: "Matchmaking App Development", href: "/matchmaking-app-development" }, { label: "Video Dating App Development", href: "/video-dating-app-development" }
+        { label: "Dating App Development", href: "/industry/dating-app-development" }, { label: "Social Dating App Development", href: "/industry/social-dating-app-development" },
+        { label: "Matchmaking App Development", href: "/industry/matchmaking-app-development" }, { label: "Video Dating App Development", href: "/industry/video-dating-app-development" }
       ]
     }
   ],
