@@ -1,9 +1,14 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
+import { notFound } from 'next/navigation';
 import { Header } from '@/components/common/Header';
 import { HeroSectionThree } from '@/components/common/solution/HeroSectionThree';
+import { HeroBentoGrid } from '@/components/common/solution/HeroBentoGrid';
 import { megaMenuData } from '@/data/megaMenuData';
+import { fetchAPI } from '@/lib/api';
+import type { Metadata, ResolvingMetadata } from 'next';
 
+// Generic Common Components
 const Services = dynamic(() => import('@/components/common/Services').then(mod => mod.Services));
 const AboutInfo = dynamic(() => import('@/components/common/AboutInfo').then(mod => mod.AboutInfo));
 const WhyChooseUs = dynamic(() => import('@/components/common/WhyChooseUs').then(mod => mod.WhyChooseUs));
@@ -11,8 +16,17 @@ const ProcessSteps = dynamic(() => import('@/components/common/ProcessSteps').th
 const Portfolio = dynamic(() => import('@/components/common/Portfolio').then(mod => mod.Portfolio));
 const Testimonials = dynamic(() => import('@/components/common/Testimonials').then(mod => mod.Testimonials));
 const FAQ = dynamic(() => import('@/components/common/FAQ').then(mod => mod.FAQ));
-const CallToAction = dynamic(() => import('@/components/common/CallToAction').then(mod => mod.CallToAction));
 const Footer = dynamic(() => import('@/components/common/Footer').then(mod => mod.Footer));
+
+// Advanced/Solution Specific Components
+const SolutionAboutInfo = dynamic(() => import('@/components/common/solution/SolutionAboutInfo').then(mod => mod.SolutionAboutInfo));
+const SolutionOfferings = dynamic(() => import('@/components/common/solution/SolutionOfferings').then(mod => mod.SolutionOfferings));
+const ProblemStatement = dynamic(() => import('@/components/common/solution/ProblemStatement').then(mod => mod.ProblemStatement));
+const IndustryModulesTab = dynamic(() => import('@/components/common/industry/IndustryModulesTab').then(mod => mod.IndustryModulesTab));
+const AdvancedTechFeatures = dynamic(() => import('@/components/common/solution/AdvancedTechFeatures').then(mod => mod.AdvancedTechFeatures));
+const Awards = dynamic(() => import('@/components/common/Awards').then(mod => mod.Awards));
+const TechStack = dynamic(() => import('@/components/common/TechStack').then(mod => mod.TechStack));
+
 
 export async function generateStaticParams() {
   const allIndustryLinks = megaMenuData.industries.flatMap(cat => cat.links);
@@ -22,62 +36,149 @@ export async function generateStaticParams() {
   });
 }
 
-function getIndustryData(slug: string) {
-  const allIndustryLinks = megaMenuData.industries.flatMap(cat => cat.links);
-  const matchedLink = allIndustryLinks.find(link => link.href.endsWith(slug));
-  
-  if (matchedLink) {
-    return { title: matchedLink.label };
+// Fetch industry data from Strapi API
+async function getIndustryDataFromAPI(slug: string) {
+  const response = await fetchAPI('/industries', {
+    filters: { slug: { $eq: slug } },
+    populate: {
+      IndustryHeroSection: { populate: '*' },
+      IndustryServiceSection: { populate: '*' },
+      IndustryAboutSection: { populate: '*' },
+      IndustryModulesSection: { populate: '*' },
+      IndustryOfferingsSection: { populate: '*' },
+      IndustryProblemsSection: { populate: '*' },
+      IndustryTechFeaturesSection: { populate: '*' },
+      faqSection: { populate: '*' },
+      Seo: { populate: '*' }
+    }
+  });
+
+  if (response?.data && response.data.length > 0) {
+    return response.data[0];
   }
-  
-  const fallbackTitle = slug
-    .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
-    
-  return { title: fallbackTitle };
+  return null;
+}
+
+// Dynamically generate metadata for SEO
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }, parent: ResolvingMetadata): Promise<Metadata> {
+  const { slug } = await params;
+  const industryData = await getIndustryDataFromAPI(slug);
+
+  if (industryData?.Seo?.[0]) {
+    const seo = industryData.Seo[0];
+    return {
+      title: seo.metaTitle || industryData.title,
+      description: seo.metaDescription,
+      keywords: seo.keywords,
+      alternates: seo.canonicalURL ? { canonical: seo.canonicalURL } : undefined,
+      robots: seo.metaRobots,
+    };
+  }
+
+  return {
+    title: industryData?.title ? `${industryData.title} | Comfygen` : 'Industry Solutions | Comfygen',
+  };
 }
 
 export default async function IndustryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const { title } = getIndustryData(slug);
+  const industryData = await getIndustryDataFromAPI(slug);
+
+  if (!industryData) {
+    notFound();
+  }
+
+  const heroSection = industryData.IndustryHeroSection?.[0];
+  const aboutSection = industryData.IndustryAboutSection?.[0];
+  const serviceSection = industryData.IndustryServiceSection?.[0];
+  const offeringsSection = industryData.IndustryOfferingsSection?.[0];
+  const problemsSection = industryData.IndustryProblemsSection?.[0];
+  const modulesSection = industryData.IndustryModulesSection?.[0];
+  const techFeaturesSection = industryData.IndustryTechFeaturesSection?.[0];
+  const faqData = industryData.faqSection?.[0];
 
   return (
     <main className="relative min-h-screen font-sans bg-white flex flex-col">
-      {/* Dark Header + Hero Section */}
-      <div className="relative flex flex-col z-[100] bg-slate-950">
+      <div className="relative flex flex-col z-[100] min-h-screen lg:min-h-screen overflow-hidden bg-[#020617]">
+        {/* Modern Glowing Gradient Blobs - Brand Theme */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: `
+            radial-gradient(circle at 20% 0%, rgba(1, 88, 230, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 100%, rgba(1, 88, 230, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 50% 50%, rgba(1, 88, 230, 0.03) 0%, transparent 60%)
+          `
+        }} />
+        {/* Elegant Tech Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+
         <Header theme="dark" />
-        <HeroSectionThree
-          badgeText="Industry Expertise"
-          title={<span className="text-white">{title} <span className="text-blue-500">Services</span></span>}
-          description={`Empower your business with our top-notch ${title.toLowerCase()} tailored to meet your unique industry needs.`}
-          primaryButtonText="Get a Quote"
-          primaryButtonLink="/contact-us"
-          secondaryButtonText="Explore Features"
-          secondaryButtonLink="#services"
-          imageSrc="/images/hero/team-collaborating.webp"
-          imageAlt={`${title} illustration`}
-        />
+        <div className="flex-1 flex flex-col justify-center">
+          {heroSection && (
+            <HeroSectionThree
+              badgeText={heroSection.badgeText}
+              title={
+                <span className="text-white">
+                  {heroSection.titlePreHighlight} <span className="text-blue-500">{heroSection.highlightText}</span> {heroSection.titlePostHighlight}
+                </span>
+              }
+              description={heroSection.description}
+              primaryButtonText={heroSection.primaryButtonText || "Get a Quote"}
+              primaryButtonLink={heroSection.primaryButtonLink || "/contact-us"}
+              secondaryButtonText={heroSection.secondaryButtonText || "Explore Features"}
+              secondaryButtonLink={heroSection.secondaryButtonLink || "#services"}
+              rightContent={<HeroBentoGrid />}
+            />
+          )}
+        </div>
       </div>
 
-      {/* Common Sections */}
       <div className="flex-1">
-        <AboutInfo 
-          title={`Innovative ${title} Solutions`}
-          paragraphs={[
-            `We specialize in delivering cutting-edge ${title.toLowerCase()} that drive efficiency, growth, and unparalleled user experiences in the modern digital era.`,
-            `Our expert team combines deep industry knowledge with the latest technologies to build scalable and secure applications designed specifically for your business requirements.`
-          ]}
-        />
-        <Services title={`Our ${title} Services`} />
-        <WhyChooseUs />
-        <ProcessSteps />
-        <Portfolio />
-        <Testimonials />
-        <FAQ />
-        <CallToAction />
-      </div>
+        {aboutSection && (
+          <SolutionAboutInfo
+            title={aboutSection.title}
+            paragraphs={aboutSection.paragraph ? aboutSection.paragraph.split('\n\n').filter((p: string) => p.trim() !== '') : []}
+          />
+        )}
 
+        {serviceSection && (
+          <Services
+            title={serviceSection.heading}
+            subtitle={serviceSection.subtitle}
+            services={serviceSection.card}
+          />
+        )}
+
+        {offeringsSection && (
+          <SolutionOfferings sectionData={offeringsSection} />
+        )}
+
+        {problemsSection && (
+          <ProblemStatement sectionData={problemsSection} />
+        )}
+
+        {/* Static sections that aren't mapped yet */}
+        <Awards />
+
+        {modulesSection && (
+          <IndustryModulesTab sectionData={modulesSection} />
+        )}
+
+        {/* Static section */}
+        <TechStack />
+        <Portfolio />
+
+        {techFeaturesSection && (
+          <AdvancedTechFeatures sectionData={techFeaturesSection} />
+        )}
+
+        <ProcessSteps />
+        <WhyChooseUs />
+        <Testimonials />
+
+        {faqData?.faqdata && (
+          <FAQ faqs={faqData.faqdata.map((faq: any) => ({ question: faq.quz, answer: faq.answer }))} />
+        )}
+      </div>
       <Footer />
     </main>
   );
