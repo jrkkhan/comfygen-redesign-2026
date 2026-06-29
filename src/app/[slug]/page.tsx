@@ -46,12 +46,12 @@ export default async function DynamicPage({ params }: PageProps) {
   const strapiData = await fetchAPI('/pages', {
     filters: { slug: { $eq: slug } },
     populate: {
-      herosection: { on: { 'shared.herosection': { populate: '*' } } },
-      servicesection: { on: { 'shared.service-component': { populate: { card: { populate: '*' } } } } },
-      aboutinfo: { on: { 'shared.about-info': { populate: '*' } } },
-      whychoose: { on: { 'shared.why-choose-us-component': { populate: { cards: { populate: '*' } } } } },
-      solution: { on: { 'shared.solution-component': { populate: { cards: { populate: '*' } } } } },
-      faqdata: { on: { 'shared.faq-component': { populate: { faqdata: { populate: '*' } } } } }
+      herosection: { populate: '*' },
+      servicesection: { populate: { card: { populate: '*' } } },
+      aboutinfo: { populate: '*' },
+      whychoose: { populate: { cards: { populate: '*' } } },
+      solution: { populate: { cards: { populate: '*' } } },
+      faqdata: { populate: { faqdata: { populate: '*' } } }
     },
   });
 
@@ -65,11 +65,11 @@ export default async function DynamicPage({ params }: PageProps) {
 
   const data = strapiData.data[0];
 
-  const heroSection = data?.herosection?.[0] || data?.Herosection?.[0];
+  const heroSection = data?.herosection;
   const rawTitle = heroSection?.heading || slug.replace(/-/g, ' ').toUpperCase();
   const heroSubtitle = heroSection?.subtitle || "";
 
-  const servicesSection = data?.servicesection?.[0];
+  const servicesSection = data?.servicesection;
   const servicesTitle = servicesSection?.heading || "Our Services";
   const servicesSubtitle = servicesSection?.subtitle || "";
   const mappedServices = servicesSection?.card?.map((item: any, index: number) => ({
@@ -78,7 +78,7 @@ export default async function DynamicPage({ params }: PageProps) {
     icon: item.icon || defaultIcons[index % defaultIcons.length],
   })) || [];
 
-  const aboutInfoSection = data?.aboutinfo?.[0];
+  const aboutInfoSection = data?.aboutinfo;
   const aboutTitle = aboutInfoSection?.title || "About Us";
   const aboutParagraphs = aboutInfoSection?.description
     ? aboutInfoSection.description.split('\n\n').filter((p: string) => p.trim() !== '')
@@ -86,7 +86,7 @@ export default async function DynamicPage({ params }: PageProps) {
   const aboutImage = aboutInfoSection?.img?.url ? `https://cms.comfygen.com${aboutInfoSection.img.url}` : "/images/mobile-app-development/mobile-app-development-aboutinfo.webp";
   const aboutButtonText = aboutInfoSection?.buttontext || "Consult Our Experts";
 
-  const whyChooseSection = data?.whychoose?.[0];
+  const whyChooseSection = data?.whychoose;
   const whyChooseTitle = whyChooseSection?.heading || "Why Choose Us?";
   const whyChooseReasons = whyChooseSection?.cards?.map((card: any, index: number) => ({
     id: `0${index + 1}`,
@@ -94,7 +94,7 @@ export default async function DynamicPage({ params }: PageProps) {
     desc: card.description
   })) || [];
 
-  const solutionSection = data?.solution?.[0];
+  const solutionSection = data?.solution;
   const solutionTitle = solutionSection?.heading || "Our Solutions";
   const solutionSubtitle = solutionSection?.subtitle || "";
   const solutionCards = solutionSection?.cards?.map((card: any) => ({
@@ -104,14 +104,11 @@ export default async function DynamicPage({ params }: PageProps) {
   })) || [];
 
   let apiFaqs = [];
-  if (data?.faqdata && data.faqdata.length > 0) {
-    const faqComponent = data.faqdata[0];
-    if (faqComponent.faqdata && faqComponent.faqdata.length > 0) {
-      apiFaqs = faqComponent.faqdata.map((faq: any) => ({
-        question: faq.quz,
-        answer: faq.answer
-      }));
-    }
+  if (data?.faqdata && data.faqdata.faqdata && data.faqdata.faqdata.length > 0) {
+    apiFaqs = data.faqdata.faqdata.map((faq: any) => ({
+      question: faq.quz,
+      answer: faq.answer
+    }));
   }
 
   return (

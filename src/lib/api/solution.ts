@@ -17,15 +17,15 @@ export async function fetchSolutionData(slug: string): Promise<SolutionPageData 
       populate: {
         seo: { populate: '*' },
         SolutionHeroSection: { populate: '*' },
-        SolutionAboutSection: { populate: '*' },
-        SolutionModulesSection: { populate: '*' },
-        SolutionProblemsSection: { populate: '*' },
-        SolutionOfferingsSection: { populate: '*' },
-        SolutionServiceSection: { populate: '*' },
-        SolutionTechFeaturesSection: { populate: '*' },
-        SolutionClonesSection: { populate: '*' },
-        SolutionPricingSection: { populate: '*' },
-        faqSection: { populate: '*' }
+        SolutionAboutSection: { populate: { stats: { populate: '*' } } },
+        ModulesSection: { populate: { items: { populate: '*' } } },
+        ProblemsSection: { populate: { items: { populate: '*' } } },
+        OfferingsSection: { populate: { items: { populate: '*' } } },
+        SolutionServiceSection: { populate: { card: { populate: '*' } } },
+        TechFeaturesSection: { populate: { items: { populate: '*' } } },
+        ClonesSection: { populate: { items: { populate: '*' } } },
+        PricingSection: { populate: { items: { populate: '*' } } },
+        faqSection: { populate: { faqdata: { populate: '*' } } }
       }, 
     });
 
@@ -35,13 +35,6 @@ export async function fetchSolutionData(slug: string): Promise<SolutionPageData 
     }
 
     const strapiData = response.data[0].attributes || response.data[0]; // handles Strapi v4 vs v5 struct
-
-    // Helper to find a specific component in the Strapi response
-    // Since each section is its own Dynamic Zone, Strapi usually returns it as an array.
-    const getComponentData = (dynamicZoneArray: StrapiComponent[] | undefined) => {
-      if (!dynamicZoneArray || !Array.isArray(dynamicZoneArray) || dynamicZoneArray.length === 0) return undefined;
-      return dynamicZoneArray[0];
-    };
 
     // Helper to extract items from repeatable components
     const extractItems = (items: any[]) => {
@@ -62,91 +55,98 @@ export async function fetchSolutionData(slug: string): Promise<SolutionPageData 
       },
       
       heroSection: {
-        badgeText: getComponentData(strapiData.SolutionHeroSection)?.badgeText || mockSolutionData.heroSection.badgeText,
-        titlePreHighlight: getComponentData(strapiData.SolutionHeroSection)?.titlePreHighlight || mockSolutionData.heroSection.titlePreHighlight,
-        highlightText: getComponentData(strapiData.SolutionHeroSection)?.highlightText || mockSolutionData.heroSection.highlightText,
-        titlePostHighlight: getComponentData(strapiData.SolutionHeroSection)?.titlePostHighlight || mockSolutionData.heroSection.titlePostHighlight,
-        description: getComponentData(strapiData.SolutionHeroSection)?.description || mockSolutionData.heroSection.description,
+        badgeText: strapiData.SolutionHeroSection?.badgeText || mockSolutionData.heroSection.badgeText,
+        titlePreHighlight: strapiData.SolutionHeroSection?.titlePreHighlight || mockSolutionData.heroSection.titlePreHighlight,
+        highlightText: strapiData.SolutionHeroSection?.highlightText || mockSolutionData.heroSection.highlightText,
+        titlePostHighlight: strapiData.SolutionHeroSection?.titlePostHighlight || mockSolutionData.heroSection.titlePostHighlight,
+        description: strapiData.SolutionHeroSection?.description || mockSolutionData.heroSection.description,
       },
 
       aboutSection: {
-        title: getComponentData(strapiData.SolutionAboutSection)?.title || mockSolutionData.aboutSection.title,
-        paragraph: getComponentData(strapiData.SolutionAboutSection)?.paragraph || mockSolutionData.aboutSection.paragraph,
-        bullets: getComponentData(strapiData.SolutionAboutSection)?.bullets || mockSolutionData.aboutSection.bullets,
-        stats: extractItems(getComponentData(strapiData.SolutionAboutSection)?.stats).length > 0 
-          ? extractItems(getComponentData(strapiData.SolutionAboutSection)?.stats).map((stat: any) => ({
-              label: stat.title || stat.label || "", // Mapping Strapi's 'title' to 'label'
-              value: stat.description || stat.value || "", // Mapping Strapi's 'description' to 'value'
+        title: strapiData.SolutionAboutSection?.title || mockSolutionData.aboutSection.title,
+        paragraph: strapiData.SolutionAboutSection?.paragraph || mockSolutionData.aboutSection.paragraph,
+        bullets: strapiData.SolutionAboutSection?.bullets || mockSolutionData.aboutSection.bullets,
+        stats: extractItems(strapiData.SolutionAboutSection?.stats).length > 0 
+          ? extractItems(strapiData.SolutionAboutSection?.stats).map((stat: any) => ({
+              label: stat.title || stat.label || "", 
+              value: stat.description || stat.value || "", 
             })) 
           : mockSolutionData.aboutSection.stats,
       },
 
       servicesSection: {
-        heading: getComponentData(strapiData.SolutionServiceSection)?.heading || "Mobile and Web App Development Services",
-        subtitle: getComponentData(strapiData.SolutionServiceSection)?.subtitle || "Our Skilled Developers Build AI-Powered Apps With Modern Frameworks To Enhance Business Performance.",
-        items: extractItems(getComponentData(strapiData.SolutionServiceSection)?.card).length > 0 
-          ? extractItems(getComponentData(strapiData.SolutionServiceSection)?.card) 
-          : [], // Fallback to empty, Services component handles defaultServices
+        heading: strapiData.SolutionServiceSection?.heading || "Mobile and Web App Development Services",
+        subtitle: strapiData.SolutionServiceSection?.subtitle || "Our Skilled Developers Build AI-Powered Apps With Modern Frameworks To Enhance Business Performance.",
+        items: extractItems(strapiData.SolutionServiceSection?.items || strapiData.SolutionServiceSection?.card).length > 0 
+          ? extractItems(strapiData.SolutionServiceSection?.items || strapiData.SolutionServiceSection?.card) 
+          : [],
       },
 
       modulesSection: {
-        heading: getComponentData(strapiData.SolutionModulesSection)?.heading || mockSolutionData.modulesSection.heading,
-        subHeading: getComponentData(strapiData.SolutionModulesSection)?.subHeading || mockSolutionData.modulesSection.subHeading,
-        items: extractItems(getComponentData(strapiData.SolutionModulesSection)?.items).length > 0 
-          ? extractItems(getComponentData(strapiData.SolutionModulesSection)?.items) 
+        heading: strapiData.ModulesSection?.heading || mockSolutionData.modulesSection.heading,
+        subHeading: strapiData.ModulesSection?.subHeading || mockSolutionData.modulesSection.subHeading,
+        items: extractItems(strapiData.ModulesSection?.items).length > 0 
+          ? extractItems(strapiData.ModulesSection?.items) 
           : mockSolutionData.modulesSection.items,
       },
 
       problemsSection: {
-        heading: getComponentData(strapiData.SolutionProblemsSection)?.heading || mockSolutionData.problemsSection.heading,
-        subHeading: getComponentData(strapiData.SolutionProblemsSection)?.subHeading || mockSolutionData.problemsSection.subHeading,
-        items: extractItems(getComponentData(strapiData.SolutionProblemsSection)?.items).length > 0
-          ? extractItems(getComponentData(strapiData.SolutionProblemsSection)?.items)
+        heading: strapiData.ProblemsSection?.heading || mockSolutionData.problemsSection.heading,
+        subHeading: strapiData.ProblemsSection?.subHeading || mockSolutionData.problemsSection.subHeading,
+        items: extractItems(strapiData.ProblemsSection?.items).length > 0
+          ? extractItems(strapiData.ProblemsSection?.items)
           : mockSolutionData.problemsSection.items,
       },
 
       offeringsSection: {
-        heading: getComponentData(strapiData.SolutionOfferingsSection)?.heading || mockSolutionData.offeringsSection.heading,
-        subHeading: getComponentData(strapiData.SolutionOfferingsSection)?.subHeading || mockSolutionData.offeringsSection.subHeading,
-        items: extractItems(getComponentData(strapiData.SolutionOfferingsSection)?.items).length > 0
-          ? extractItems(getComponentData(strapiData.SolutionOfferingsSection)?.items)
+        heading: strapiData.OfferingsSection?.heading || mockSolutionData.offeringsSection.heading,
+        subHeading: strapiData.OfferingsSection?.subHeading || mockSolutionData.offeringsSection.subHeading,
+        items: extractItems(strapiData.OfferingsSection?.items).length > 0
+          ? extractItems(strapiData.OfferingsSection?.items)
           : mockSolutionData.offeringsSection.items,
       },
 
       techFeaturesSection: {
-        heading: getComponentData(strapiData.SolutionTechFeaturesSection)?.heading || mockSolutionData.techFeaturesSection.heading,
-        subHeading: getComponentData(strapiData.SolutionTechFeaturesSection)?.subHeading || mockSolutionData.techFeaturesSection.subHeading,
-        items: extractItems(getComponentData(strapiData.SolutionTechFeaturesSection)?.items).length > 0
-          ? extractItems(getComponentData(strapiData.SolutionTechFeaturesSection)?.items)
+        heading: strapiData.TechFeaturesSection?.heading || mockSolutionData.techFeaturesSection.heading,
+        subHeading: strapiData.TechFeaturesSection?.subHeading || mockSolutionData.techFeaturesSection.subHeading,
+        items: extractItems(strapiData.TechFeaturesSection?.items).length > 0
+          ? extractItems(strapiData.TechFeaturesSection?.items)
           : mockSolutionData.techFeaturesSection.items,
       },
 
       clonesSection: {
-        heading: getComponentData(strapiData.SolutionClonesSection)?.heading || mockSolutionData.clonesSection.heading,
-        subHeading: getComponentData(strapiData.SolutionClonesSection)?.subHeading || mockSolutionData.clonesSection.subHeading,
-        items: extractItems(getComponentData(strapiData.SolutionClonesSection)?.items).length > 0
-          ? extractItems(getComponentData(strapiData.SolutionClonesSection)?.items)
+        heading: strapiData.ClonesSection?.heading || mockSolutionData.clonesSection.heading,
+        subHeading: strapiData.ClonesSection?.subHeading || mockSolutionData.clonesSection.subHeading,
+        items: extractItems(strapiData.ClonesSection?.items).length > 0
+          ? extractItems(strapiData.ClonesSection?.items)
           : mockSolutionData.clonesSection.items,
-        mockup: getComponentData(strapiData.SolutionClonesSection)?.mockup || mockSolutionData.clonesSection.mockup,
+        mockup: strapiData.ClonesSection?.mockup || mockSolutionData.clonesSection.mockup,
       },
 
       pricingSection: {
-        heading: getComponentData(strapiData.SolutionPricingSection)?.heading || mockSolutionData.pricingSection.heading,
-        subHeading: getComponentData(strapiData.SolutionPricingSection)?.subHeading || mockSolutionData.pricingSection.subHeading,
-        items: extractItems(getComponentData(strapiData.SolutionPricingSection)?.items).length > 0
-          ? extractItems(getComponentData(strapiData.SolutionPricingSection)?.items)
+        heading: strapiData.PricingSection?.heading || mockSolutionData.pricingSection.heading,
+        subHeading: strapiData.PricingSection?.subHeading || mockSolutionData.pricingSection.subHeading,
+        items: extractItems(strapiData.PricingSection?.items).length > 0
+          ? extractItems(strapiData.PricingSection?.items)
           : mockSolutionData.pricingSection.items,
       },
 
       faqSection: {
-        heading: strapiData.faqSection?.[0]?.heading || mockSolutionData.faqSection.heading,
-        subHeading: strapiData.faqSection?.[0]?.subHeading || mockSolutionData.faqSection.subHeading,
-        items: strapiData.faqSection?.[0]?.faqdata?.length > 0
-          ? strapiData.faqSection[0].faqdata.map((faq: any) => ({
+        heading: Array.isArray(strapiData.faqSection) ? mockSolutionData.faqSection.heading : (strapiData.faqSection?.heading || mockSolutionData.faqSection.heading),
+        subHeading: Array.isArray(strapiData.faqSection) ? mockSolutionData.faqSection.subHeading : (strapiData.faqSection?.subHeading || mockSolutionData.faqSection.subHeading),
+        items: Array.isArray(strapiData.faqSection) 
+          ? strapiData.faqSection.map((faq: any) => ({
               question: faq.quz || faq.question || "",
               answer: faq.answer || ""
             }))
-          : mockSolutionData.faqSection.items,
+          : (strapiData.faqSection?.items || strapiData.faqSection?.faqdata)?.length > 0
+            ? (strapiData.faqSection?.items || strapiData.faqSection?.faqdata).map((faq: any) => ({
+                question: faq.quz || faq.question || "",
+                answer: faq.answer || ""
+              }))
+            : (strapiData.faqSection?.quz || strapiData.faqSection?.answer) 
+              ? [{ question: strapiData.faqSection.quz || "", answer: strapiData.faqSection.answer || "" }] 
+              : mockSolutionData.faqSection.items,
       },
     };
 
