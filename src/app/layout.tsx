@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import { GoogleTagManager } from '@next/third-parties/google';
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -83,6 +84,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${roboto.variable} ${nataSans.variable} h-full antialiased`} suppressHydrationWarning>
+      <GoogleTagManager gtmId="GTM-5K96GNBB" />
       <body className="min-h-full flex flex-col font-sans">
         {children}
         <FloatingContact />
