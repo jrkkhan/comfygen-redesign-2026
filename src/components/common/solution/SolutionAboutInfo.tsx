@@ -8,6 +8,7 @@ export interface SolutionAboutInfoProps {
   imageAlt?: string;
   title?: React.ReactNode;
   description?: string;
+  paragraphs?: string[];
   bulletPoints?: string[];
   buttonText?: string;
   buttonLink?: string;
@@ -18,6 +19,7 @@ export const SolutionAboutInfo = ({
   imageAlt = "Food Delivery About Image",
   title = "Transforming the Delivery Landscape with Intelligent App Solutions",
   description = "Our food delivery app solutions bridge the gap between customers and restaurants. We leverage cutting-edge technology to create seamless, scalable, and highly reliable applications that ensure a 5-star user experience, helping your business grow rapidly.",
+  paragraphs,
   bulletPoints = [
     "100% Custom-built & White-label solutions",
     "High performance and scalable cloud architecture",
@@ -50,18 +52,28 @@ export const SolutionAboutInfo = ({
             {title}
           </h2>
           
-          <p className="text-slate-600 text-base lg:text-lg leading-relaxed mb-8 line-clamp-2">
-            {description}
-          </p>
+          {paragraphs && paragraphs.length > 0 ? (
+            paragraphs.map((text, idx) => (
+              <p key={idx} className={`text-slate-600 text-base lg:text-lg leading-relaxed ${idx === paragraphs.length - 1 ? 'mb-8' : 'mb-4'}`}>
+                {text}
+              </p>
+            ))
+          ) : (
+            <p className="text-slate-600 text-base lg:text-lg leading-relaxed mb-8 line-clamp-2">
+              {description}
+            </p>
+          )}
 
-          <div className="space-y-4 mb-10">
-            {bulletPoints.map((point, idx) => (
-              <div key={idx} className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-[#0158e6] shrink-0" />
-                <span className="text-slate-700 font-medium">{point}</span>
-              </div>
-            ))}
-          </div>
+          {bulletPoints && bulletPoints.length > 0 && (
+            <div className="space-y-4 mb-10">
+              {bulletPoints.map((point, idx) => (
+                <div key={idx} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-[#0158e6] shrink-0" />
+                  <span className="text-slate-700 font-medium">{point}</span>
+                </div>
+              ))}
+            </div>
+          )}
           
           <Link 
             href={buttonLink}

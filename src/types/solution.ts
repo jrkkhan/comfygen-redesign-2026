@@ -111,6 +111,7 @@ export interface SolutionPageData {
       price: string;
       description: string;
       features: string[];
+      timeline?: string;
     }[];
   };
 

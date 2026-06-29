@@ -42,8 +42,7 @@ export const HeroSectionThree: React.FC<HeroSectionThreeProps> = ({
 
   return (
     <section
-      className="relative w-full min-h-screen flex items-center pt-24 pb-12 px-4 lg:px-8 overflow-hidden bg-slate-950"
-      style={{ backgroundImage: "radial-gradient(circle, rgba(102, 68, 227, 0.2) 0%, rgba(2, 6, 23, 0.8) 16%, rgba(2, 6, 23, 0.8) 81%, rgba(1, 88, 230, 0.2) 100%)" }}
+      className="relative w-full flex items-center pt-12 pb-12 px-4 lg:px-8 overflow-hidden"
     >
       <div className="max-w-[1400px] w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mt-10 lg:mt-0">
 

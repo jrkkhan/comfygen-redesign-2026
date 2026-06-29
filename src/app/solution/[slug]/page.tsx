@@ -66,23 +66,31 @@ export default async function SolutionPage({ params }: { params: { slug: string 
 
   return (
     <main className="min-h-screen bg-white">
-      {/* Absolute Header to overlap with Hero's dark background */}
-      <div className="absolute top-0 left-0 w-full z-50">
-        <Header theme="dark" />
+      {/* Dark Hero Section Container matching other pages but with solution gradient */}
+      <div 
+        className="relative min-h-screen overflow-hidden flex flex-col z-[100]"
+        style={{ backgroundImage: "radial-gradient(circle, rgba(102, 68, 227, 0.2) 0%, rgba(2, 6, 23, 1) 16%, rgba(2, 6, 23, 1) 81%, rgba(1, 88, 230, 0.2) 100%)", backgroundColor: "#020617" }}
+      >
+
+        {/* Content Layer */}
+        <div className="relative z-10 flex flex-col flex-1">
+          <Header theme="dark" />
+          <div className="flex-1 flex flex-col justify-center">
+            <HeroSectionThree 
+              badgeText={heroSection.badgeText}
+              title={
+                <span dangerouslySetInnerHTML={{ __html: `${heroSection.titlePreHighlight} <span class="text-[#0158e6]">${heroSection.highlightText}</span> ${heroSection.titlePostHighlight}` }} />
+              }
+              description={heroSection.description}
+              primaryButtonText="Book a Free Demo"
+              primaryButtonLink="/contact-us"
+              secondaryButtonText="Explore Features"
+              secondaryButtonLink="#services"
+              rightContent={<HeroBentoGrid />}
+            />
+          </div>
+        </div>
       </div>
-      
-      <HeroSectionThree 
-        badgeText={heroSection.badgeText}
-        title={
-          <span dangerouslySetInnerHTML={{ __html: `${heroSection.titlePreHighlight} <span class="text-[#0158e6]">${heroSection.highlightText}</span> ${heroSection.titlePostHighlight}` }} />
-        }
-        description={heroSection.description}
-        primaryButtonText="Book a Free Demo"
-        primaryButtonLink="/contact-us"
-        secondaryButtonText="Explore Features"
-        secondaryButtonLink="#services"
-        rightContent={<HeroBentoGrid />}
-      />
 
       {/* Common Services Component */}
       <Services 
