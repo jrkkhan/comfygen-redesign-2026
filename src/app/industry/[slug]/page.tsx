@@ -53,8 +53,11 @@ async function getIndustryDataFromAPI(slug: string) {
     }
   });
 
-  if (response?.data && response.data.length > 0) {
-    return response.data[0];
+  if (response?.data) {
+    if (Array.isArray(response.data)) {
+      return response.data.length > 0 ? response.data[0] : null;
+    }
+    return response.data;
   }
   return null;
 }
@@ -64,8 +67,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const industryData = await getIndustryDataFromAPI(slug);
 
-  if (industryData?.Seo?.[0]) {
-    const seo = industryData.Seo[0];
+  const seo = Array.isArray(industryData?.Seo) ? industryData.Seo[0] : industryData?.Seo;
+
+  if (seo) {
     return {
       title: seo.metaTitle || industryData.title,
       description: seo.metaDescription,
@@ -88,14 +92,16 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
     notFound();
   }
 
-  const heroSection = industryData.IndustryHeroSection?.[0];
-  const aboutSection = industryData.IndustryAboutSection?.[0];
-  const serviceSection = industryData.IndustryServiceSection?.[0];
-  const offeringsSection = industryData.IndustryOfferingsSection?.[0];
-  const problemsSection = industryData.IndustryProblemsSection?.[0];
-  const modulesSection = industryData.IndustryModulesSection?.[0];
-  const techFeaturesSection = industryData.IndustryTechFeaturesSection?.[0];
-  const faqData = industryData.faqSection?.[0];
+  const getSectionData = (section: any) => Array.isArray(section) ? section[0] : section;
+
+  const heroSection = getSectionData(industryData.IndustryHeroSection);
+  const aboutSection = getSectionData(industryData.IndustryAboutSection);
+  const serviceSection = getSectionData(industryData.IndustryServiceSection);
+  const offeringsSection = getSectionData(industryData.IndustryOfferingsSection);
+  const problemsSection = getSectionData(industryData.IndustryProblemsSection);
+  const modulesSection = getSectionData(industryData.IndustryModulesSection);
+  const techFeaturesSection = getSectionData(industryData.IndustryTechFeaturesSection);
+  const faqData = getSectionData(industryData.faqSection);
 
   return (
     <main className="relative min-h-screen font-sans bg-white flex flex-col">
