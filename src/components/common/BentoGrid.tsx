@@ -24,7 +24,6 @@ export const BentoGrid = () => {
             alt="Team collaborating"
             width={348}
             height={232}
-            priority
             className="object-cover transition-transform duration-700 group-hover:scale-105 w-full h-full"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -36,7 +35,7 @@ export const BentoGrid = () => {
 
         {/* Box 3: Tall Image Stat (Right) */}
         <div className="md:col-span-1 row-span-2 rounded-2xl overflow-hidden relative group min-h-[260px] md:min-h-0">
-          <Image src="/images/hero/happy-customer.webp" alt="Happy Customer" fill priority sizes="(max-width: 768px) 350px, (max-width: 1200px) 50vw, 33vw" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <Image src="/images/hero/happy-customer.webp" alt="Happy Customer" fill sizes="(max-width: 768px) 350px, (max-width: 1200px) 50vw, 33vw" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
 
           <div className="absolute top-5 right-5 w-12 h-12 rounded-full bg-[#0158E6] text-white hover:text-slate-900 flex items-center justify-center shadow-[0_0_20px_rgba(255,107,0,0.4)] cursor-pointer hover:bg-[#fff] hover:scale-105 transition-all z-10">

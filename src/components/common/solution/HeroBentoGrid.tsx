@@ -11,7 +11,6 @@ export const HeroBentoGrid = () => {
           src="/images/hero/happy-customer.webp" 
           alt="Happy Customer" 
           fill 
-          priority
           className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-105"
         />
         {/* Adjusted gradient to let the image show clearly at the top while keeping text readable at the bottom */}

@@ -27,7 +27,6 @@ export const HeroTwoBentoGrid = () => {
             src="/images/hero/team-collaborating.webp"
             alt="Team collaborating"
             fill
-            priority
             sizes="(max-width: 768px) 100vw, 350px"
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
@@ -44,7 +43,6 @@ export const HeroTwoBentoGrid = () => {
             src="/images/hero/happy-customer.webp"
             alt="Happy Customer"
             fill
-            priority
             sizes="(max-width: 768px) 100vw, 350px"
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
