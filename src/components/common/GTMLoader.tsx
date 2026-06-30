@@ -6,8 +6,6 @@ export function GTMLoader() {
   const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
-    
     const loadGTM = () => {
       if (!shouldLoad) {
         setShouldLoad(true);
@@ -16,7 +14,6 @@ export function GTMLoader() {
         window.removeEventListener('mousemove', loadGTM);
         window.removeEventListener('touchstart', loadGTM);
         window.removeEventListener('keydown', loadGTM);
-        if (timeout) clearTimeout(timeout);
       }
     };
 
@@ -26,15 +23,11 @@ export function GTMLoader() {
     window.addEventListener('touchstart', loadGTM, { once: true, passive: true });
     window.addEventListener('keydown', loadGTM, { once: true, passive: true });
 
-    // Fallback: load after 5 seconds if no interaction occurs
-    timeout = setTimeout(loadGTM, 5000);
-
     return () => {
       window.removeEventListener('scroll', loadGTM);
       window.removeEventListener('mousemove', loadGTM);
       window.removeEventListener('touchstart', loadGTM);
       window.removeEventListener('keydown', loadGTM);
-      if (timeout) clearTimeout(timeout);
     };
   }, [shouldLoad]);
 
