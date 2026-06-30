@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, Smartphone, Activity, BrainCircuit, Network, Component, ShoppingCart, icons } from 'lucide-react';
+import { ArrowRight, Smartphone, Activity, BrainCircuit, Network, Component, ShoppingCart, DollarSign, Percent, Megaphone, Store, Car, CheckCircle2, LayoutDashboard, Settings, MapPin, Bell, Search, User, FileText, Heart, Clock } from 'lucide-react';
 
 interface ServiceCardProps {
   title: string;
@@ -57,6 +57,12 @@ const defaultServices: ServiceItemData[] = [
   { title: "Ecommerce Web & App Development", description: "We Are A Top-Rated IT Solutions Company Providing Secure And Engaging ECommerce Web And Mobile App Development", link: "/ecommerce-app-development", icon: ShoppingCart }
 ];
 
+const iconMap: Record<string, React.ElementType> = {
+  Smartphone, Activity, BrainCircuit, Network, Component, ShoppingCart, 
+  DollarSign, Percent, Megaphone, Store, Car, CheckCircle2, 
+  LayoutDashboard, Settings, MapPin, Bell, Search, User, FileText, Heart, Clock
+};
+
 export const Services = ({
   title = <><span className="text-primary !font-heading">Mobile and Web</span><br />App Development Services</>,
   subtitle = "Our Skilled Developers Build AI-Powered Apps With Modern Frameworks To Enhance Business Performance.",
@@ -76,8 +82,7 @@ export const Services = ({
 
   const getIcon = (iconProp: any) => {
     if (typeof iconProp === 'string') {
-      const IconComp = (icons as any)[iconProp];
-      return IconComp || Smartphone;
+      return iconMap[iconProp] || Smartphone;
     }
     return iconProp || Smartphone;
   };
