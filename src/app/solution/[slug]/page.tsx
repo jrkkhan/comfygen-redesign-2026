@@ -1,25 +1,26 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { Header } from "@/components/common/Header";
-import { Footer } from "@/components/common/Footer";
 import { HeroSectionThree } from "@/components/common/solution/HeroSectionThree";
 import { HeroBentoGrid } from "@/components/common/solution/HeroBentoGrid";
 import { ProblemStatement } from "@/components/common/solution/ProblemStatement";
 import { SolutionAboutInfo } from "@/components/common/solution/SolutionAboutInfo";
-import { AppModulesTab } from "@/components/common/solution/AppModulesTab";
 import { AdvancedTechFeatures } from "@/components/common/solution/AdvancedTechFeatures";
 import { SolutionOfferings } from "@/components/common/solution/SolutionOfferings";
-const ProcessSteps = dynamic(() => import("@/components/common/ProcessSteps").then(mod => mod.ProcessSteps));
-import { FAQ } from "@/components/common/FAQ";
-import { PricingTable } from "@/components/common/solution/PricingTable";
-import { TechStack } from "@/components/common/TechStack";
-const WhyChooseUs = dynamic(() => import("@/components/common/WhyChooseUs").then(mod => mod.WhyChooseUs));
-import { CloneSolutions } from "@/components/common/solution/CloneSolutions";
 import { Portfolio } from "@/components/common/Portfolio";
 import { Services } from "@/components/common/Services";
 import { Metadata } from 'next';
 import { fetchSolutionData } from "@/lib/api/solution";
 import { notFound } from "next/navigation";
+
+const AppModulesTab = dynamic(() => import("@/components/common/solution/AppModulesTab").then(mod => mod.AppModulesTab));
+const PricingTable = dynamic(() => import("@/components/common/solution/PricingTable").then(mod => mod.PricingTable));
+const CloneSolutions = dynamic(() => import("@/components/common/solution/CloneSolutions").then(mod => mod.CloneSolutions));
+const TechStack = dynamic(() => import("@/components/common/TechStack").then(mod => mod.TechStack));
+const FAQ = dynamic(() => import("@/components/common/FAQ").then(mod => mod.FAQ));
+const Footer = dynamic(() => import("@/components/common/Footer").then(mod => mod.Footer));
+const ProcessSteps = dynamic(() => import("@/components/common/ProcessSteps").then(mod => mod.ProcessSteps));
+const WhyChooseUs = dynamic(() => import("@/components/common/WhyChooseUs").then(mod => mod.WhyChooseUs));
 
 export const metadata: Metadata = {
   title: 'Food Delivery App Development Company | Custom & White-Label',
