@@ -1,4 +1,5 @@
 import React from 'react';
+import parse from 'html-react-parser';
 import { AlertCircle, TrendingDown, Users, Clock, ShieldAlert, CheckCircle2, Megaphone } from 'lucide-react';
 import { SolutionPageData } from "@/types/solution";
 
@@ -58,7 +59,7 @@ export const ProblemStatement = ({ sectionData }: ProblemStatementProps) => {
           </div>
           <h2 className="text-balance text-3xl md:text-4xl 2xl:text-5xl font-bold !font-heading text-slate-900 mb-4 2xl:mb-6 leading-tight">
             {sectionData?.heading ? (
-              <span dangerouslySetInnerHTML={{ __html: sectionData.heading.replace('Problems', '<span class="text-rose-600">Problems</span>') }} />
+              <span>{parse(sectionData.heading.replace('Problems', '<span class="text-rose-600">Problems</span>'))}</span>
             ) : (
               <><span className="text-rose-600">Major Problems</span> in <br />
               <span className="inline-block">Food Delivery App Development</span></>

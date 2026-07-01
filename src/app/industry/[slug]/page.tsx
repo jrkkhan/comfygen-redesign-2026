@@ -17,6 +17,7 @@ const ProcessSteps = dynamic(() => import('@/components/common/ProcessSteps').th
 const Portfolio = dynamic(() => import('@/components/common/Portfolio').then(mod => mod.Portfolio));
 const Testimonials = dynamic(() => import('@/components/common/Testimonials').then(mod => mod.Testimonials));
 const FAQ = dynamic(() => import('@/components/common/FAQ').then(mod => mod.FAQ));
+const Blog = dynamic(() => import('@/components/common/Blog').then(mod => mod.Blog));
 const Footer = dynamic(() => import('@/components/common/Footer').then(mod => mod.Footer));
 
 // Advanced/Solution Specific Components
@@ -72,11 +73,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   if (seo) {
     return {
-      title: seo.metaTitle || industryData.title,
+      title: seo.metaTitle || industryData?.title || `${slug.replace(/-/g, ' ').toUpperCase()} | Comfygen`,
       description: seo.metaDescription,
       keywords: seo.keywords,
       alternates: seo.canonicalURL ? { canonical: seo.canonicalURL } : undefined,
       robots: seo.metaRobots,
+      openGraph: {
+        title: seo.metaTitle || industryData?.title,
+        description: seo.metaDescription,
+        url: `https://www.comfygen.com/industry/${slug}`,
+        siteName: 'Comfygen',
+        type: 'website',
+      },
     };
   }
 
@@ -186,6 +194,8 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
         {faqData?.faqdata && (
           <FAQ faqs={faqData.faqdata.map((faq: any) => ({ question: faq.quz, answer: faq.answer }))} />
         )}
+
+        <Blog searchTerm={slug.replace(/-/g, ' ')} />
       </div>
       <Footer />
     </main>

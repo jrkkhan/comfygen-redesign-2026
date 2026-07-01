@@ -1,5 +1,6 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
+import parse from 'html-react-parser';
 import { DynamicFAQSchema } from "@/components/common/DynamicFAQSchema";
 import { Header } from "@/components/common/Header";
 import { HeroSectionThree } from "@/components/common/solution/HeroSectionThree";
@@ -11,24 +12,60 @@ import { SolutionOfferings } from "@/components/common/solution/SolutionOffering
 import { Portfolio } from "@/components/common/Portfolio";
 import { Services } from "@/components/common/Services";
 import { Metadata } from 'next';
-import { fetchSolutionData } from "@/lib/api/solution";
+import { fetchSolutionData } from "@/lib/api";
 import { notFound } from "next/navigation";
 
 const AppModulesTab = dynamic(() => import("@/components/common/solution/AppModulesTab").then(mod => mod.AppModulesTab));
 const PricingTable = dynamic(() => import("@/components/common/solution/PricingTable").then(mod => mod.PricingTable));
 const CloneSolutions = dynamic(() => import("@/components/common/solution/CloneSolutions").then(mod => mod.CloneSolutions));
 const TechStack = dynamic(() => import("@/components/common/TechStack").then(mod => mod.TechStack));
+const Blog = dynamic(() => import("@/components/common/Blog").then(mod => mod.Blog));
 const FAQ = dynamic(() => import("@/components/common/FAQ").then(mod => mod.FAQ));
 const Footer = dynamic(() => import("@/components/common/Footer").then(mod => mod.Footer));
 const ProcessSteps = dynamic(() => import("@/components/common/ProcessSteps").then(mod => mod.ProcessSteps));
 const WhyChooseUs = dynamic(() => import("@/components/common/WhyChooseUs").then(mod => mod.WhyChooseUs));
 
-export const metadata: Metadata = {
-  title: 'Food Delivery App Development Company | Custom & White-Label',
-  description: 'Launch a complete food delivery ecosystem with our custom, scalable, and white-label food delivery app development solutions for iOS and Android.',
+type PageProps = {
+  params: Promise<{ slug: string }>;
 };
 
-export default async function SolutionPage({ params }: { params: { slug: string } }) {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  
+  try {
+    const data = await fetchSolutionData(slug);
+    if (data?.seo) {
+      return {
+        title: data.seo.title || `${slug.replace(/-/g, ' ').toUpperCase()} | Comfygen`,
+        description: data.seo.description || `Leading ${slug.replace(/-/g, ' ')} solutions by Comfygen.`,
+        keywords: data.seo.keywords,
+        alternates: {
+          canonical: data.seo.canonicalURL || `https://www.comfygen.com/solution/${slug}`,
+        },
+        robots: {
+          index: true,
+          follow: true,
+        },
+        openGraph: {
+          title: data.seo.title,
+          description: data.seo.description,
+          url: `https://www.comfygen.com/solution/${slug}`,
+          siteName: 'Comfygen',
+          type: 'website',
+        },
+      };
+    }
+  } catch (error) {
+    console.error("Error generating metadata:", error);
+  }
+
+  return {
+    title: `${slug.replace(/-/g, ' ').toUpperCase()} | Comfygen`,
+    description: `Leading ${slug.replace(/-/g, ' ')} solutions by Comfygen.`,
+  };
+}
+
+export default async function SolutionPage({ params }: PageProps) {
   // Wait for the slug to be resolved
   const resolvedParams = await params;
   const { slug } = resolvedParams;
@@ -82,7 +119,7 @@ export default async function SolutionPage({ params }: { params: { slug: string 
             <HeroSectionThree 
               badgeText={heroSection.badgeText}
               title={
-                <span dangerouslySetInnerHTML={{ __html: `${heroSection.titlePreHighlight} <span class="text-[#0158e6]">${heroSection.highlightText}</span> ${heroSection.titlePostHighlight}` }} />
+                <span>{parse(`${heroSection.titlePreHighlight} <span class="text-[#0158e6]">${heroSection.highlightText}</span> ${heroSection.titlePostHighlight}`)}</span>
               }
               description={heroSection.description}
               primaryButtonText="Book a Free Demo"
@@ -151,6 +188,9 @@ export default async function SolutionPage({ params }: { params: { slug: string 
         description={faqSection?.subHeading || "Got questions? We have answers."}
         faqs={faqSection?.items || []}
       />
+
+      {/* 15. Blog Section */}
+      <Blog searchTerm={slug.replace(/-/g, ' ')} />
 
       <Footer />
     </main>

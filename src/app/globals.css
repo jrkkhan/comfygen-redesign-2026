@@ -80,3 +80,34 @@ button, button * {
 .footer-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.15); /* Slightly more visible on hover */
 }
+
+/* Running Border Animation */
+.running-border-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.running-border-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 300%;
+  background: conic-gradient(from 0deg, transparent 70%, var(--color-primary) 100%);
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: spin-border 1.5s linear infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.running-border-wrapper:hover::before {
+  opacity: 1;
+}
+
+@keyframes spin-border {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}

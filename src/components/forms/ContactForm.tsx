@@ -24,6 +24,8 @@ const countryDialCodes: Record<string, { dial: string; flag: string }> = {
   // Add more as needed
 };
 
+import { getClientCountry, submitContactForm } from '@/app/actions/contact';
+
 export const ContactForm = ({ variant = 'contact' }: ContactFormProps) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -51,15 +53,13 @@ export const ContactForm = ({ variant = 'contact' }: ContactFormProps) => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Auto-detect country using IP API
+  // Auto-detect country securely via server action
   useEffect(() => {
     const fetchCountryCode = async () => {
       try {
-        const response = await fetch('https://ipinfo.io/json?token=55503f8d72626d');
-        const data = await response.json();
-        
-        if (data && data.country) {
-          const countryInfo = countryDialCodes[data.country];
+        const country = await getClientCountry();
+        if (country) {
+          const countryInfo = countryDialCodes[country];
           if (countryInfo) {
             setFormData(prev => ({ ...prev, countryCode: countryInfo.dial }));
           }
@@ -120,25 +120,17 @@ export const ContactForm = ({ variant = 'contact' }: ContactFormProps) => {
         msg: formData.message,
       };
 
-      const response = await fetch('https://www.comfygen.com/api/v1/createContactUs1111', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-      
-      const data = await response.json();
+      const result = await submitContactForm(payload);
 
-      if (!response.ok || data.error) {
-        throw new Error(data.message || 'Failed to submit the form.');
+      if (!result.success) {
+        throw new Error(result.message);
       }
 
       setSubmitSuccess(true);
-      setFormData({ name: '', email: '', countryCode: '+91', phone: '', subject: '', message: '' });
+      setFormData({ name: '', email: '', countryCode: formData.countryCode, phone: '', subject: '', message: '' });
       setTimeout(() => setSubmitSuccess(false), 5000);
-    } catch (error) {
-      setErrorMessage('Something went wrong. Please try again later.');
+    } catch (error: any) {
+      setErrorMessage(error.message || 'Something went wrong. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }

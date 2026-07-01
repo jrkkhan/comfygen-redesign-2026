@@ -46,3 +46,12 @@ fix-*.js
 generate-*.js
 scratch_*.js
 test-*.js
+analyze-chunk.js
+fetch-schema.js
+merge.js
+migrate-single-types-to-pages.js
+test.js
+test-render.js
+update-icons.js
+semantic-icons*.js
+scratch/

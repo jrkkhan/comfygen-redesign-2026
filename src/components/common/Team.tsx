@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 const teamMembers = [
   {
@@ -60,10 +61,12 @@ export const Team = () => {
                 {/* Optional glow ring on hover */}
                 <div className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-primary/20 transition-colors z-10"></div>
 
-                <img
+                <Image
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform duration-700 ease-out"
+                  fill
+                  sizes="(max-width: 768px) 112px, 160px"
+                  className="object-cover rounded-full group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
               </div>
 

@@ -32,6 +32,41 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
+  
+  try {
+    const strapiData = await fetchAPI('/pages', {
+      filters: { slug: { $eq: slug } },
+      populate: '*',
+    });
+
+    if (strapiData && strapiData.data && strapiData.data.length > 0) {
+      const seo = strapiData.data[0].attributes?.Seo || strapiData.data[0].Seo || strapiData.data[0].attributes?.seo || strapiData.data[0].seo;
+      if (seo) {
+        return {
+          title: seo.metaTitle || seo.title || `${slug.replace(/-/g, ' ').toUpperCase()} | Comfygen`,
+          description: seo.metaDescription || seo.description || `Leading ${slug.replace(/-/g, ' ')} services by Comfygen.`,
+          keywords: seo.keywords,
+          alternates: {
+            canonical: seo.canonicalURL || `https://www.comfygen.com/${slug}`,
+          },
+          robots: {
+            index: true,
+            follow: true,
+          },
+          openGraph: {
+            title: seo.metaTitle || seo.title,
+            description: seo.metaDescription || seo.description,
+            url: `https://www.comfygen.com/${slug}`,
+            siteName: 'Comfygen',
+            type: 'website',
+          },
+        };
+      }
+    }
+  } catch (error) {
+    console.error("Error generating metadata:", error);
+  }
+
   return {
     title: `${slug.replace(/-/g, ' ').toUpperCase()} | Comfygen`,
     description: `Leading ${slug.replace(/-/g, ' ')} services by Comfygen.`,

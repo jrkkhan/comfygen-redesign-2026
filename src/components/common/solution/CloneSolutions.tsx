@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import parse from 'html-react-parser';
 import { ArrowRight, Menu, Search, ShoppingBag, Home, FileText, User, Heart, Star, Clock } from 'lucide-react';
 
 import { SolutionPageData } from "@/types/solution";
@@ -48,7 +49,7 @@ export const CloneSolutions = ({ sectionData }: CloneSolutionsProps) => {
           <div className="text-left w-full">
             <h2 className="text-balance text-3xl md:text-4xl 2xl:text-5xl font-bold mb-4 2xl:mb-6 leading-tight">
               {sectionData?.heading ? (
-                <span dangerouslySetInnerHTML={{ __html: sectionData.heading.replace('Clone', '<span class="text-blue-500">Clone</span>') }} />
+                <span>{parse(sectionData.heading.replace('Clone', '<span class="text-blue-500">Clone</span>'))}</span>
               ) : (
                 <>Looking for a <br /> Specific <span className="text-blue-500">Market Clone?</span></>
               )}
