@@ -32,7 +32,7 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  
+
   try {
     const strapiData = await fetchAPI('/pages', {
       filters: { slug: { $eq: slug } },
@@ -222,8 +222,9 @@ export default async function DynamicPage({ params }: PageProps) {
         )}
 
         <CallToAction
-          title={<>Ready to Dominate the <br className="hidden md:block" /> Market?</>}
-          description="We Build Custom Apps That Boost Orders, Retain Customers, And Help You Scale Your Business Faster."
+          title={<>Your Competitors Are Already
+            <br className="hidden md:block" />  Going Digital</>}
+          description="Don't fall behind. Build a custom app that helps you reach more customers and scale faster. "
           buttonText="Talk to Expert Now"
           isDark={false}
           graphicType="dashed-circles"

@@ -17,12 +17,12 @@ export const Testimonials = async () => {
   }
 
   const testimonialSection = cmsData?.data;
-  
+
   // Default values
   let heading: React.ReactNode = (
     <>Here is what our <span className="text-primary !font-heading">clients</span> say about their <span className="text-primary !font-heading">experience.</span></>
   );
-  let subheading = "We Don't Just Deliver Solutions; We Build Lasting Partnerships. Discover The Success Stories And Feedback From Our Clients, Which Stand As A Testament To Our Unwavering Commitment To Quality And Excellence.";
+  let subheading = "We let our work speak through our clients' voices. Take a look at their honest feedback, reviews, and experiences working with our team.";
   let reviews: Review[] = [];
   let videos: TestimonialVideo[] = [];
 
@@ -30,16 +30,16 @@ export const Testimonials = async () => {
     const rawHeading = testimonialSection.heading || "";
     // If the string contains exactly the text from the screenshot, inject HTML
     if (rawHeading.toLowerCase().includes("clients") && rawHeading.toLowerCase().includes("experience")) {
-       heading = (
-         <>
+      heading = (
+        <>
           {rawHeading.split(/clients/i)[0]}
           <span className="text-primary !font-heading">clients</span>
           {rawHeading.split(/clients/i)[1].split(/experience/i)[0]}
           <span className="text-primary !font-heading">experience.</span>
-         </>
-       );
+        </>
+      );
     } else {
-       heading = <>{rawHeading}</>;
+      heading = <>{rawHeading}</>;
     }
 
     subheading = testimonialSection.subheading || subheading;
@@ -137,7 +137,7 @@ export const Testimonials = async () => {
   }
 
   return (
-    <TestimonialsClient 
+    <TestimonialsClient
       heading={heading}
       subheading={subheading}
       reviews={reviews}

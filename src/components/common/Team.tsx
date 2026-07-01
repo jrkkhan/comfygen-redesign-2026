@@ -5,26 +5,30 @@ import Image from 'next/image';
 
 const teamMembers = [
   {
-    name: 'Mr. Saddam Husen',
+    name: 'MR. Saddam Husen',
     role: 'Founder And CTO',
     // High-quality placeholder for Founder
     image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80',
-    isActive: true
+    isActive: true,
+    linkedin: 'https://www.linkedin.com/in/saddam-husen/'
   },
   {
-    name: 'Girdhari Rajpurohit',
+    name: 'MR. Girdhari Rajpurohit',
     role: 'SEO Manager',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80',
+    linkedin: 'https://www.linkedin.com/in/thegirdharisingh/'
   },
   {
-    name: 'Abhishek Nayar',
-    role: 'General Manager',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&q=80'
+    name: 'MR. Abhishek Singh',
+    role: 'Project Manager',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&q=80',
+    linkedin: 'https://www.linkedin.com/in/abhishek-ssingh/'
   },
   {
     name: 'Sandha Agrawal',
-    role: 'Human Resource Head',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80'
+    role: 'Sales Head',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80',
+    linkedin: 'https://www.linkedin.com/in/sandhya-agarwal-a3a089189/'
   },
 ];
 
@@ -36,49 +40,58 @@ export const Team = () => {
         {/* Header Section */}
         <div className="text-center mb-10 2xl:mb-16">
           <h2 className="text-balance text-3xl sm:text-4xl 2xl:text-[42px] font-bold text-slate-900 mb-3 2xl:mb-5 tracking-tight">
-            Meet the team you'll work with
+            Meet the People Behind Your Project
           </h2>
           <p className="text-slate-500 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Led By A Founding Team With 80+ Developers, Designers, And QA Engineers In-House.
+            The core team at Comfygen brings together designers, developers, and blockchain engineers who build every solution we deliver.
+
           </p>
         </div>
 
         {/* Team Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 2xl:gap-6">
-          {teamMembers.map((member, idx) => (
-            <div
-              key={idx}
-              // Active state mimicking the blue outlined border in the design
-              className={`flex flex-col items-center text-center p-6 2xl:p-10 rounded-[20px] border transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1 cursor-pointer group bg-white
-                ${member.isActive
-                  ? 'border-primary/40 shadow-xl shadow-primary/5 ring-1 ring-primary/10'
-                  : 'border-slate-100 hover:border-primary/30'
-                }
-              `}
-            >
-              {/* Profile Image Wrapper */}
-              <div className="w-28 h-28 md:w-32 md:h-32 2xl:w-40 2xl:h-40 rounded-full overflow-hidden mb-4 2xl:mb-6 relative">
-                {/* Optional glow ring on hover */}
-                <div className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-primary/20 transition-colors z-10"></div>
+          {teamMembers.map((member, idx) => {
+            const CardWrapper = member.linkedin ? 'a' : 'div';
+            return (
+              <CardWrapper
+                key={idx}
+                {...(member.linkedin ? {
+                  href: member.linkedin,
+                  target: "_blank",
+                  rel: "noopener noreferrer"
+                } : {})}
+                // Active state mimicking the blue outlined border in the design
+                className={`flex flex-col items-center text-center p-6 2xl:p-10 rounded-[20px] border transition-all duration-300 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1 cursor-pointer group bg-white
+                  ${member.isActive
+                    ? 'border-primary/40 shadow-xl shadow-primary/5 ring-1 ring-primary/10'
+                    : 'border-slate-100 hover:border-primary/30'
+                  }
+                `}
+              >
+                {/* Profile Image Wrapper */}
+                <div className="w-28 h-28 md:w-32 md:h-32 2xl:w-40 2xl:h-40 rounded-full overflow-hidden mb-4 2xl:mb-6 relative">
+                  {/* Optional glow ring on hover */}
+                  <div className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-primary/20 transition-colors z-10"></div>
 
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  sizes="(max-width: 768px) 112px, 160px"
-                  className="object-cover rounded-full group-hover:scale-110 transition-transform duration-700 ease-out"
-                />
-              </div>
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    sizes="(max-width: 768px) 112px, 160px"
+                    className="object-cover rounded-full group-hover:scale-110 transition-transform duration-700 ease-out"
+                  />
+                </div>
 
-              {/* Details */}
-              <h3 className="text-balance text-base 2xl:text-xl font-bold text-slate-900 mb-1 2xl:mb-2 group-hover:text-primary transition-colors !font-heading">
-                {member.name}
-              </h3>
-              <p className="text-slate-500 text-xs 2xl:text-sm font-medium">
-                {member.role}
-              </p>
-            </div>
-          ))}
+                {/* Details */}
+                <h3 className="text-balance text-base 2xl:text-xl font-bold text-slate-900 mb-1 2xl:mb-2 group-hover:text-primary transition-colors !font-heading">
+                  {member.name}
+                </h3>
+                <p className="text-slate-500 text-xs 2xl:text-sm font-medium mb-3 2xl:mb-4">
+                  {member.role}
+                </p>
+              </CardWrapper>
+            );
+          })}
         </div>
 
       </div>
