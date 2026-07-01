@@ -1,6 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { notFound } from 'next/navigation';
+import { DynamicFAQSchema } from "@/components/common/DynamicFAQSchema";
 import { Header } from '@/components/common/Header';
 import { HeroSectionThree } from '@/components/common/solution/HeroSectionThree';
 import { HeroBentoGrid } from '@/components/common/solution/HeroBentoGrid';
@@ -105,6 +106,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
 
   return (
     <main className="relative min-h-screen font-sans bg-white flex flex-col">
+      <DynamicFAQSchema faqs={faqData?.faqdata ? faqData.faqdata.map((faq: any) => ({ question: faq.quz, answer: faq.answer })) : []} />
       <div className="relative flex flex-col z-[100] min-h-screen lg:min-h-screen overflow-hidden bg-[#020617]">
         {/* Modern Glowing Gradient Blobs - Brand Theme */}
         <div className="absolute inset-0 pointer-events-none" style={{

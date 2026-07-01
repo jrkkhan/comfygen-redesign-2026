@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from "next/image";
+import { DynamicFAQSchema } from "@/components/common/DynamicFAQSchema";
 import { Header } from "@/components/common/Header";
 import { Hero } from "@/components/common/Hero";
 import { Services } from "@/components/common/Services";
@@ -113,6 +114,7 @@ export default async function DynamicPage({ params }: PageProps) {
 
   return (
     <main className="relative min-h-screen font-sans bg-white flex flex-col">
+      <DynamicFAQSchema faqs={apiFaqs} />
       <div className="relative min-h-screen overflow-hidden bg-[#02040a] flex flex-col z-[100]">
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           <Image

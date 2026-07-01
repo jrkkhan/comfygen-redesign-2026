@@ -1,5 +1,6 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
+import { DynamicFAQSchema } from "@/components/common/DynamicFAQSchema";
 import { Header } from "@/components/common/Header";
 import { HeroSectionThree } from "@/components/common/solution/HeroSectionThree";
 import { HeroBentoGrid } from "@/components/common/solution/HeroBentoGrid";
@@ -67,6 +68,7 @@ export default async function SolutionPage({ params }: { params: { slug: string 
 
   return (
     <main className="min-h-screen bg-white">
+      <DynamicFAQSchema faqs={faqSection?.items || []} />
       {/* Dark Hero Section Container matching other pages but with solution gradient */}
       <div 
         className="relative min-h-screen overflow-hidden flex flex-col z-[100]"

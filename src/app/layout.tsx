@@ -78,6 +78,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { GlobalSchema } from '@/components/common/GlobalSchema';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -86,6 +88,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${roboto.variable} ${nataSans.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col font-sans">
+        <GlobalSchema />
         {children}
         <FloatingContact />
         <GTMLoader />
