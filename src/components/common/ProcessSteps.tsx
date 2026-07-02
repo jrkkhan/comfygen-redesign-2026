@@ -22,11 +22,12 @@ export interface ProcessStep {
 
 export interface ProcessStepsProps {
   title?: string;
+  pageName?: string;
   subtitle?: string;
   steps?: ProcessStep[];
 }
 
-export const ProcessSteps = ({ title, subtitle, steps }: ProcessStepsProps) => {
+export const ProcessSteps = ({ title, pageName, subtitle, steps }: ProcessStepsProps) => {
   const displaySteps = steps && steps.length > 0 ? steps : defaultSteps;
   const [activeStep, setActiveStep] = useState(displaySteps[0]?.id || '01');
 
@@ -42,7 +43,7 @@ export const ProcessSteps = ({ title, subtitle, steps }: ProcessStepsProps) => {
           </span>
 
           <h2 className="text-balance text-3xl sm:text-4xl 2xl:text-[42px] font-bold text-slate-900 mb-4 2xl:mb-6 leading-[1.25] tracking-tight">
-            {title ? title : <>A simple 7-step process for<br className="hidden lg:block" /> delivery development</>}
+            {title ? title : <>A simple 7-step process for<br className="hidden lg:block" /> <span className="capitalize">{pageName || "delivery development"}</span></>}
           </h2>
 
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-3 2xl:mb-4 pr-0 lg:pr-10">

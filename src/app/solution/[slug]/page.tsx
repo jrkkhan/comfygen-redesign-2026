@@ -78,16 +78,6 @@ export default async function SolutionPage({ params }: PageProps) {
     notFound();
   }
   
-  // Dummy data for Process Steps
-  const processStepsData = [
-    { id: "01", title: "Market Research & Strategy", desc: "We analyze your target audience and local competitors." },
-    { id: "02", title: "UI/UX Design", desc: "Creating intuitive designs for Users, Drivers, and Restaurants." },
-    { id: "03", title: "App Development", desc: "Building the apps with scalable, secure, and robust technology." },
-    { id: "04", title: "Testing & QA", desc: "Rigorous testing to ensure zero bugs and high performance." },
-    { id: "05", title: "Launch & Deployment", desc: "Publishing the apps on App Store and Google Play Store." },
-    { id: "06", title: "Maintenance & Support", desc: "Post-launch support to keep your app updated and secure." }
-  ];
-
 
 
   const { 
@@ -170,11 +160,7 @@ export default async function SolutionPage({ params }: PageProps) {
       <CloneSolutions sectionData={clonesSection} />
 
       {/* 12. Development Process */}
-      <ProcessSteps 
-        title="Our Food Delivery App Development Process"
-        subtitle="A streamlined, agile approach to bring your idea to the market faster."
-        steps={processStepsData}
-      />
+      <ProcessSteps pageName={slug.replace(/-/g, ' ')} />
 
       {/* 13. Tech Stack */}
       <TechStack />

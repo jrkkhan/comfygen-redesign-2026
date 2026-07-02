@@ -46,10 +46,11 @@ export const Footer = () => {
               {/* Left Side: Contact Information */}
               <div className="flex flex-col justify-center">
                 <h2 className="text-balance text-3xl sm:text-4xl 2xl:text-[44px] font-bold text-white mb-4 2xl:mb-5 leading-[1.1] tracking-tight">
-                  Tell us what you're<br />planning to build.
+                  Let's Turn Your Idea<br />Into a Reality
                 </h2>
                 <p className="text-slate-400 mb-8 2xl:mb-12 text-[15px] max-w-md leading-relaxed">
-                  Share Your Idea And We'll Come Back Within One Business Day With Next Steps.
+                  Share a few details about your project and we'll respond quickly with a clear plan forward
+
                 </p>
 
                 <div className="flex flex-col sm:flex-row flex-wrap gap-8 md:gap-12">

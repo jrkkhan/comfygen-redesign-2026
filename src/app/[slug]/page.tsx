@@ -201,7 +201,7 @@ export default async function DynamicPage({ params }: PageProps) {
         )}
 
         <Awards />
-        <ProcessSteps />
+        <ProcessSteps pageName={slug.replace(/-/g, ' ')} />
 
         {whyChooseReasons.length > 0 && (
           <WhyChooseUs

@@ -187,7 +187,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
           <AdvancedTechFeatures sectionData={techFeaturesSection} />
         )}
 
-        <ProcessSteps />
+        <ProcessSteps pageName={slug.replace(/-/g, ' ')} />
         <WhyChooseUs />
         <Testimonials />
 

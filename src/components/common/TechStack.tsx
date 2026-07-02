@@ -1,24 +1,27 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const tabs = [
   'Frontend', 'Backend', 'Database', 'Cloud & DevOps',
   'Payment Gateways', 'Security', 'UI/UX Design',
-  'Product Management', 'Artificial Intelligence'
+  'Product Management', 'Artificial Intelligence',
+  'Blockchain', 'Crypto Wallets', 'APIs and Integrations'
 ];
 
 const techData: Record<string, string[]> = {
   'Frontend': [
     'React.js', 'Vue.js', 'Angular', 'Svelte', 'Next.js',
-    'Ember.js', 'Backbone.js', 'Bootstrap', 'Tailwind CSS', 'Material UI'
+    'Ember.js', 'Backbone.js', 'Bootstrap', 'Tailwind CSS', 'Material UI',
+    'TypeScript', 'HTML5', 'CSS3'
   ],
   'Backend': [
     'Node.js', 'Python', 'Java', 'PHP', 'Ruby on Rails',
-    'Go', 'C#', 'Spring Boot', 'Django', 'Express.js'
+    'Go', 'C#', 'Spring Boot', 'Django', 'Express.js',
+    'Laravel', '.NET'
   ],
   'Database': [
     'MongoDB', 'MySQL', 'PostgreSQL', 'Redis', 'Oracle',
@@ -30,15 +33,18 @@ const techData: Record<string, string[]> = {
   ],
   'Payment Gateways': [
     'Stripe', 'PayPal', 'Razorpay', 'Braintree', 'Square',
-    'Adyen', 'Authorize.Net', '2Checkout', 'Mollie', 'Skrill'
+    'Adyen', 'Authorize.Net', '2Checkout', 'Mollie', 'Skrill',
+    'Coinbase Commerce', 'BitPay', 'Chargebee'
   ],
   'Security': [
     'OAuth', 'JWT', 'SSL/TLS', 'bcrypt', 'Cloudflare',
-    'Keycloak', 'Auth0', 'Okta', 'Let\'s Encrypt', 'Sentinel'
+    'Keycloak', 'Auth0', 'Okta', 'Let\'s Encrypt', 'Sentinel',
+    'Snyk', 'OWASP', 'CertiK', 'Slither', 'Penetration Testing'
   ],
   'UI/UX Design': [
     'Figma', 'Adobe XD', 'Sketch', 'InVision', 'Zeplin',
-    'Framer', 'Principle', 'Balsamiq', 'Miro', 'Abstract'
+    'Framer', 'Principle', 'Balsamiq', 'Miro', 'Abstract',
+    'Adobe Illustrator', 'Photoshop'
   ],
   'Product Management': [
     'Jira', 'Trello', 'Asana', 'Notion', 'Linear',
@@ -46,7 +52,17 @@ const techData: Record<string, string[]> = {
   ],
   'Artificial Intelligence': [
     'OpenAI', 'TensorFlow', 'PyTorch', 'Keras', 'Hugging Face',
-    'LangChain', 'Scikit-learn', 'Midjourney', 'Claude', 'Gemini'
+    'LangChain', 'Scikit-learn', 'Midjourney', 'Claude', 'Gemini',
+    'Pinecone'
+  ],
+  'Blockchain': [
+    'Solidity', 'Rust', 'Ethereum', 'Solana', 'Polygon', 'BNB Chain', 'Web3.js', 'Hardhat'
+  ],
+  'Crypto Wallets': [
+    'MetaMask', 'WalletConnect', 'Trust Wallet', 'Coinbase Wallet SDK', 'Web3Auth', 'Ledger', 'Phantom', 'Rainbow'
+  ],
+  'APIs and Integrations': [
+    'REST', 'GraphQL', 'Google Maps', 'Mapbox', 'Socket.io', 'Twilio', 'Firebase Cloud Messaging', 'WebRTC'
   ]
 };
 
@@ -60,6 +76,17 @@ export const TechStack = ({
   buttonLink = "/contact-us"
 }: TechStackProps = {}) => {
   const [activeTab, setActiveTab] = useState('Frontend');
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 300;
+      scrollContainerRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <section className="w-full py-16 xl:py-16 2xl:py-28 px-4 bg-[#0A0D27]">
@@ -98,19 +125,48 @@ export const TechStack = ({
         </div>
 
         {/* Tabs Section */}
-        <div className="flex flex-wrap gap-2.5 sm:gap-3 mb-8 2xl:mb-10">
-          {tabs.map(tab => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-5 py-2 rounded-full text-[13px] font-medium transition-colors border ${activeTab === tab
-                ? 'border-primary/80 text-white bg-primary/10 shadow-[0_0_10px_rgba(1,88,230,0.15)]'
-                : 'border-white/10 text-slate-400 hover:text-white hover:bg-white/5'
-                }`}
-            >
-              {tab}
-            </button>
-          ))}
+        <div className="relative mb-8 2xl:mb-10 flex items-center">
+          {/* Left Fade Dissolve */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#0A0D27] via-[#0A0D27]/80 to-transparent z-[5] pointer-events-none" />
+
+          {/* Left Scroll Button */}
+          <button 
+            onClick={() => scroll('left')}
+            className="absolute left-0 z-10 w-9 h-9 flex items-center justify-center bg-[#151c33] text-white hover:bg-primary rounded-full shadow-lg border border-white/10 transition-colors"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          <div 
+            ref={scrollContainerRef}
+            className="flex overflow-x-auto gap-2.5 sm:gap-3 px-12 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          >
+            {tabs.map(tab => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`whitespace-nowrap shrink-0 px-5 py-2 rounded-full text-[13px] font-medium transition-colors border ${activeTab === tab
+                  ? 'border-primary/80 text-white bg-primary/10 shadow-[0_0_10px_rgba(1,88,230,0.15)]'
+                  : 'border-white/10 text-slate-400 hover:text-white hover:bg-white/5'
+                  }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          {/* Right Fade Dissolve */}
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#0A0D27] via-[#0A0D27]/80 to-transparent z-[5] pointer-events-none" />
+
+          {/* Right Scroll Button */}
+          <button 
+            onClick={() => scroll('right')}
+            className="absolute right-0 z-10 w-9 h-9 flex items-center justify-center bg-[#151c33] text-white hover:bg-primary rounded-full shadow-lg border border-white/10 transition-colors"
+            aria-label="Scroll right"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
 
         {/* Tech Grid Section */}
