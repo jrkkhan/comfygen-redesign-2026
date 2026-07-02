@@ -20,7 +20,7 @@ export async function fetchAPI(path: string, urlParamsObject = {}, options = {})
 
     // Make the fetch request
     const response = await fetch(requestUrl, {
-      next: { revalidate: 3600 }, // Default to 1-hour ISR instead of no-store
+      next: { revalidate: 60 }, // Reduced to 1-minute ISR to see updates faster
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,

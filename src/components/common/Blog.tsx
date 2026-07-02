@@ -15,7 +15,7 @@ async function fetchLatestBlogs(searchTerm?: string) {
       url += `&search=${encodeURIComponent(searchTerm)}`;
     }
     const res = await fetch(url, {
-      next: { revalidate: 3600 } // Revalidate every hour
+      next: { revalidate: 60 } // Reduced to 1-minute ISR to see updates faster
     });
 
     if (!res.ok) {
