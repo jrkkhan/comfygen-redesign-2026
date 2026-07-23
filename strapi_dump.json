@@ -1,0 +1,1611 @@
+{
+  "data": [
+    {
+      "id": 39,
+      "documentId": "ycwl7mzqyqdtly3n03l75e58",
+      "createdAt": "2026-06-24T12:36:26.212Z",
+      "updatedAt": "2026-06-24T12:36:26.212Z",
+      "publishedAt": "2026-06-24T12:36:26.270Z",
+      "slug": "courier-delivery-app-development",
+      "title": "Courier Delivery App Development",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 36,
+        "metaTitle": "Custom Courier Delivery App Development Services | Scale Fast",
+        "metaDescription": "Launch a high-performance courier delivery app. We build scalable, feature-rich solutions for startups and enterprises to streamline logistics and operations.",
+        "keywords": "courier delivery app development, logistics software solution, last-mile delivery app, delivery management system, on-demand courier app",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/courier-delivery-app-development",
+        "structuredData": {
+          "name": "Courier Delivery App Solution",
+          "@type": "SoftwareApplication",
+          "@context": "https://schema.org",
+          "description": "Professional courier delivery app development services for modern logistics businesses.",
+          "applicationCategory": "BusinessApplication"
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 39,
+        "badgeText": "Logistics Excellence",
+        "titlePreHighlight": "Revolutionize Logistics with a ",
+        "highlightText": "Custom Courier Delivery App",
+        "titlePostHighlight": " Built for Scale",
+        "description": "Accelerate your delivery operations with a robust, feature-rich mobile solution. We design high-performance apps that connect customers, drivers, and businesses in real-time."
+      },
+      "SolutionServiceSection": null,
+      "SolutionAboutSection": {
+        "id": 39,
+        "title": "Empowering Logistics Through Advanced Technology",
+        "paragraph": "In an era of instant gratification, your delivery business needs more than just a website; it needs a seamless digital ecosystem. Our courier delivery app development services focus on creating intuitive user experiences coupled with powerful backend engines, ensuring that every package moves from point A to point B with absolute efficiency and complete transparency for all stakeholders involved.",
+        "bullets": [
+          "End-to-end real-time shipment tracking",
+          "Optimized route planning for drivers",
+          "Automated dispatch management system",
+          "Secure multi-gateway payment integration",
+          "Advanced analytics and custom reporting",
+          "Seamless cross-platform performance"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 47,
+      "documentId": "ktib53p3itfzdw035o2an3sb",
+      "createdAt": "2026-06-24T12:41:26.790Z",
+      "updatedAt": "2026-06-24T12:41:26.790Z",
+      "publishedAt": "2026-06-24T12:41:26.856Z",
+      "slug": "dpos-blockchain-development",
+      "title": "DPOS Blockchain Development",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 44,
+        "metaTitle": "Professional DPoS Blockchain Development Services | Scalable Web3",
+        "metaDescription": "Unlock high-performance blockchain solutions with our expert DPoS development services. Fast, secure, and energy-efficient decentralized infrastructure builds.",
+        "keywords": "DPoS blockchain development, delegated proof of stake, blockchain consulting, custom blockchain solutions, web3 development, decentralized finance",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/dpos-blockchain-development",
+        "structuredData": {
+          "name": "DPoS Blockchain Development",
+          "@type": "SoftwareApplication",
+          "@context": "https://schema.org",
+          "applicationCategory": "Blockchain Infrastructure"
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 47,
+        "badgeText": "Blockchain Excellence",
+        "titlePreHighlight": "Accelerate Your Vision With ",
+        "highlightText": "DPoS Blockchain Development",
+        "titlePostHighlight": " Designed for Scale",
+        "description": "Deploy high-throughput, energy-efficient, and secure decentralized networks using the power of Delegated Proof of Stake. Our experts build the backbone for your next-generation enterprise blockchain applications."
+      },
+      "SolutionServiceSection": null,
+      "SolutionAboutSection": {
+        "id": 47,
+        "title": "Revolutionizing Consensus Mechanisms",
+        "paragraph": "Delegated Proof of Stake (DPoS) is the gold standard for high-performance blockchain environments requiring enterprise-grade speed and sustainability. Our development team specializes in architecting robust consensus protocols that enable thousands of transactions per second while maintaining complete network integrity and decentralized governance.",
+        "bullets": [
+          "Sub-second block confirmation times",
+          "High energy efficiency architecture",
+          "Democratic delegate voting systems",
+          "Scalable network throughput",
+          "Advanced slashing and security protocols",
+          "Modular smart contract integration"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 79,
+      "documentId": "yrj0f40g6sb22g7d07i7zxdg",
+      "createdAt": "2026-06-24T12:49:49.718Z",
+      "updatedAt": "2026-06-24T12:49:49.718Z",
+      "publishedAt": "2026-06-24T12:49:49.750Z",
+      "slug": "crypto-white-paper-development",
+      "title": "Crypto White Paper Development",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 76,
+        "metaTitle": "Professional Crypto White Paper Development Services | Web3",
+        "metaDescription": "Transform your blockchain vision into a professional white paper. We offer expert crypto white paper development, technical writing, and investor-ready design.",
+        "keywords": "crypto white paper, blockchain white paper, ICO white paper, DeFi documentation, Web3 copywriting, tokenomics design",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/crypto-white-paper-development",
+        "structuredData": {
+          "name": "Crypto White Paper Experts",
+          "@type": "ProfessionalService",
+          "@context": "https://schema.org",
+          "priceRange": "$$$",
+          "description": "Premium technical documentation and white paper development for Web3 projects."
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 79,
+        "badgeText": "Elite Web3 Documentation",
+        "titlePreHighlight": "Launch Your Project with a ",
+        "highlightText": "High-Conversion White Paper",
+        "titlePostHighlight": " That Investors Trust",
+        "description": "Our expert team blends technical blockchain architecture with persuasive business strategy. Secure your project's credibility and attract institutional capital with a professional, investor-grade white paper."
+      },
+      "SolutionServiceSection": null,
+      "SolutionAboutSection": {
+        "id": 79,
+        "title": "Crafting the Blueprint for Your Blockchain Future",
+        "paragraph": "Your white paper is the most critical document in your fundraising journey. We combine deep technical knowledge with professional copywriting to articulate your project's value proposition, tokenomics, and roadmap, ensuring your vision resonates with stakeholders, investors, and the global blockchain community.",
+        "bullets": [
+          "Deep technical blockchain expertise",
+          "Strategic tokenomics modeling",
+          "Investor-grade storytelling",
+          "Professional layout and typography",
+          "Regulatory-conscious documentation",
+          "Scalable market analysis"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 85,
+      "documentId": "fg0qblv23msxaluno032tl66",
+      "createdAt": "2026-06-24T12:50:28.506Z",
+      "updatedAt": "2026-06-24T12:50:28.506Z",
+      "publishedAt": "2026-06-24T12:50:28.548Z",
+      "slug": "hybrid-crypto-exchange-development",
+      "title": "Hybrid Crypto Exchange Development",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 82,
+        "metaTitle": "Custom Hybrid Crypto Exchange Development Services",
+        "metaDescription": "Launch a high-performance hybrid crypto exchange with our expert development solutions. Secure, scalable, and fully customizable trading platform architecture.",
+        "keywords": "hybrid crypto exchange, exchange software development, blockchain development, trading platform, crypto startup, liquidity management",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/hybrid-crypto-exchange-development",
+        "structuredData": {
+          "name": "Hybrid Crypto Exchange Development",
+          "@type": "SoftwareApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "@context": "https://schema.org",
+          "applicationCategory": "FinancialSoftware"
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 85,
+        "badgeText": "Fintech Solutions",
+        "titlePreHighlight": "Build Your High-Performance ",
+        "highlightText": "Hybrid Crypto Exchange",
+        "titlePostHighlight": " Platform Today",
+        "description": "Combine the speed of centralized order books with the security of decentralized custody. We build robust, scalable, and compliant hybrid trading solutions tailored to your business needs."
+      },
+      "SolutionServiceSection": null,
+      "SolutionAboutSection": {
+        "id": 85,
+        "title": "Revolutionizing Digital Asset Trading",
+        "paragraph": "Our hybrid exchange development bridges the gap between traditional liquidity and decentralized sovereignty. By leveraging modular architecture and advanced cryptography, we empower startups and institutions to create trading environments that prioritize both user experience and fund safety.",
+        "bullets": [
+          "Advanced order matching engine",
+          "Non-custodial wallet integration",
+          "Cross-chain liquidity pools",
+          "Institutional-grade security",
+          "Multi-asset support ecosystem",
+          "Regulatory compliance features"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 95,
+      "documentId": "wxeti407ittrdanw6ahl30fu",
+      "createdAt": "2026-06-24T12:51:58.984Z",
+      "updatedAt": "2026-06-24T12:51:58.984Z",
+      "publishedAt": "2026-06-24T12:51:59.030Z",
+      "slug": "nft-wallet-development-company",
+      "title": "NFT Wallet Development Company",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 92,
+        "metaTitle": "Custom NFT Wallet Development Company | Secure Blockchain App",
+        "metaDescription": "Build high-performance, secure, and user-friendly NFT wallets with our expert development team. Accelerate your Web3 market entry with custom blockchain solutions.",
+        "keywords": "NFT wallet development company, custom NFT wallet app, blockchain wallet development, non-custodial wallet builder, Web3 app developers",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/nft-wallet-development",
+        "structuredData": {
+          "name": "Custom NFT Wallet Development Services",
+          "@type": "SoftwareApplication",
+          "@context": "https://schema.org",
+          "description": "Professional NFT wallet development company building secure, scalable blockchain applications for startups and enterprises.",
+          "applicationCategory": "FinTechSoftware"
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 95,
+        "badgeText": "Blockchain Innovation",
+        "titlePreHighlight": "Build Your Secure ",
+        "highlightText": "NFT Wallet Application",
+        "titlePostHighlight": " with Enterprise-Grade Security",
+        "description": "Launch a feature-rich, high-performance NFT wallet tailored to your business needs. We specialize in building secure, scalable, and intuitive blockchain experiences that empower your users to manage digital assets with confidence."
+      },
+      "SolutionServiceSection": null,
+      "SolutionAboutSection": {
+        "id": 95,
+        "title": "Empowering the Future of Digital Asset Management",
+        "paragraph": "As a leading NFT wallet development company, we combine deep expertise in cryptography, decentralized architecture, and intuitive UI/UX design to build robust digital asset solutions. We help businesses and startups bridge the gap between complex blockchain technology and end-user simplicity, ensuring every transaction is seamless, fast, and highly secure.",
+        "bullets": [
+          "End-to-end blockchain integration",
+          "Multi-chain support (ETH, SOL, MATIC)",
+          "Advanced biometric security protocols",
+          "Seamless NFT gallery and viewing",
+          "Cross-platform mobile responsiveness",
+          "Compliance-ready architecture"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 97,
+      "documentId": "m7vvcgrnk6lfu31fl05y613n",
+      "createdAt": "2026-06-24T12:52:11.325Z",
+      "updatedAt": "2026-06-24T12:52:11.325Z",
+      "publishedAt": "2026-06-24T12:52:11.361Z",
+      "slug": "white-label-cryptocurrency-wallet-development",
+      "title": "White Label Cryptocurrency Wallet Development",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 94,
+        "metaTitle": "White Label Cryptocurrency Wallet Development Services",
+        "metaDescription": "Launch your own secure, scalable crypto wallet app. Our expert white label cryptocurrency wallet development services ensure rapid market entry and security.",
+        "keywords": "white label crypto wallet, crypto wallet development, blockchain wallet solutions, custom cryptocurrency wallet, secure wallet app",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/white-label-cryptocurrency-wallet",
+        "structuredData": {
+          "name": "White Label Crypto Wallet Development",
+          "@type": "SoftwareApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "@context": "https://schema.org",
+          "applicationCategory": "FinTechApplication"
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 97,
+        "badgeText": "Fintech Innovation",
+        "titlePreHighlight": "Launch Your Own ",
+        "highlightText": "Secure Crypto Wallet",
+        "titlePostHighlight": " in Record Time",
+        "description": "Empower your users with a highly secure, feature-rich cryptocurrency wallet. We provide end-to-end white label development to get your fintech venture off the ground."
+      },
+      "SolutionServiceSection": null,
+      "SolutionAboutSection": {
+        "id": 97,
+        "title": "Future-Ready Wallet Solutions",
+        "paragraph": "Our white label cryptocurrency wallet software provides a robust, pre-tested architecture designed for high security and seamless user experience. By leveraging our scalable codebase, your business can significantly reduce time-to-market while ensuring institutional-grade protection for digital assets.",
+        "bullets": [
+          "Multi-currency asset support",
+          "Bank-grade security encryption",
+          "Real-time market data integration",
+          "Cross-platform synchronization",
+          "High-speed transaction processing",
+          "Compliance-ready architecture"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 99,
+      "documentId": "aiqmrej9afbm0eowpyt609uw",
+      "createdAt": "2026-06-24T12:52:27.878Z",
+      "updatedAt": "2026-06-24T12:52:27.878Z",
+      "publishedAt": "2026-06-24T12:52:27.923Z",
+      "slug": "multi-currency-wallet-development-company",
+      "title": "Multi Currency Wallet Development Company",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 96,
+        "metaTitle": "Custom Multi Currency Wallet Development Company | FinTech",
+        "metaDescription": "Build high-performance, secure, and scalable multi-currency digital wallets. Partner with a leading FinTech software development company for global solutions.",
+        "keywords": "Multi currency wallet development, crypto wallet app, fintech app development, digital wallet software, secure payment gateway integration, white label wallet",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/multi-currency-wallet-development",
+        "structuredData": {
+          "name": "Multi Currency Wallet Platform",
+          "@type": "SoftwareApplication",
+          "@context": "https://schema.org",
+          "operatingSystem": "iOS, Android, Web",
+          "applicationCategory": "FinancialApplication"
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 99,
+        "badgeText": "FinTech Development Experts",
+        "titlePreHighlight": "Scale Your Financial Business with a",
+        "highlightText": "Multi-Currency Digital Wallet",
+        "titlePostHighlight": "Engineered for Global Growth.",
+        "description": "Deploy secure, feature-rich, and compliant multi-currency wallets that empower your users to transact across borders seamlessly. We build robust digital infrastructures that bridge the gap between traditional banking and crypto assets."
+      },
+      "SolutionServiceSection": null,
+      "SolutionAboutSection": {
+        "id": 99,
+        "title": "Empowering Global Transactions through Innovation",
+        "paragraph": "In an increasingly interconnected economy, a multi-currency wallet is the backbone of successful FinTech ventures. We combine cutting-edge blockchain technology with traditional financial standards to provide a holistic wallet ecosystem that supports seamless currency conversion, high-speed transactions, and top-tier user security.",
+        "bullets": [
+          "Real-time currency exchange rates",
+          "Bank-grade security protocols",
+          "Multi-asset support including crypto",
+          "Regulatory compliance (KYC/AML)",
+          "Cross-border payment optimization",
+          "Scalable microservices architecture"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 255,
+      "documentId": "qzg9oy2x1kx4xncgb9ggag04",
+      "createdAt": "2026-06-24T12:45:14.677Z",
+      "updatedAt": "2026-07-01T09:04:03.322Z",
+      "publishedAt": "2026-07-01T09:04:03.406Z",
+      "slug": "news-web-app-development",
+      "title": "News & Web App Development",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 574,
+        "metaTitle": "Best News App Development Company | India & USA | Comfygen",
+        "metaDescription": "Leading news app development company providing high-performance, secure, and feature-rich digital media solutions for publishers and startups in India and the USA.",
+        "keywords": "news app development, newspaper app development, custom news portal, media app solutions, digital news web app, live tv streaming app",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/news-app-development",
+        "structuredData": {
+          "name": "Comfygen",
+          "@type": "LocalBusiness",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "India & USA"
+          },
+          "@context": "https://schema.org",
+          "description": "Top-tier news and web app development company specializing in digital media transformation."
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 577,
+        "badgeText": "Digital Media Solutions",
+        "titlePreHighlight": "Build the Next Generation ",
+        "highlightText": "News Mobile App",
+        "titlePostHighlight": "with Comfygen",
+        "description": "Empower your media brand with scalable, secure, and user-centric news applications. We bridge the gap between publishers and readers through advanced digital innovation."
+      },
+      "SolutionServiceSection": {
+        "id": 1258,
+        "heading": "Professional News & Web App Development Services",
+        "subtitle": "Comprehensive News & Web App Development solutions designed for global media businesses"
+      },
+      "SolutionAboutSection": {
+        "id": 577,
+        "title": "Empowering Media Giants with Digital Excellence",
+        "paragraph": "Comfygen is a premier news app development company dedicated to transforming how publishers and digital media startups deliver content to their audiences. We combine cutting-edge technology with intuitive design to ensure your platform stands out in the competitive digital landscape, offering real-time updates and seamless monetization capabilities.",
+        "bullets": [
+          "Customized mobile app development for publishers",
+          "Advanced web app creation for media portals",
+          "Scalable API integration and maintenance",
+          "Real-time news feed delivery architecture",
+          "User-centric design for maximum engagement",
+          "Secure and high-performance backend infrastructure"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 258,
+      "documentId": "bdhw39xf0un1u1sazqagp2sb",
+      "createdAt": "2026-06-24T12:23:44.566Z",
+      "updatedAt": "2026-07-01T09:04:04.788Z",
+      "publishedAt": "2026-07-01T09:04:04.858Z",
+      "slug": "pizza-delivery-app-development",
+      "title": "Pizza Delivery App Development",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 577,
+        "metaTitle": "Top Pizza Delivery App Development Company | Custom Solutions",
+        "metaDescription": "Launch a high-performance pizza delivery app with Comfygen. We offer custom, secure, and scalable pizza ordering solutions for startups and enterprise restaurant chains.",
+        "keywords": "pizza delivery app development, pizza ordering app, food delivery software, restaurant app development, white-label pizza app, custom pizza app",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/pizza-delivery-app-development",
+        "structuredData": {
+          "name": "Pizza Delivery App Development",
+          "@type": "SoftwareApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "@context": "https://schema.org",
+          "applicationCategory": "BusinessApplication"
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 580,
+        "badgeText": "Digital Food Delivery Solutions",
+        "titlePreHighlight": "Revolutionize Your Pizzeria with ",
+        "highlightText": "Premium Pizza Delivery App Development",
+        "titlePostHighlight": " Services",
+        "description": "Accelerate your online food delivery business with our robust, AI-powered pizza app solutions. We help restaurants and franchises scale rapidly with high-performance, secure, and user-centric mobile applications."
+      },
+      "SolutionServiceSection": {
+        "id": 1264,
+        "heading": "Pizza Delivery App Development Services",
+        "subtitle": "Professional Pizza Delivery App Development to grow your business effectively and scale operations across many regions."
+      },
+      "SolutionAboutSection": {
+        "id": 580,
+        "title": "Why Partner with Comfygen for Pizza Delivery App Development?",
+        "paragraph": "Comfygen is a leading digital transformation partner dedicated to building bespoke pizza delivery ecosystems that cater to the evolving demands of the modern food industry. Our expertise spans from intuitive customer-facing interfaces to complex backend delivery management systems, ensuring your business stays ahead of the competition. By combining 8+ years of industry experience with cutting-edge technology, we help pizzerias and cloud kitchens automate operations, minimize delivery times, and foster lasting customer loyalty through seamless, high-speed ordering experiences.",
+        "bullets": [
+          "AI-driven ordering workflows",
+          "Real-time GPS delivery tracking",
+          "Secure multi-payment integrations",
+          "Multi-role administrative access",
+          "Fully branded UI/UX designs",
+          "Cross-platform performance optimization"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 260,
+      "documentId": "f750x7lmvs3491xgwb6qekuu",
+      "createdAt": "2026-06-24T12:41:58.390Z",
+      "updatedAt": "2026-07-01T09:04:05.508Z",
+      "publishedAt": "2026-07-01T09:04:05.561Z",
+      "slug": "defi-development-company",
+      "title": "DeFi Development Company",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 579,
+        "metaTitle": "Top-Rated DeFi Development Company | Secure Blockchain Solutions",
+        "metaDescription": "Partner with a premier DeFi development company to build scalable, secure decentralized financial ecosystems, including DEXs, lending platforms, and custom dApps.",
+        "keywords": "DeFi development company, DeFi development services, smart contract development, DEX development, blockchain development company, decentralized finance solutions",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/defi-development-company",
+        "structuredData": {
+          "name": "DeFi Development Services",
+          "@type": "SoftwareApplication",
+          "@context": "https://schema.org",
+          "description": "Professional DeFi platform development and blockchain integration services.",
+          "applicationCategory": "FinTechSoftware"
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 582,
+        "badgeText": "Blockchain & FinTech Experts",
+        "titlePreHighlight": "Scale Your Business with Custom ",
+        "highlightText": "DeFi Development Solutions",
+        "titlePostHighlight": " for Global Finance",
+        "description": "Comfygen is a leading DeFi development company delivering secure, scalable, and high-performance decentralized finance solutions for startups and enterprises. We transform your financial vision into reality with robust smart contract architecture and seamless blockchain technology integration."
+      },
+      "SolutionServiceSection": {
+        "id": 1268,
+        "heading": "Expert DeFi Development Company Services",
+        "subtitle": "Comprehensive solutions from a leading DeFi Development Company to scale your financial platform."
+      },
+      "SolutionAboutSection": {
+        "id": 582,
+        "title": "Empowering the Future of Decentralized Finance",
+        "paragraph": "At Comfygen, we provide a full suite of DeFi development services to help businesses, startups, and enterprises build next-generation decentralized financial platforms. Our expertise covers everything from DeFi token creation to complex dApps, ensuring secure, scalable, and high-performance solutions tailored to your unique business goals and market requirements.",
+        "bullets": [
+          "End-to-end DeFi development lifecycle management",
+          "Custom smart contract development and security audits",
+          "Multi-chain integration for Ethereum, Polygon, and BSC",
+          "High-performance decentralized exchange architecture",
+          "Advanced liquidity pool and tokenomics consulting",
+          "Scalable dApp development with intuitive UI/UX"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 261,
+      "documentId": "hlpo3cldb9b9qp3v8gburgcm",
+      "createdAt": "2026-06-24T12:42:28.745Z",
+      "updatedAt": "2026-07-01T09:04:06.001Z",
+      "publishedAt": "2026-07-01T09:04:06.340Z",
+      "slug": "smart-contract-development",
+      "title": "Smart Contract Development",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 580,
+        "metaTitle": "Top-Rated Smart Contract Development Company | Comfygen",
+        "metaDescription": "Build secure, reliable, and high-performance smart contracts with Comfygen. We specialize in blockchain development, auditing, and optimization for decentralized applications.",
+        "keywords": "Smart Contract Development, Blockchain Development Services, DeFi Development, Smart Contract Auditing, NFT Smart Contract, Custom Blockchain Solutions",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/smart-contract-development",
+        "structuredData": {
+          "name": "Smart Contract Development Services",
+          "@type": "SoftwareApplication",
+          "@context": "https://schema.org",
+          "provider": {
+            "name": "Comfygen",
+            "@type": "Organization"
+          }
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 583,
+        "badgeText": "Blockchain Innovation",
+        "titlePreHighlight": "Build Secure, Scalable, and ",
+        "highlightText": "Smart Contract Development",
+        "titlePostHighlight": "Solutions for Enterprises",
+        "description": "Automate complex processes and secure your digital assets with high-performance smart contracts. We deliver precision-engineered blockchain solutions designed to minimize risk and maximize operational efficiency."
+      },
+      "SolutionServiceSection": {
+        "id": 1270,
+        "heading": "Smart Contract Development Services",
+        "subtitle": "Explore our professional Smart Contract Development solutions tailored to your business."
+      },
+      "SolutionAboutSection": {
+        "id": 583,
+        "title": "Leading the Future of Decentralized Automation",
+        "paragraph": "Comfygen is a top-rated smart contract development company dedicated to helping enterprises navigate the blockchain landscape with confidence. Our team of expert developers specializes in crafting bespoke smart contracts that automate workflows, eliminate intermediaries, and ensure absolute transparency and security for your business operations across various industry sectors.",
+        "bullets": [
+          "Expert blockchain development team",
+          "End-to-end security audits",
+          "High-performance contract optimization",
+          "Custom DeFi and NFT solutions",
+          "Seamless dApp integration services",
+          "Cross-platform protocol selection"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 262,
+      "documentId": "dvzt9ijsj8be7wmiuljj78uz",
+      "createdAt": "2026-06-24T12:42:58.578Z",
+      "updatedAt": "2026-07-01T09:04:06.622Z",
+      "publishedAt": "2026-07-01T09:04:06.713Z",
+      "slug": "ico-development-company",
+      "title": "ICO Development Company",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 581,
+        "metaTitle": "Professional ICO Development Company | Secure Token Launch",
+        "metaDescription": "Partner with a leading ICO development company to launch your crypto project securely. Custom blockchain solutions, smart contract auditing, and end-to-end token sale management.",
+        "keywords": "ICO development company, blockchain development, token sale platform, smart contract development, crypto launchpad, Initial Coin Offering services",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/ico-development-company",
+        "structuredData": {
+          "name": "Elite Blockchain Solutions",
+          "@type": "LocalBusiness",
+          "@context": "https://schema.org",
+          "description": "Professional ICO development company providing end-to-end blockchain and tokenization services."
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 584,
+        "badgeText": "Blockchain Experts",
+        "titlePreHighlight": "Accelerate Your Project with an",
+        "highlightText": "ICO Development Company",
+        "titlePostHighlight": "Driven by Excellence",
+        "description": "Transform your blockchain vision into reality with our elite development services. We deliver secure, scalable, and investor-ready ICO platforms tailored to your specific project needs."
+      },
+      "SolutionServiceSection": {
+        "id": 1272,
+        "heading": "Expert ICO Development Company Services",
+        "subtitle": "We offer a full suite of services as a professional ICO Development Company for your blockchain project."
+      },
+      "SolutionAboutSection": {
+        "id": 584,
+        "title": "Revolutionizing Tokenization Through Advanced Engineering",
+        "paragraph": "As a premier ICO development company, we specialize in building robust ecosystems that foster trust between developers and investors. Our expert team leverages cutting-edge blockchain protocols to ensure your Initial Coin Offering is secure, compliant, and highly efficient in the competitive digital assets market.",
+        "bullets": [
+          "End-to-End ICO Platform Development",
+          "Custom Smart Contract Architecture",
+          "Advanced Investor Dashboard Integration",
+          "Comprehensive Security Auditing Protocols",
+          "Secure Multi-Cryptocurrency Wallets",
+          "Post-Launch Technical Support Services"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 263,
+      "documentId": "z4zp637jfugsp3agvbjx21k6",
+      "createdAt": "2026-06-24T17:16:21.389Z",
+      "updatedAt": "2026-07-01T09:04:07.039Z",
+      "publishedAt": "2026-07-01T09:04:07.091Z",
+      "slug": "poa-blockchain-development",
+      "title": "POA Blockchain Development",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 582,
+        "metaTitle": "Expert POA Blockchain Development Services | Enterprise Solutions",
+        "metaDescription": "Scale your operations with high-performance POA Blockchain Development. Secure, energy-efficient, and scalable infrastructure tailored for modern enterprise decentralized applications.",
+        "keywords": "POA blockchain development, Proof of Authority, blockchain architecture, dApp development, private blockchain, enterprise blockchain solutions",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/poa-blockchain-development",
+        "structuredData": {
+          "name": "POA Blockchain Development",
+          "@type": "SoftwareApplication",
+          "@context": "https://schema.org",
+          "applicationCategory": "Blockchain Development Services"
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 585,
+        "badgeText": "Blockchain Enterprise Solution",
+        "titlePreHighlight": "Scale Faster with",
+        "highlightText": "POA Blockchain Development",
+        "titlePostHighlight": "for Modern Enterprises",
+        "description": "Unlock high-throughput, energy-efficient decentralized networks. We provide end-to-end Proof of Authority blockchain development to streamline your business logic and transaction integrity."
+      },
+      "SolutionServiceSection": {
+        "id": 1274,
+        "heading": "POA Blockchain Development Solutions",
+        "subtitle": "Premium POA Blockchain Development expertise for your growth."
+      },
+      "SolutionAboutSection": {
+        "id": 585,
+        "title": "Why Choose Proof of Authority?",
+        "paragraph": "Proof of Authority (POA) is a reputation-based consensus mechanism that offers unmatched speed and efficiency compared to traditional mining protocols. Our development team builds robust architectures that prioritize transaction security and network scalability, making it the ideal choice for private consortiums and high-performance decentralized applications requiring predictable outcomes.",
+        "bullets": [
+          "High transaction throughput speeds",
+          "Energy-efficient network design",
+          "Reputation-based validator identity",
+          "Low latency finality mechanism",
+          "Customized governance protocols",
+          "Enterprise-grade security standards"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 264,
+      "documentId": "s6bv40xoffxdqb3rgxt4r2jr",
+      "createdAt": "2026-06-24T12:41:45.860Z",
+      "updatedAt": "2026-07-01T09:04:07.330Z",
+      "publishedAt": "2026-07-01T09:04:07.402Z",
+      "slug": "dapp-development-company",
+      "title": "DApp Development Company",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 583,
+        "metaTitle": "Expert Blockchain DApp Development Company | Comfygen",
+        "metaDescription": "Comfygen is a premier Blockchain DApp Development Company, building secure, scalable decentralized applications for DeFi, NFTs, and Web3 enterprise solutions. Grow today.",
+        "keywords": "DApp Development Company, Blockchain Development, Web3 Integration, Smart Contract Services, Decentralized Application Services",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/dapp-development-company",
+        "structuredData": {
+          "name": "DApp Development Services",
+          "@type": "SoftwareApplication",
+          "@context": "https://schema.org",
+          "provider": {
+            "name": "Comfygen",
+            "@type": "LocalBusiness"
+          },
+          "applicationCategory": "Blockchain Software Development"
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 586,
+        "badgeText": "Web3 Innovation",
+        "titlePreHighlight": "Build the Future with Our ",
+        "highlightText": "DApp Development Company",
+        "titlePostHighlight": "Expertise",
+        "description": "Transform your business vision into reality with our custom decentralized application solutions. We deliver secure, scalable, and high-performance Web3 platforms designed for the modern digital economy."
+      },
+      "SolutionServiceSection": {
+        "id": 1276,
+        "heading": "Expert DApp Development Company Services",
+        "subtitle": "Partner with a premier DApp Development Company for transformative results"
+      },
+      "SolutionAboutSection": {
+        "id": 586,
+        "title": "Leading the Decentralized Revolution",
+        "paragraph": "Comfygen stands as a premier DApp development company, bridging the gap between traditional business models and the future of decentralized technology. We specialize in crafting high-performance, secure, and user-centric applications across diverse blockchain ecosystems to ensure your project thrives in a competitive digital landscape.",
+        "bullets": [
+          "Customized smart contract architecture",
+          "Seamless multi-chain Web3 integration",
+          "End-to-end security and auditing",
+          "User-centric UI/UX design workflows",
+          "Scalable infrastructure for enterprise",
+          "Ongoing maintenance and optimization"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 265,
+      "documentId": "e11xumb4hcpgaf3afz0jmpg3",
+      "createdAt": "2026-06-24T12:42:12.594Z",
+      "updatedAt": "2026-07-01T09:04:07.675Z",
+      "publishedAt": "2026-07-01T09:04:07.741Z",
+      "slug": "defi-smart-contract-development",
+      "title": "DeFi Smart Contract Development",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 584,
+        "metaTitle": "DeFi Smart Contract Development Company | Expert Services",
+        "metaDescription": "Comfygen offers premium DeFi smart contract development services. We build secure, audited, and optimized blockchain solutions for finance, real estate, and enterprise needs.",
+        "keywords": "DeFi smart contract development, smart contract auditing, blockchain development, smart contract optimization, decentralized finance solutions",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/defi-smart-contract-development",
+        "structuredData": {
+          "name": "DeFi Smart Contract Development",
+          "@type": "SoftwareApplication",
+          "@context": "https://schema.org",
+          "provider": {
+            "name": "Comfygen",
+            "@type": "Organization"
+          }
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 587,
+        "badgeText": "Blockchain Excellence",
+        "titlePreHighlight": "Revolutionize Finance with ",
+        "highlightText": "DeFi Smart Contract Development",
+        "titlePostHighlight": " Solutions",
+        "description": "Empower your business with high-performance, secure, and self-executing smart contracts. We bridge the gap between traditional industry processes and cutting-edge decentralized blockchain technology."
+      },
+      "SolutionServiceSection": {
+        "id": 1278,
+        "heading": "Our DeFi Smart Contract Development Services",
+        "subtitle": "Premier DeFi Smart Contract Development services for global enterprises"
+      },
+      "SolutionAboutSection": {
+        "id": 587,
+        "title": "Why Choose Our DeFi Development Services?",
+        "paragraph": "Comfygen is a premier provider of DeFi smart contract solutions, delivering transparent and automation-driven blockchain frameworks to global enterprises. We focus on building trustless, scalable, and highly optimized code architectures that ensure long-term stability and security for your decentralized finance applications.",
+        "bullets": [
+          "Expert DeFi smart contract developers",
+          "Rigorous security and auditing processes",
+          "Gas-optimized code for cost efficiency",
+          "Scalable and modular contract design",
+          "Custom integration with blockchain networks",
+          "Self-executing automation for business logic"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 266,
+      "documentId": "crj0xvlfw9e03nwkpe0bjv16",
+      "createdAt": "2026-06-24T12:42:46.587Z",
+      "updatedAt": "2026-07-01T09:04:08.004Z",
+      "publishedAt": "2026-07-01T09:04:08.078Z",
+      "slug": "smart-contract-mlm-software",
+      "title": "Smart Contract MLM Software",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 585,
+        "metaTitle": "Smart Contract MLM Software Development | Secure Blockchain MLM",
+        "metaDescription": "Launch your business with premier Smart Contract MLM Software Development services. We build secure, automated, and transparent blockchain-powered MLM platforms for global scale.",
+        "keywords": "Smart Contract MLM Software, Blockchain MLM Development, Decentralized MLM, Crypto MLM Software, MLM Commission Integration, Smart Contract Auditing",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/smart-contract-mlm-software",
+        "structuredData": {
+          "name": "Smart Contract MLM Software",
+          "@type": "SoftwareApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD"
+          },
+          "@context": "https://schema.org",
+          "applicationCategory": "BusinessApplication"
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 588,
+        "badgeText": "Blockchain MLM Solutions",
+        "titlePreHighlight": "Build Your Next Generation ",
+        "highlightText": "Smart Contract MLM Software",
+        "titlePostHighlight": "for Global Scaling",
+        "description": "Empower your multi-level marketing enterprise with our cutting-edge, blockchain-powered software. Automate commissions, ensure complete transparency, and foster trust with a secure decentralized network solution."
+      },
+      "SolutionServiceSection": {
+        "id": 1280,
+        "heading": "Smart Contract MLM Software Development Services",
+        "subtitle": "We offer comprehensive Smart Contract MLM Software development solutions for modern global business."
+      },
+      "SolutionAboutSection": {
+        "id": 588,
+        "title": "Trusted Smart Contract MLM Software Development Company",
+        "paragraph": "As a leader in blockchain innovation, we specialize in crafting robust MLM platforms that replace manual processes with secure, immutable smart contracts. Our development lifecycle focuses on high-performance architecture, automated payout systems, and seamless user experiences, ensuring your business stays competitive in the rapidly evolving digital economy.",
+        "bullets": [
+          "Automated commission and payout calculations",
+          "Immutable and transparent transaction history",
+          "Multi-chain support including Ethereum and Polygon",
+          "Real-time analytics for network growth",
+          "Advanced security and smart contract auditing",
+          "Global scalability for multi-currency support"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 267,
+      "documentId": "o60msspdkx6ilx00v3km6vyb",
+      "createdAt": "2026-06-24T12:43:14.756Z",
+      "updatedAt": "2026-07-01T09:04:08.392Z",
+      "publishedAt": "2026-07-01T09:04:08.464Z",
+      "slug": "blockchain-wallet-development-company",
+      "title": "Blockchain Wallet Development Company",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 586,
+        "metaTitle": "Secure Blockchain Wallet Development Company | Custom Crypto Apps",
+        "metaDescription": "Leading blockchain wallet development company creating secure, scalable, and user-friendly crypto wallet solutions for enterprises and startups globally. Start your journey today.",
+        "keywords": "blockchain wallet development company, custom crypto wallet, white label wallet software, decentralized wallet app, ethereum wallet development, btc wallet development",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/blockchain-wallet-development",
+        "structuredData": {
+          "name": "Blockchain Wallet Development Services",
+          "@type": "SoftwareApplication",
+          "@context": "https://schema.org",
+          "applicationCategory": "FinTech Application"
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 589,
+        "badgeText": "Crypto Security Experts",
+        "titlePreHighlight": "Build Your Own ",
+        "highlightText": "High-Performance Blockchain Wallet",
+        "titlePostHighlight": "With Enterprise-Grade Security",
+        "description": "Empower your users with seamless digital asset management. We design and develop bespoke, highly secure cryptocurrency wallets tailored to your specific business requirements."
+      },
+      "SolutionServiceSection": {
+        "id": 1282,
+        "heading": "Blockchain Wallet Development Company Solutions",
+        "subtitle": "Professional services offered by our Blockchain Wallet Development Company for your business."
+      },
+      "SolutionAboutSection": {
+        "id": 589,
+        "title": "Unrivaled Expertise in Wallet Infrastructure",
+        "paragraph": "As a premier blockchain wallet development company, we combine deep cryptographic knowledge with intuitive UX design to deliver world-class digital asset storage solutions that bridge the gap between complex blockchain technology and end-user simplicity.",
+        "bullets": [
+          "Multi-currency support for diverse assets",
+          "Advanced biometric and 2FA authentication",
+          "Seamless integration with decentralized apps",
+          "Cold and hot storage architecture design",
+          "Strict compliance with global security standards",
+          "Real-time market analytics and data tracking"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 268,
+      "documentId": "q5w4jx42gz66j6odp10xtdqj",
+      "createdAt": "2026-06-24T12:44:32.262Z",
+      "updatedAt": "2026-07-01T09:04:08.770Z",
+      "publishedAt": "2026-07-01T09:04:08.843Z",
+      "slug": "social-media-app-development",
+      "title": "Social Media App Development",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 587,
+        "metaTitle": "Leading Social Media App Development Company | Comfygen",
+        "metaDescription": "Launch a high-performing social media platform with our expert development services. We offer custom, scalable, and secure social networking solutions for your business.",
+        "keywords": "Social Media App Development, Social Networking App Development, Custom Social Media Platform, Mobile App Development India, Chat App Development, Live Streaming App",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/social-media-app-development",
+        "structuredData": {
+          "name": "Social Media App Development Services",
+          "@type": "SoftwareApplication",
+          "@context": "https://schema.org",
+          "provider": {
+            "name": "Comfygen",
+            "@type": "Organization"
+          },
+          "applicationCategory": "BusinessApplication"
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 590,
+        "badgeText": "Premium Social Solutions",
+        "titlePreHighlight": "Build the Next Big ",
+        "highlightText": "Social Media Application",
+        "titlePostHighlight": "with Expert Developers",
+        "description": "Comfygen provides end-to-end social media app development services designed for scalability and high user engagement. Transform your unique networking ideas into high-performing digital platforms."
+      },
+      "SolutionServiceSection": {
+        "id": 1284,
+        "heading": "Expert Social Media App Development Services",
+        "subtitle": "Specialized Social Media App Development for your specific niche needs."
+      },
+      "SolutionAboutSection": {
+        "id": 590,
+        "title": "Empowering Connectivity Through Advanced App Development",
+        "paragraph": "As a leading social media app development company in India, Comfygen specializes in building feature-rich, intuitive, and secure platforms that bring people together. We combine modern technology with user-centric design to ensure your social media app stands out in a competitive market, delivering seamless experiences across all devices and platforms.",
+        "bullets": [
+          "Expert cross-platform development team",
+          "Scalable and secure architecture",
+          "Modern UI/UX design integration",
+          "End-to-end project management",
+          "High user retention strategies",
+          "Custom feature implementation"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 269,
+      "documentId": "gzuzh5sfmu213to3jcxjfgq5",
+      "createdAt": "2026-06-24T17:19:29.113Z",
+      "updatedAt": "2026-07-01T09:04:09.127Z",
+      "publishedAt": "2026-07-01T09:04:09.181Z",
+      "slug": "mobile-game-development",
+      "title": "Mobile Game Development",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 588,
+        "metaTitle": "Professional Mobile Game Development Services | Custom Gaming App",
+        "metaDescription": "Transform your gaming vision into reality with our expert mobile game development services. We build high-performance, immersive, and engaging games for iOS and Android.",
+        "keywords": "mobile game development, game app developers, hire game developers, iOS game development, Android game development, custom game design",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/mobile-game-development",
+        "structuredData": {
+          "name": "Mobile Game Development Services",
+          "@type": "SoftwareApplication",
+          "@context": "https://schema.org",
+          "applicationCategory": "GameDevelopment"
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 591,
+        "badgeText": "Game Development Studio",
+        "titlePreHighlight": "Build Your Immersive",
+        "highlightText": "Mobile Game",
+        "titlePostHighlight": "With Expert Developers",
+        "description": "From hyper-casual titles to complex 3D adventures, we turn your creative vision into immersive mobile experiences. Leverage cutting-edge technology to dominate the global app stores today."
+      },
+      "SolutionServiceSection": {
+        "id": 1286,
+        "heading": "Our Mobile Game Development Expertise",
+        "subtitle": "Industry leading Mobile Game Development solutions for your business success."
+      },
+      "SolutionAboutSection": {
+        "id": 591,
+        "title": "Crafting Worlds in Your Pocket",
+        "paragraph": "We specialize in end-to-end mobile game development, combining artistic creativity with technical precision to deliver games that keep players coming back. Our team uses industry-leading engines and design frameworks to build robust, scalable, and visually stunning gaming applications tailored for any target audience and genre.",
+        "bullets": [
+          "Custom 2D and 3D Game Design",
+          "Multiplayer Engine Integration",
+          "Advanced Physics and Logic",
+          "Cross-Platform Compatibility",
+          "Engaging User Experience Design",
+          "Continuous Optimization and Support"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 270,
+      "documentId": "xq1h6zyeaxyu0gcnzvvdf3nf",
+      "createdAt": "2026-06-24T17:20:23.152Z",
+      "updatedAt": "2026-07-01T09:04:09.447Z",
+      "publishedAt": "2026-07-01T09:04:09.496Z",
+      "slug": "iot-development",
+      "title": "IoT Development",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 589,
+        "metaTitle": "Custom IoT Development Services | Scalable Connected Solutions",
+        "metaDescription": "Transform your business with expert IoT development services. We build secure, scalable, and intelligent connected ecosystems tailored to your unique operational requirements.",
+        "keywords": "IoT development, IoT app development, industrial IoT, smart device connectivity, custom IoT solutions, embedded systems development",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/iot-development",
+        "structuredData": {
+          "name": "IoT Development Services",
+          "@type": "SoftwareApplication",
+          "@context": "https://schema.org",
+          "description": "Expert IoT development consulting and implementation services for modern enterprises.",
+          "applicationCategory": "BusinessApplication"
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 592,
+        "badgeText": "Industry Leading Solutions",
+        "titlePreHighlight": "Revolutionize Your Business with ",
+        "highlightText": "Advanced IoT Development",
+        "titlePostHighlight": " Services",
+        "description": "We architect robust IoT ecosystems that drive operational efficiency and real-time insights. Empower your hardware with intelligence through our bespoke end-to-end development solutions."
+      },
+      "SolutionServiceSection": {
+        "id": 1288,
+        "heading": "IoT Development Specialized Services",
+        "subtitle": "Leverage our expertise to build world-class IoT development solutions for your business."
+      },
+      "SolutionAboutSection": {
+        "id": 592,
+        "title": "Unlocking Potential Through Connected Intelligence",
+        "paragraph": "Our IoT development experts provide comprehensive technical strategy, hardware integration, and cloud-based data management to ensure your business remains at the competitive edge. We specialize in building secure communication protocols that bridge the gap between physical sensors and actionable business dashboards, creating seamless workflows that scale effortlessly with your growing infrastructure needs.",
+        "bullets": [
+          "End-to-end IoT system architecture",
+          "Secure firmware and device development",
+          "Real-time data analytics integration",
+          "Cloud-based IoT backend infrastructure",
+          "Scalable sensor network management",
+          "Custom mobile and web dashboards"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 271,
+      "documentId": "plam37cbsjj9phtpze11tikp",
+      "createdAt": "2026-06-24T17:23:48.309Z",
+      "updatedAt": "2026-07-01T09:04:09.750Z",
+      "publishedAt": "2026-07-01T09:04:09.814Z",
+      "slug": "education-app-development",
+      "title": "Education App Development",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 590,
+        "metaTitle": "Custom Education App Development Services | Scalable E-Learning",
+        "metaDescription": "Transform learning with bespoke Education App Development solutions. We build scalable, feature-rich platforms for schools, universities, and corporate training programs globally.",
+        "keywords": "Education App Development, E-learning App Development, LMS Software, EdTech Solutions, Classroom App, Virtual Learning Platform",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/education-app-development",
+        "structuredData": {
+          "name": "Education App Development",
+          "@type": "SoftwareApplication",
+          "@context": "https://schema.org",
+          "operatingSystem": "iOS, Android, Web",
+          "applicationCategory": "EducationalApplication"
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 593,
+        "badgeText": "EdTech Innovation",
+        "titlePreHighlight": "Revolutionize Learning with Custom",
+        "highlightText": "Education App Development",
+        "titlePostHighlight": "Tailored for Digital Success",
+        "description": "Empower educators and engage students with intuitive, high-performance e-learning platforms. We provide end-to-end development services to digitize your educational vision."
+      },
+      "SolutionServiceSection": {
+        "id": 1290,
+        "heading": "Our Expert Education App Development Services",
+        "subtitle": "We deliver comprehensive Education App Development services designed to meet modern pedagogical and technical industry standards globally."
+      },
+      "SolutionAboutSection": {
+        "id": 593,
+        "title": "Empowering Future Learning",
+        "paragraph": "In an era of digital transformation, our education app development services bridge the gap between traditional teaching and modern technology. We design interactive, user-centric ecosystems that foster collaboration, accessibility, and improved learning outcomes for institutions and private organizations across the globe.",
+        "bullets": [
+          "Customized Learning Management Systems",
+          "Gamified Student Engagement Features",
+          "Secure Multi-Tenant Cloud Hosting",
+          "Real-Time Analytics and Reporting",
+          "Seamless Integration with Third-Party Tools",
+          "Cross-Platform Scalability for Mobile"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 272,
+      "documentId": "ch932krbgf92scnz4hoh8a31",
+      "createdAt": "2026-06-24T12:46:23.185Z",
+      "updatedAt": "2026-07-01T09:04:10.110Z",
+      "publishedAt": "2026-07-01T09:04:10.158Z",
+      "slug": "magazine-app-development",
+      "title": "Magazine App Development",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 591,
+        "metaTitle": "Custom Magazine App Development | Digital Publishing Solutions",
+        "metaDescription": "Transform your content with professional Magazine App Development. High-performance, scalable, and engaging digital reading experiences for publishers worldwide. Start today.",
+        "keywords": "magazine app development, digital publishing app, content delivery platform, interactive magazine app, mobile publishing solutions, ios android magazine app",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/magazine-app-development",
+        "structuredData": {
+          "name": "Magazine App Development",
+          "@type": "SoftwareApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "@context": "https://schema.org",
+          "applicationCategory": "MultimediaApplication"
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 594,
+        "badgeText": "Digital Publishing Solution",
+        "titlePreHighlight": "Revolutionize Your Content with ",
+        "highlightText": "Magazine App Development",
+        "titlePostHighlight": " That Readers Love",
+        "description": "Captivate your audience with a stunning, feature-rich digital magazine experience. We build high-performance mobile apps designed to monetize content and boost reader retention."
+      },
+      "SolutionServiceSection": {
+        "id": 1292,
+        "heading": "Comprehensive Magazine App Development Services",
+        "subtitle": "Professional Magazine App Development designed to help publishers succeed in the digital economy effectively and quickly."
+      },
+      "SolutionAboutSection": {
+        "id": 594,
+        "title": "Empowering Modern Publishers",
+        "paragraph": "In an era of digital dominance, your content needs a home that is both aesthetically pleasing and technically superior. Our Magazine App Development services empower publishers to distribute premium content seamlessly across iOS and Android devices, ensuring your brand stands out in a crowded marketplace.",
+        "bullets": [
+          "Custom UI/UX design for immersive reading",
+          "Offline reading modes for on-the-go access",
+          "Robust subscription and paywall integration",
+          "Real-time analytics for reader insights",
+          "Advanced multimedia support for rich media",
+          "Automated push notifications for new issues"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 273,
+      "documentId": "d7obj5nce57dm9zvep5fj0ou",
+      "createdAt": "2026-06-24T17:27:12.472Z",
+      "updatedAt": "2026-07-01T09:04:10.430Z",
+      "publishedAt": "2026-07-01T09:04:10.494Z",
+      "slug": "metaverse-development-company",
+      "title": "Metaverse Development Company",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 592,
+        "metaTitle": "Leading Metaverse Development Company | Immersive 3D Solutions",
+        "metaDescription": "Transform your business with our expert Metaverse development services. We build scalable 3D virtual worlds, NFT marketplaces, and immersive experiences for global brands.",
+        "keywords": "Metaverse Development Company, Virtual Reality Solutions, 3D Web Development, Blockchain Metaverse, Metaverse App Builder, NFT Marketplace Development",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/metaverse-development-company",
+        "structuredData": {
+          "name": "Metaverse Development Services",
+          "@type": "SoftwareApplication",
+          "@context": "https://schema.org",
+          "description": "Premium Metaverse development and virtual world integration services.",
+          "applicationCategory": "Enterprise Software"
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 595,
+        "badgeText": "Metaverse Development Experts",
+        "titlePreHighlight": "Build Your Own ",
+        "highlightText": "Immersive Metaverse World",
+        "titlePostHighlight": " with Industry-Leading Tech",
+        "description": "We architect high-fidelity virtual ecosystems that bridge the gap between physical and digital reality. Elevate your brand with custom-built 3D environments, blockchain integration, and seamless user experiences."
+      },
+      "SolutionServiceSection": {
+        "id": 1294,
+        "heading": "Metaverse Development Company Solutions",
+        "subtitle": "Our services as a top Metaverse Development Company provide end-to-end digital transformation for modern business enterprises."
+      },
+      "SolutionAboutSection": {
+        "id": 595,
+        "title": "The Future of Digital Interaction",
+        "paragraph": "As a premier Metaverse development company, we provide end-to-end solutions that help businesses establish a presence in the next generation of the internet. Our team combines expertise in blockchain, 3D graphics, and cloud infrastructure to deliver secure, scalable, and highly interactive virtual platforms that captivate audiences worldwide.",
+        "bullets": [
+          "Custom 3D World Building",
+          "Blockchain & NFT Integration",
+          "Decentralized Economy Modeling",
+          "Real-time Spatial Computing",
+          "Cross-Platform Compatibility",
+          "Secure Multi-User Environments"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 274,
+      "documentId": "k3sy9gxkn5bgpevs1cv8i4wg",
+      "createdAt": "2026-06-24T17:27:28.123Z",
+      "updatedAt": "2026-07-01T09:04:10.764Z",
+      "publishedAt": "2026-07-01T09:04:10.841Z",
+      "slug": "nft-marketplace-development",
+      "title": "NFT Marketplace Development",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 593,
+        "metaTitle": "Custom NFT Marketplace Development Services | Blockchain Experts",
+        "metaDescription": "Launch your premium NFT marketplace with our end-to-end development services. Secure, scalable, and feature-rich blockchain solutions tailored for your unique business needs today.",
+        "keywords": "NFT marketplace development, white label NFT platform, blockchain development services, NFT minting portal, crypto marketplace developer, custom NFT app",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/nft-marketplace-development",
+        "structuredData": {
+          "name": "NFT Marketplace Development Services",
+          "@type": "SoftwareApplication",
+          "@context": "https://schema.org",
+          "applicationCategory": "Blockchain Software Development"
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 596,
+        "badgeText": "Blockchain Enterprise Solution",
+        "titlePreHighlight": "Launch Your Own ",
+        "highlightText": "NFT Marketplace",
+        "titlePostHighlight": " with Global Standards",
+        "description": "Transform the digital asset economy by building a robust, secure, and highly scalable NFT marketplace. We provide end-to-end development solutions that empower creators and collectors globally."
+      },
+      "SolutionServiceSection": {
+        "id": 1296,
+        "heading": "Professional NFT Marketplace Development Services",
+        "subtitle": "End-to-end NFT Marketplace Development to launch your brand"
+      },
+      "SolutionAboutSection": {
+        "id": 596,
+        "title": "Empowering the Next Generation of Digital Asset Trading",
+        "paragraph": "Our comprehensive NFT marketplace development service provides a turnkey solution for entrepreneurs looking to disrupt the digital collectible industry. By combining advanced smart contract auditing with intuitive UI/UX design, we ensure your platform is not only secure against threats but also provides a frictionless experience for users to mint, buy, and auction assets across multiple blockchain networks.",
+        "bullets": [
+          "Multi-chain compatibility support",
+          "Advanced smart contract development",
+          "Intuitive user dashboard interface",
+          "Real-time analytics and tracking",
+          "Secure crypto wallet integration",
+          "Scalable infrastructure architecture"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    },
+    {
+      "id": 275,
+      "documentId": "zg8e9ecwikaoldxtxbsnwrlt",
+      "createdAt": "2026-06-24T16:51:24.120Z",
+      "updatedAt": "2026-07-01T09:04:11.123Z",
+      "publishedAt": "2026-07-01T09:04:11.186Z",
+      "slug": "delivery-app-development-v2",
+      "title": "Delivery App Development",
+      "serviceScema": null,
+      "author": null,
+      "seo": {
+        "id": 594,
+        "metaTitle": "Top-Rated Delivery App Development Company | Custom Solutions",
+        "metaDescription": "Build high-performance, scalable delivery apps with expert developers. We offer end-to-end custom delivery app development, UI/UX design, and AI-powered optimization.",
+        "keywords": "delivery app development, on-demand delivery app, mobile app development, logistics software, food delivery app builder, white-label delivery solutions",
+        "metaRobots": "index, follow",
+        "canonicalURL": "/delivery-app-development",
+        "structuredData": {
+          "name": "Delivery App Development Services",
+          "@type": "SoftwareApplication",
+          "@context": "https://schema.org",
+          "operatingSystem": "iOS, Android",
+          "applicationCategory": "BusinessApplication"
+        }
+      },
+      "SolutionHeroSection": {
+        "id": 597,
+        "badgeText": "On-Demand Logistics Solutions",
+        "titlePreHighlight": "Build Your Powerful",
+        "highlightText": "Delivery App Solution",
+        "titlePostHighlight": "with Industry-Leading Technology",
+        "description": "Transform your logistics business with scalable, secure, and feature-rich delivery applications. We help startups and enterprises automate operations and drive revenue growth."
+      },
+      "SolutionServiceSection": {
+        "id": 1298,
+        "heading": "Our Delivery App Development Expertise",
+        "subtitle": "Professional Delivery App Development services tailored for your unique needs."
+      },
+      "SolutionAboutSection": {
+        "id": 597,
+        "title": "Empowering Businesses Through Next-Gen Delivery Apps",
+        "paragraph": "Comfygen Technologies specializes in delivering high-performance, custom-tailored mobile applications designed for speed, efficiency, and scalability. Whether you are launching a new food delivery service or optimizing a complex supply chain, our expert team provides end-to-end development solutions that integrate seamlessly with your business model while enhancing user experience.",
+        "bullets": [
+          "Real-time GPS tracking and route optimization",
+          "Advanced AI-powered demand forecasting algorithms",
+          "Seamless multi-role access for admins and users",
+          "Custom white-label solutions for rapid deployment",
+          "Secure, encrypted multi-gateway payment integration",
+          "High-performance architecture for global scalability"
+        ],
+        "buttontext": null,
+        "buttonLink": null
+      },
+      "ModulesSection": null,
+      "ProblemsSection": null,
+      "OfferingsSection": null,
+      "TechFeaturesSection": null,
+      "ClonesSection": null,
+      "PricingSection": null,
+      "faqSection": null,
+      "Process": null,
+      "extracards": null,
+      "demoVideo": null
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 25,
+      "pageCount": 3,
+      "total": 62
+    }
+  }
+}

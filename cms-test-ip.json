@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "id": 322,
+      "documentId": "jv3mzr3dq0oaaj1uvr9mckzy",
+      "createdAt": "2026-06-24T12:14:06.266Z",
+      "updatedAt": "2026-07-18T10:09:55.073Z",
+      "publishedAt": "2026-07-18T10:09:55.314Z",
+      "slug": "food-delivery-app-development",
+      "title": "Food Delivery App Development",
+      "serviceScema": null,
+      "author": null,
+      "ClonesSection": {
+        "id": 311,
+        "heading": null,
+        "disc": null,
+        "cloneItems": []
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 25,
+      "pageCount": 1,
+      "total": 1
+    }
+  }
+}
