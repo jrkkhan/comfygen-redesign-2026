@@ -115,17 +115,17 @@ export default function AwardsPage() {
           </div>
         </section>
 
+        {/* 4.5.5 Category wise Awards */}
+        <AwardsCategories />
+
+        {/* 4.6. Media Recognition Section */}
+        <MediaRecognition />
         {/* 4. Testimonials Section */}
         <Testimonials />
 
         {/* 4.5. Trailblazing Success Section */}
         <TrailblazingSuccess />
 
-        {/* 4.5.5 Category wise Awards */}
-        <AwardsCategories />
-
-        {/* 4.6. Media Recognition Section */}
-        <MediaRecognition />
 
         {/* 5. Final CTA */}
         <section className="py-24 px-4">
